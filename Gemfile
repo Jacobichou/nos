@@ -3,7 +3,6 @@ ruby '2.0.0'
 #ruby-gemset=rails4
 
 gem 'rails', '4.0.0'
-gem 'devise', '3.0.0'
 
 group :development, :test do
   gem 'sqlite3', '1.3.7'
@@ -20,12 +19,16 @@ group :test do
   gem 'libnotify', '0.8.0' # linux specific
 end
 
+gem 'devise', '3.0.0'
+gem 'cancan', '1.6.10'
+gem 'bootstrap-sass', '~> 2.3.2.1'
 gem 'sass-rails', '4.0.0'
 gem 'uglifier', '2.1.1'
 gem 'coffee-rails', '4.0.0'
 gem 'jquery-rails', '2.2.1'
 gem 'turbolinks', '1.1.1'
 gem 'jbuilder', '1.0.2'
+gem 'holder_rails'
 
 group :doc do
   gem 'sdoc', '0.3.20', require: false
