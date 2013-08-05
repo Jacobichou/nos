@@ -1,7 +1,7 @@
 module ApplicationHelper
 	# Returns the full title of page
 	def full_title(page_title)
-		base_title = "NOS"
+		base_title = "NOSSYM"
 
 		if page_title.empty?
 			base_title
