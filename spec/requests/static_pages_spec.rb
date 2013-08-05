@@ -23,6 +23,7 @@ describe "StaticPages" do
 		let(:heading) { 'Information Center' }
 		let(:page_title) { 'Help' }
 
+		it_should_behave_like "all static pages"
 		it { should have_content('Here are answers to frequently asked questions') }
 
 		describe "the answer section" do
@@ -37,6 +38,20 @@ describe "StaticPages" do
 
 			it { should have_link('Who sees the information I submit?', href: '#collapseThree') }
 			it { should have_selector('#collapseThree', text: 'Only necessary staff who are required') }
+		end
+	end
+
+	describe "Contact page" do
+		before { visit contact_path }
+		let(:heading) { 'Get In Touch With Us' }
+		let(:page_title) { 'Contact' }
+
+		it_should_behave_like "all static pages"
+		it { should have_content('If you have questions about this system') }
+
+		describe "the comment card" do
+			it { should have_selector('input#email') }
+			it { should have_selector('div.comment') }
 		end
 	end
 end # end_file
