@@ -15,7 +15,7 @@ describe "StaticPages" do
 			let(:page_title) { '' }
 			
 			it_should_behave_like "all static pages"
-			it { should have_link('Sign up now!', href: signup_path) }
+			it { should have_link('Sign up now!', href: new_user_registration_path) }
 	end
 
 	describe "Help page" do
