@@ -64,50 +64,17 @@
 </div>
 
 <div class="content-box shadow">
-  <div class="center">
+  <div class="container center">
     <% flash.each do |key, value| %>
         <%= content_tag(:div, value, class: "alert alert-#{key}") %>
     <% end %>
   </div>
 
-    <div class="content">
-        <div class="container no-bottom">
-            <%= yield %> 
-        </div>
-
-        <div class="decoration"></div>
-            
-        <div class="container no-bottom">
-           <h5 class="uppercase">THIS IS NOSSYM</h5>
-           <p>The online management system for New Creation Christian Fellowship! </p> 
-        </div>
-        
-        <div class="decoration"></div>
-        
-        <div class="container">
-            <%= image_tag "icons-large/icon1@2x.png", class: "column-icon", width:"85", alt:"img" %>
-            <h6 class="uppercase">Touch in our framework!</h6>
-            <p class="no-bottom">We brought touch features to our framework! High compatibility and gracefull fallback! </p> 
-        </div> 
-        
-        <div class="container">
-            <%= image_tag "icons-large/icon2@2x.png", class: "column-icon", width:"85", alt:"img" %>
-            <h6 class="uppercase">Very well optimized!</h6>
-            <p class="no-bottom">We optimized drawer to a whole new level, making sure it works on Androids, RIMS, iOS's and Nokias alike! </p> 
-        </div> 
-        
-        <div class="container">
-            <%= image_tag "icons-large/icon3@2x.png", class: "column-icon", width:"85", alt:"img" %>
-            <h6 class="uppercase">Documented for everyone!</h6>
-            <p class="no-bottom">We made sure you'll get everything in here by making easy documentations that cover every feature! </p> 
-        </div>
-           
-        <div class="decoration"></div>      
-        <p class="center-text uppercase footer-text">
-            Copyright 2013. All rights reserved!
-        </p>
-            
-    </div>
+  <div class="content">
+      <div class="container no-bottom">
+          <%= yield %> 
+      </div>    
+  </div>
 </div>
 
 <%= render 'layouts/left_nav' %>

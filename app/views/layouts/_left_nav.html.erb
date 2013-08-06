@@ -2,7 +2,11 @@
   <div class="sidebar-scroll-left">
       <div class="sidebar-header-left">
         <!-- <= image_tag "misc/logo-sidebar.png", class: "sidebar-left-logo replace-2x", width:"125", alt:"img" %> -->
-        <span class="sidebar-left-logo">NOSSYM</span>
+        <% if user_signed_in? %>
+            <span class="sidebar-left-logo"><%= current_user.email %></span>
+        <% else %>
+            <span class="sidebar-left-logo">NOSSYM</span>
+        <% end %>
           <a href="#" class="close-sidebar-left"></a>
       </div>
     
@@ -10,7 +14,6 @@
         
         <a href="#" class="nav-item coach-nav">WALKTHROUGH<em class="icon-page"></em></a>
         <a href="<%= root_url %>" class="nav-item home-nav">DASHBOARD<em class="icon-active"></em></a>
-
         <a href="#" id="submenu-one" class="nav-item blog-nav">FORMS<em class="icon-drop"></em></a>
             <div class="submenu submenu-one">
               <a href=""><em></em>PSF</a>
@@ -20,7 +23,7 @@
                 <a href=""><em></em>Another Form</a>
             </div>
         
-        <a href="<%= help_path %>" class="nav-item info-nav">Help<em class="icon-page"></em></a>
+        <a href="<%= help_path %>" class="nav-item coach-nav">Help<em class="icon-page"></em></a>
         <a href="<%= about_path %>" class="nav-item info-nav">About<em class="icon-page"></em></a>
 
         <% if user_signed_in? %>
@@ -29,28 +32,13 @@
             <%= link_to "Sign in", new_user_session_path, class: "nav-item", id:"sign-in" %>
         <% end %> 
         
-        <p class="sidebar-divider-text">NOTIFICATIONS</p>
+        <p class="sidebar-divider-text">SETTINGS</p>
         <div class="sidebar-decoration"></div>
-        
+
         <div class="sidebar-notifications">
-            <a href="#" class="info-sidebar">
-                New Item Released<br>
-                15th April 2013
-            </a>
-        
+            <%= link_to 'Profile', '#', class: "info-sidebar" %>
             <div class="sidebar-decoration"></div>
-            
-            <a href="#" class="update-sidebar">
-                New Item Released<br>
-                15th April 2013
-            </a>
-        
-            <div class="sidebar-decoration"></div>
-    
-            <a href="#" class="folio-sidebar">
-                New Item Released<br>
-                15th April 2013
-            </a>        
+            <%= link_to 'Settings', '#', class: "info-sidebar" %>    
         </div>
         
         <div class="sidebar-decoration"></div>
