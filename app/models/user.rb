@@ -6,4 +6,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :project_summary_forms
+
+
 end

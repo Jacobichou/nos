@@ -3,5 +3,7 @@
 </div>
 
 <div class="container psf-box">
-	<%= render 'a_psf' %>
+	<% if @psf_items.any? %>
+		<%= render partial: 'psf_item', collection @psf_items %>
+	<% end %>
 </div>
