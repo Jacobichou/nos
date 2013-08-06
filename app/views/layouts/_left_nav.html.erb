@@ -11,7 +11,9 @@
       </div>
     
         <p class="sidebar-divider-text">NAVIGATION</p>
-        
+        <% if !user_signed_in? %>
+            <%= link_to "Sign in", new_user_session_path, class: "nav-item", id:"sign-in" %>
+        <% end %>
         <a href="#" class="nav-item coach-nav">WALKTHROUGH<em class="icon-page"></em></a>
         <a href="<%= root_url %>" class="nav-item home-nav">DASHBOARD<em class="icon-active"></em></a>
         <a href="#" id="submenu-one" class="nav-item blog-nav">FORMS<em class="icon-drop"></em></a>
@@ -28,8 +30,7 @@
 
         <% if user_signed_in? %>
             <%= link_to "Sign out", destroy_user_session_path, class: "nav-item", id:"sign-out", method: "delete" %>
-        <% else %>
-            <%= link_to "Sign in", new_user_session_path, class: "nav-item", id:"sign-in" %>
+
         <% end %> 
         
         <p class="sidebar-divider-text">SETTINGS</p>
