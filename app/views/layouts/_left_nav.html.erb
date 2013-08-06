@@ -9,8 +9,9 @@
         <p class="sidebar-divider-text">NAVIGATION</p>
         
         <a href="#" class="nav-item coach-nav">WALKTHROUGH<em class="icon-page"></em></a>
-        <a href="index.html" class="nav-item home-nav">DASHBOARD<em class="icon-active"></em></a>
-        <a href="#" id="submenu-one" class="nav-item info-nav">FORMS<em class="icon-drop"></em></a>
+        <a href="<%= root_url %>" class="nav-item home-nav">DASHBOARD<em class="icon-active"></em></a>
+
+        <a href="#" id="submenu-one" class="nav-item blog-nav">FORMS<em class="icon-drop"></em></a>
             <div class="submenu submenu-one">
               <a href=""><em></em>PSF</a>
                 <a href=""><em></em>Another Form</a>
@@ -18,17 +19,15 @@
                 <a href=""><em></em>Another Form</a>
                 <a href=""><em></em>Another Form</a>
             </div>
-        <a href="#" id="submenu-two" class="nav-item folio-nav">FOLIOS<em class="icon-drop"></em></a>
-            <div class="submenu submenu-two">
-              <a href="ffolio.html"><em></em>Full Column</a>
-                <a href="onecol.html"><em></em>One Column</a>
-                <a href="twocol.html"><em></em>Two Columns</a>
-                <a href="swiper.html"><em></em>Swipables</a>
-                <a href="filter.html"><em></em>Filter</a>
-            </div>
-        <a href="video.html" class="nav-item video-nav">VIDEOS<em class="icon-page"></em></a>
-        <a href="blog.html" class="nav-item blog-nav">BLOG<em class="icon-page"></em></a>
-        <a href="contact.html" class="nav-item mail-nav">CONTACT<em class="icon-page"></em></a>   
+        
+        <a href="<%= help_path %>" class="nav-item info-nav">Help<em class="icon-page"></em></a>
+        <a href="<%= about_path %>" class="nav-item info-nav">About<em class="icon-page"></em></a>
+
+        <% if user_signed_in? %>
+            <%= link_to "Sign out", destroy_user_session_path, class: "nav-item", id:"sign-out", method: "delete" %>
+        <% else %>
+            <%= link_to "Sign in", new_user_session_path, class: "nav-item", id:"sign-in" %>
+        <% end %> 
         
         <p class="sidebar-divider-text">NOTIFICATIONS</p>
         <div class="sidebar-decoration"></div>

@@ -27,11 +27,6 @@
     </div>
 </div>
 
-<% flash.each do |key, value| %>
-    <%= content_tag(:div, value, class: "alert alert-#{key}") %>
-  <% end %>
-
-
 <div class="page-coach">
   <div class="portrait-coach">
         <span  style="top:-10px; left:50px;" class="coach-arrow arrow9">
@@ -69,8 +64,13 @@
 </div>
 
 <div class="content-box shadow">
-    <div class="content">
+  <div class="center">
+    <% flash.each do |key, value| %>
+        <%= content_tag(:div, value, class: "alert alert-#{key}") %>
+    <% end %>
+  </div>
 
+    <div class="content">
         <div class="container no-bottom">
             <%= yield %> 
         </div>
