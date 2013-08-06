@@ -1,12 +1,5 @@
 <% if user_signed_in? %>
-	<div class="container center">
-		<h1>Welcome, <%= current_user.email %></h1>
-	</div>
-
-	<div class="container no-bottom ">
-		<h5 class="uppercase">THIS IS NOSSYM</h5>
-		<p>The online management system for New Creation Christian Fellowship! </p> 
-	</div>
+	<%= render 'home_content' %>
 <% else %>
 	<div class="center hero-unit">
 		<h1>NOS Management System</h1>

@@ -26,7 +26,9 @@
             </div>
         
         <a href="<%= help_path %>" class="nav-item coach-nav">Help<em class="icon-page"></em></a>
+        <a href="<%= contact_path %>" class="nav-item text-nav">Contact Us<em class="icon-page"></em></a>
         <a href="<%= about_path %>" class="nav-item info-nav">About<em class="icon-page"></em></a>
+
 
         <% if user_signed_in? %>
             <%= link_to "Sign out", destroy_user_session_path, class: "nav-item", id:"sign-out", method: "delete" %>
