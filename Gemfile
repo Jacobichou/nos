@@ -20,6 +20,8 @@ group :test do
 end
 
 gem 'devise', '3.0.0'
+gem 'will_paginate', '3.0.3'
+gem 'bootstrap-will_paginate', '0.0.6'
 gem 'cancan', '1.6.10'
 gem 'bootstrap-sass', '~> 2.3.2.1'
 gem 'sass-rails', '4.0.0'

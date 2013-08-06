@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
   def home
 	  if signed_in?
-		  @psf_items = current_user.project_summary_forms.paginate(page: params[:page])
+		  @psf_items = ProjectSummaryForm.all # change this later when doing personalized feeds
 	  end
   end
 
