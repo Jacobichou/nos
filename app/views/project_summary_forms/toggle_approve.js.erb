@@ -1,0 +1,2 @@
+$("#approve_link_<%= @psf_item.id %>").html("<%= escape_javascript(render('project_summary_forms/status_buttons')) %>")
+$("#approve_link_<%= @psf_item.id %>").html('<%= @psf_item.approved %>')

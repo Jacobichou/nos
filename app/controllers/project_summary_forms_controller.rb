@@ -27,6 +27,27 @@ class ProjectSummaryFormsController < ApplicationController
 	  end
 	end
 
+	def toggle_approve
+		@a = ProjectSummaryForm.find(params[:id])
+		@a.toggle!(:approved)
+		render :nothing => true
+	end
+
+	def toggle_status
+		@psf = ProjectSummaryForm.find(params[:id])
+		if @psf.approved?
+			respond_to do |format|
+				format.js
+				format.html { redirect_to @psf, notice: 'Approved PSF' }
+			end
+		else
+			respond_to do |format|
+				format.js
+				format.html { redirect_to :back }
+			end
+		end
+	end
+
 	private
 		def psf_params
 			params.require(:psf).permit(:project_manager, :location, :budget, :est_revenue, :class)

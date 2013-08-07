@@ -1,0 +1,9 @@
+<% if psf_item.approved? %>
+	<%= link_to 'Discard', '#', class: "no-bottom demo-button button-minimal red-minimal discard", id:"approve_link_#{psf_item.id}" %>
+
+	<%= link_to 'Accept', toggle_approve_project_summary_form_path(psf_item), remote: true, class: "no-bottom demo-button button-minimal green-minimal accept", id:"approve_link_#{psf_item.id}" %>
+<% else %>
+	<%= link_to 'Discard', toggle_approve_project_summary_form_path(psf_item), remote: true, class: "no-bottom demo-button button-minimal red-minimal discard", id:"approve_link_#{psf_item.id}" %>
+
+	<%= link_to 'Accept', '#', class: "no-bottom demo-button button-minimal green-minimal accept", id:"approve_link_#{psf_item.id}" %>
+<% end %>

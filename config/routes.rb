@@ -10,6 +10,11 @@ Nos::Application.routes.draw do
   match '/about',   to: 'static_pages#about',   via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'
 
+  resources :project_summary_forms do
+    get 'toggle_approve', :on => :member
+    get 'toggle_status', :on => :member
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
