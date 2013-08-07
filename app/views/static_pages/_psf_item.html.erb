@@ -21,7 +21,7 @@
                 </p>
                 <div class="toggle-decoration-v1"></div>
                 <div class="psf-controls">
-                    <%= link_to 'Discard', '#', class: "no-bottom demo-button button-minimal red-minimal discard" %>
+                    <%= link_to 'Discard', '#', class: "no-bottom demo-button button-minimal red-minimal discard", post, method: :accepted, remote: true %>
                     <%= link_to 'Accept', '#', class: "no-bottom demo-button button-minimal green-minimal accept" %>
                 </div>
             </div> 
