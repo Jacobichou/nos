@@ -1,6 +1,5 @@
 class ProjectSummaryFormsController < ApplicationController
 	def create
-		# @psf = ProjectSummaryForm.new(params[:component])
 		@psf = current_user.ProjectSummaryForms.build(psf_params)
 
 		respond_to do |format|

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130806225340) do
+ActiveRecord::Schema.define(version: 20130807002025) do
 
   create_table "departments", force: true do |t|
     t.string   "dept_name"
@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 20130806225340) do
     t.datetime "updated_at"
     t.string   "title",           default: "A PSF"
     t.integer  "hierarchy_lvl",   default: 1
+    t.boolean  "approved",        default: false
+    t.boolean  "reviewed",        default: false
   end
 
   create_table "users", force: true do |t|
