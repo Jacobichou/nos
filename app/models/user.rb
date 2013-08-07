@@ -7,5 +7,12 @@ class User < ActiveRecord::Base
 
   has_many :project_summary_forms
 
-
+  	def feed
+	  	@LOWEST_HIERARCHY_LVL = 4
+	  	if hierarchy > -1
+	  		ProjectSummaryForm.where(hierarchy_lvl: hierarchy..@LOWEST_HIERARCHY_LVL)
+	  	else
+	  		ProjectSummaryForm.where(hierarchy_lvl: hierarchy)
+		end
+	end
 end

@@ -16,6 +16,6 @@ class ProjectSummaryFormsController < ApplicationController
 
 	private
 		def psf_params
-			params.require(:psf).permit(:project_manager, :location, :budget, :est_revenue)
+			params.require(:psf).permit(:project_manager, :location, :budget, :est_revenue, :class)
 		end
 end
