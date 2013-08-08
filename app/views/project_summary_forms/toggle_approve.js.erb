@@ -1,2 +1,11 @@
 $("#approve_link_<%= @psf.id %>").html("<%= approve_link_text(@psf) %>")
-$("#approve_link_<%= @psf.id %>").removeClass("un-approved")
+$("#item_<%=@psf.title.downcase.tr(" ", "_") %>_<%=@psf.id %>").html()
+
+if ( <%= @psf.approved? %> ) {
+	$("#item_<%=@psf.title.downcase.tr(" ", "_") %>_<%=@psf.id %>").removeClass("approved-item").addClass("un-approved-item")
+	$("#approve_link_<%= @psf.id %>").removeClass("un-approved-item").addClass("approved-item")
+}
+else {
+	$("#item_<%=@psf.title.downcase.tr(" ", "_") %>_<%=@psf.id %>").removeClass("un-approved-item").addClass("approved-item")
+	$("#approve_link_<%= @psf.id %>").removeClass("approved-item").addClass("un-approved-item")
+}
