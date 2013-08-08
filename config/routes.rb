@@ -11,8 +11,10 @@ Nos::Application.routes.draw do
   match '/contact', to: 'static_pages#contact', via: 'get'
 
   resources :project_summary_forms do
-    get 'toggle_approve', :on => :member
-    get 'toggle_status', :on => :member
+    member { put :toggle_approve }
+    # get 'toggle_status', :on => :member
+    # get 'approve', :on => :member
+    # get 'unnapprove', :on => :member
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

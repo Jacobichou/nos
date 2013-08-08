@@ -28,28 +28,24 @@ class ProjectSummaryFormsController < ApplicationController
 	end
 
 	def toggle_approve
-		@a = ProjectSummaryForm.find(params[:id])
-		@a.toggle!(:approved)
-		render :nothing => true
+		@psf = ProjectSummaryForm.find(params[:id])
+		@psf.toggle!(:approved)
+		respond_to do |format|
+			format.html { redirect_to :back, notice: "Changed" }
+			format.js
+		end
 	end
 
-	def toggle_status
+	def approve
 		@psf = ProjectSummaryForm.find(params[:id])
-		if @psf.approved?
-			respond_to do |format|
-				format.js
-				format.html { redirect_to @psf, notice: 'Approved PSF' }
-			end
-		else
-			respond_to do |format|
-				format.js
-				format.html { redirect_to :back }
-			end
-		end
+	end
+
+	def unapprove
+		@psf = ProjectSummaryForm.find(params[:id])
 	end
 
 	private
 		def psf_params
-			params.require(:psf).permit(:project_manager, :location, :budget, :est_revenue, :class)
+			params.require(:psf).permit(:project_manager, :location, :budget, :est_revenue)
 		end
 end

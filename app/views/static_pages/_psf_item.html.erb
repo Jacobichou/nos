@@ -1,7 +1,7 @@
 <div id="<%= psf_item.id %>" class="container no-bottom">
     <div class="toggle-container-v1"> 
         <div class="toggle-v1">
-            <a href="#" class="show-toggle-v1" style="display: none;"><span class="<%= psf_item.approved? ? 'un-approved-item' : 'approved-item' %>"><%= psf_item.title %>&nbsp;|&nbsp;<%= psf_item.project_manager %></span></a>
+            <a href="#" id= "item_<%=psf_item.type %>_<%=psf_item.id %>" class="show-toggle-v1" style="display: none;"><span class="<%= psf_item.approved? ? 'un-approved-item' : 'approved-item' %>"><%= psf_item.title %>&nbsp;|&nbsp;<%= psf_item.project_manager %></span></a>
             <a href="#" class="hide-toggle-v1"><span class="<%= psf_item.approved? ? 'un-approved-item' : 'approved-item' %>"><%= psf_item.title %>&nbsp;|&nbsp;<%= psf_item.project_manager %></span></a>
             <div class="clear"></div>
             <div class="toggle-content-v1" style="display: none;">
@@ -25,9 +25,7 @@
                     
                     <= link_to 'Accept', toggle_approve_project_summary_form_path(psf_item), remote: true, class: "no-bottom demo-button button-minimal green-minimal accept", id:"approve_link_#{psf_item.id}" %> -->
 
-                    
-
-                    <%= link_to approve_link_text(psf_item), toggle_approve_project_summary_form_path(psf_item), remote: true, id:"approve_link_#{psf_item.id}" %> 
+                    <%= link_to approve_link_text(psf_item), toggle_approve_project_summary_form_path(psf_item), remote: true, id:"approve_link_#{psf_item.id}", method: :put %> 
                 </div>
             </div> 
         </div> 
