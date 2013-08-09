@@ -8,26 +8,20 @@
 				<div class="toggle-decoration-v1"></div>
 
 				<div class="column">
-					<div class="one-third">
+					<div class="one-half">
 						<h5>Phone:&nbsp;<%= psf_item.phone %></h5>
-						<h5>E-mail:&nbsp;<!-- <= psf_item.email %> --></h5>
+						<h5>E-mail:&nbsp;<%= get_email(psf_item) %></h5>
 						
 					</div>
-					<div class="one-third">
-						<h5>&nbsp;</h5>
-						<h5>&nbsp;</h5>
-					</div>
-					<div class="one-third">
+
+					<div class="one-half">
 						<h5>Budget:&nbsp;<%= number_to_currency(psf_item.budget) %></h5>
 						<h5>Date:&nbsp;<%= psf_item.start_date %></h5>
 					</div>
 				</div>
 
-				<div class="column">
-					<div class="one-third">  
+				<div class="container no-bottom">
 						<h5>Location:&nbsp;<%= psf_item.location.titlecase %></h5>
-						<p>&nbsp;</p>
-					</div>
 				</div>
 				
 				<div class="toggle-decoration-v1"></div>
