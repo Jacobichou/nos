@@ -10,5 +10,95 @@
   <%= @project_summary_form.location %>
 </p>
 
+<p>
+  <strong>Project Manager:</strong>
+  <%= @project_summary_form.project_manager %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @project_summary_form.phone %>
+</p>
+
+<p>
+  <strong>Budget:</strong>
+  <%= number_to_currency(@project_summary_form.budget) %>
+</p>
+
+<p>
+  <strong>Revenue:</strong>
+  <%= number_to_currency(@project_summary_form.revenue) %>
+</p>
+
+<p>
+  <strong>Purpose:</strong>
+  <%= @project_summary_form.purpose %>
+</p>
+
+<p>
+  <strong>Frequency:</strong>
+  <%= @project_summary_form.frequency %>
+</p>
+
+<p>
+  <strong>Frequency Exception:</strong>
+  <%= @project_summary_form.frequency_exception %>
+</p>
+
+<p>
+  <strong>Fee:</strong>
+  <%= number_to_currency(@project_summary_form.fee) %>
+</p>
+
+<p>
+  <strong>Offering:</strong>
+  <%= @project_summary_form.offering %>
+</p>
+
+<p>
+  <strong>Comments:</strong>
+  <%= @project_summary_form.comments %>
+</p>
+
+<p>
+  <strong>Start Date:</strong>
+  <%= @project_summary_form.start_date %>
+</p>
+
+<p>
+  <strong>End Date:</strong>
+  <%= @project_summary_form.end_date %>
+</p>
+
+<p>
+  <strong>Start Time:</strong>
+  <%= @project_summary_form.start_time %>
+</p>
+
+<p>
+  <strong>End Time:</strong>
+  <%= @project_summary_form.end_time %>
+</p>
+
+<p>
+  <strong>Participants:</strong>
+  <%= @project_summary_form.num_participants %>
+</p>
+
+<p>
+  <strong>Request Type:</strong>
+  <%= @project_summary_form.type %>
+</p>
+
+<p>
+  <strong>Audience:</strong>
+  <%= @project_summary_form.audience %>
+</p>
+
+<p>
+  <strong>Outcome:</strong>
+  <%= @project_summary_form.outcome %>
+</p>
+
 <%= link_to 'Edit', edit_project_summary_form_path(@project_summary_form) %> |
 <%= link_to 'Back', home_path %>

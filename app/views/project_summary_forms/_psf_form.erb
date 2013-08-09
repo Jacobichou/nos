@@ -92,12 +92,27 @@
 
       <div class="formFieldWrap">
         <%= f.label :budget, "Budget:", class:"field-title" %>
-        <%= f.text_field :budget, class:"contactField" %>
+        <%= f.number_field :budget, class:"contactField" %>
       </div>
 
       <div class="formFieldWrap">
         <%= f.label :revenue, "Estimated revenue:", class:"field-title" %>
         <%= f.number_field :revenue, class:"contactField" %>
+      </div>
+    </div>
+
+    <div class="decoration"></div>
+
+    <div class="container">
+      <div class="formFieldWrap">
+        <%= f.label :fee, "Event fee:", class:"field-title" %>
+        <%= f.number_field :fee, class:"contactField" %>
+      </div>
+
+      <div class="formFieldWrap">
+        <%= f.label :offering, "Will there be an offering?:", class:"field-title" %>
+        # <= f.radio_button :offering, "Yes", class:"checker radio-v1" %>
+        # <= f.radio_button :offering, "No", class:"checker radio-v1" %>
       </div>
     </div>
 

@@ -43,7 +43,7 @@ class ProjectSummaryFormsController < ApplicationController
 
 	def update
 		respond_to do |format|
-			if @project_summary_form.update(project_summary_form_params)
+			if @project_summary_form.update(psf_params)
 			  format.html { redirect_to @project_summary_form, notice: 'Project summary form was successfully updated.' }
 			  format.json { head :no_content }
 			else
@@ -77,7 +77,7 @@ class ProjectSummaryFormsController < ApplicationController
 		end
 	
 		def psf_params
-			params.require(:project_summary_form).permit(:project_manager, :location, :budget, :revenue, :est_revenue, 
+			params.require(:project_summary_form).permit(:project_manager, :location, :budget, :revenue, 
 																		:title, :purpose, :frequency, :frequency_exception, :fee, :offering, 
 																		:comments, :start_date, :end_date, :start_time, :end_time, 
 																		:num_participants, :type, :audience, :outcome, :phone)
