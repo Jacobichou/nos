@@ -1,0 +1,9 @@
+<% provide(:title, 'New PSF') %>
+<h1>Project Summary Form</h1>
+
+<div class="container">
+	<%= form_for(@psf) do |f| %>
+		<%= render 'psf_form', f:f %>
+		<%= f.submit "Submit PSF", class: "no-bottom demo-button button blue" %>
+	<% end %>
+</div>

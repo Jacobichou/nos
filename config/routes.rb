@@ -12,9 +12,6 @@ Nos::Application.routes.draw do
 
   resources :project_summary_forms do
     member { put :toggle_approve }
-    # get 'toggle_status', :on => :member
-    # get 'approve', :on => :member
-    # get 'unnapprove', :on => :member
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

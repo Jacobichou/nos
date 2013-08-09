@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130807002025) do
+ActiveRecord::Schema.define(version: 20130808170646) do
 
   create_table "departments", force: true do |t|
     t.string   "dept_name"
@@ -29,10 +29,24 @@ ActiveRecord::Schema.define(version: 20130807002025) do
     t.integer  "est_revenue"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "title",           default: "A PSF"
-    t.integer  "hierarchy_lvl",   default: 1
-    t.boolean  "approved",        default: false
-    t.boolean  "reviewed",        default: false
+    t.string   "title",               default: "A PSF"
+    t.integer  "hierarchy_lvl",       default: 1
+    t.boolean  "approved",            default: false
+    t.boolean  "reviewed",            default: false
+    t.time     "start_time"
+    t.time     "end_time"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.string   "frequency"
+    t.string   "frequency_exception"
+    t.string   "purpose"
+    t.string   "audience"
+    t.string   "outcome"
+    t.integer  "fee"
+    t.boolean  "offering"
+    t.integer  "event_level"
+    t.string   "type"
+    t.string   "comments"
   end
 
   create_table "users", force: true do |t|
