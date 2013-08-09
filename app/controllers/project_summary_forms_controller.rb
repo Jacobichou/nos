@@ -56,7 +56,7 @@ class ProjectSummaryFormsController < ApplicationController
 	def destroy
 		@project_summary_form.destroy
 		respond_to do |format|
-			format.html { redirect_to project_summary_forms_url }
+			format.html { redirect_to home_path }
 			format.json { head :no_content }
 		end
 	end

@@ -8,22 +8,26 @@
 				<div class="toggle-decoration-v1"></div>
 
 				<div class="column">
-					<div class="one-third">  
-						<h5>Location:&nbsp;<%= psf_item.location.titlecase %></h5>
+					<div class="one-third">
 						<h5>Phone:&nbsp;<%= psf_item.phone %></h5>
+						<h5>E-mail:&nbsp;<!-- <= psf_item.email %> --></h5>
+						
 					</div>
 					<div class="one-third">
 						<h5>&nbsp;</h5>
-						<h5>Budget:&nbsp;<%= psf_item.id %></h5>
+						<h5>&nbsp;</h5>
 					</div>
 					<div class="one-third">
-						<h5>Budget:&nbsp;<%= number_to_currency(psf_item.email) %></h5>
+						<h5>Budget:&nbsp;<%= number_to_currency(psf_item.budget) %></h5>
 						<h5>Date:&nbsp;<%= psf_item.start_date %></h5>
 					</div>
 				</div>
-				<div class="container no-bottom">
-				    <h5>Purpose:</h5>
-				    <p><%= psf_item.purpose %></p> 
+
+				<div class="column">
+					<div class="one-third">  
+						<h5>Location:&nbsp;<%= psf_item.location.titlecase %></h5>
+						<p>&nbsp;</p>
+					</div>
 				</div>
 				
 				<div class="toggle-decoration-v1"></div>
@@ -33,6 +37,8 @@
 					<% else %>
 						<%= link_to approve_link_text(psf_item), toggle_approve_project_summary_form_path(psf_item), remote: true, id:"approve_link_#{psf_item.id}", class:"un-approved-item", method: :put %>
 					<% end %>
+					&nbsp;|&nbsp;
+					<%= link_to 'Destroy', psf_item, method: :delete, class:"btn", data: { confirm: 'Are you sure?' } %>
 				</div>
 			</div> 
 		</div> 
