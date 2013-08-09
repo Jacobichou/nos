@@ -4,25 +4,25 @@ class ProjectSummaryFormsController < ApplicationController
 	def create
 		@psf = current_user.project_summary_forms.create(psf_params)
 
-		# respond_to do |format|
-		#   if @psf.save
-		#     format.html { redirect_to @psf, notice: 'Project summary form was successfully created.' }
-		#     format.json { render action: 'show', status: :created, location: @psf }
-		#   else
-		#     format.html { render action: 'new' }
-		#     format.json { render json: @psf.errors, status: :unprocessable_entity }
-		#   end
-		# end
-
 		respond_to do |format|
-			if @psf.save
-				format.html { redirect_to @psf, notice: 'PSF was successfully created.' }
-				format.json { render json: @psf, status: :created, location: @psf }
-			else
-				format.html { render action: "new" }
-				format.json { render json: @psf.errors, status: :unprocessable_entity }
-			end
+		  if @psf.save
+		    format.html { redirect_to @psf, notice: 'Project summary form was successfully created.' }
+		    format.json { render action: 'show', status: :created, location: @psf }
+		  else
+		    format.html { render action: 'new' }
+		    format.json { render json: @psf.errors, status: :unprocessable_entity }
+		  end
 		end
+
+		# respond_to do |format|
+		# 	if @psf.save
+		# 		format.html { redirect_to @psf, notice: 'PSF was successfully created.' }
+		# 		format.json { render json: @psf, status: :created, location: @psf }
+		# 	else
+		# 		format.html { render action: "new" }
+		# 		format.json { render json: @psf.errors, status: :unprocessable_entity }
+		# 	end
+		# end
 	end
 
 	def new
