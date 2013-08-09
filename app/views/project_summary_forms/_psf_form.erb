@@ -1,17 +1,114 @@
 <%= form_for(@project_summary_form) do |f| %>
 	<%= render 'shared/error_messages', object: f.object %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :location %><br>
-    <%= f.text_field :location %>
-  </div>
-  <div class="actions">
-    <%= f.submit 'Submit' %>
-  </div>
+  <fieldset>
+    <div class="container">
+      <div class="formFieldWrap">
+        <%= f.label :title, "Event Title:", class:"field-title" %>
+        <%= f.text_field :title, class:"contactField" %>
+      </div>
+
+      <div class="formFieldWrap">
+        <%= f.label :location, "Location:", class:"field-title" %>
+        <%= f.text_field :location, class:"contactField" %>
+      </div>
+
+      <div class="formFieldWrap">
+        <%= f.label :project_manager, "Project manager:", class:"field-title" %>
+        <%= f.text_field :project_manager, class:"contactField" %>
+      </div>
+
+      <div class="formFieldWrap">
+        <%= f.label :phone, "Phone:", class:"field-title" %>
+        <%= f.phone_field :phone, class:"contactField" %>
+      </div>
+
+    <div class="decoration"></div>
+
+
+    <div class="column">
+      <div class="one-half">
+        <div class="formFieldWrap">
+          <%= f.label :start_time, "Start time", class:"field-title" %>
+          <%= f.time_field :start_time %>
+        </div>
+      </div>
+
+      <div class="one-half">
+        <div class="formFieldWrap">
+          <%= f.label :end_time, "End time", class:"field-title" %>
+          <%= f.time_field :end_time %>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="one-half">
+        <div class="formFieldWrap">
+          <%= f.label :start_date, "Start date", class:"field-title" %>
+          <%= f.date_field :start_date %>
+        </div>
+      </div>
+
+      <div class="one-half">
+        <div class="formFieldWrap">
+          <%= f.label :end_date, "End day", class:"field-title" %>
+          <%= f.date_field :end_date %>
+        </div>
+      </div>
+    </div>
+
+    <div class="decoration"></div>
+
+    <div class="container">
+      <div class="formFieldWrap">
+        <%= f.label :frequency, "Indicate if recurring event by giving the frequency (e.g. Each Sunday after 8pm):", class:"field-title" %>
+        <%= f.text_field :frequency, class:"contactField" %>
+      </div>
+
+      <div class="formFieldWrap">
+        <%= f.label :frequency_exception, "Indicate exception for recurring event (e.g. the date during Thanksgiving week):", class:"field-title" %>
+        <%= f.text_field :frequency_exception, class:"contactField" %>
+      </div>
+    </div>
+
+    <div class="decoration"></div>
+
+    <div class="container">
+      <div class="formFieldWrap">
+        <%= f.label :purpose, "Purpose of event:", class:"field-title" %>
+        <%= f.text_area :purpose, class:"contactTextarea" %>
+      </div>
+
+      <div class="formFieldWrap">
+        <%= f.label :audience, "Target audience:", class:"field-title" %>
+        <%= f.text_field :audience, class:"contactField" %>
+      </div>
+
+      <div class="formFieldWrap">
+        <%= f.label :outcome, "Expected outcome:", class:"field-title" %>
+        <%= f.text_field :outcome, class:"contactField" %>
+      </div>
+
+      <div class="formFieldWrap">
+        <%= f.label :budget, "Budget:", class:"field-title" %>
+        <%= f.text_field :budget, class:"contactField" %>
+      </div>
+
+      <div class="formFieldWrap">
+        <%= f.label :revenue, "Estimated revenue:", class:"field-title" %>
+        <%= f.number_field :revenue, class:"contactField" %>
+      </div>
+    </div>
+
+    <div class="decoration"></div>
+
+    <div class="actions center">
+      <%= f.submit 'Submit', class:"buttonWrap button-minimal grey-minimal" %>
+    </div>
+  </fieldset>
+
 <% end %>
+
 
 

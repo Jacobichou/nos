@@ -77,6 +77,17 @@ class ProjectSummaryFormsController < ApplicationController
 		end
 	
 		def psf_params
-			params.require(:project_summary_form).permit(:project_manager, :location, :budget, :est_revenue, :title)
+			params.require(:project_summary_form).permit(:project_manager, :location, :budget, :revenue, :est_revenue, 
+																		:title, :purpose, :frequency, :frequency_exception, :fee, :offering, 
+																		:comments, :start_date, :end_date, :start_time, :end_time, 
+																		:num_participants, :type, :audience, :outcome, :phone)
+		end
+
+		def can_view?
+			if current_user.hierarchy >=3
+				return true
+			else
+				return false
+			end
 		end
 end
