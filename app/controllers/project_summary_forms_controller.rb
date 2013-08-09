@@ -1,16 +1,17 @@
 class ProjectSummaryFormsController < ApplicationController
 	before_filter :authenticate_user!
+	before_action :set_project_summary_form, only: [:show, :edit, :update, :destroy]
 
 	def create
-		@psf = current_user.project_summary_forms.create(psf_params)
+		@project_summary_form = current_user.project_summary_forms.create(psf_params)
 
 		respond_to do |format|
-		  if @psf.save
-		    format.html { redirect_to @psf, notice: 'Project summary form was successfully created.' }
-		    format.json { render action: 'show', status: :created, location: @psf }
+		  if @project_summary_form.save
+		    format.html { redirect_to @project_summary_form, notice: 'Project summary form was successfully created.' }
+		    format.json { render action: 'show', status: :created, location: @project_summary_form }
 		  else
 		    format.html { render action: 'new' }
-		    format.json { render json: @psf.errors, status: :unprocessable_entity }
+		    format.json { render json: @project_summary_form.errors, status: :unprocessable_entity }
 		  end
 		end
 
@@ -26,7 +27,7 @@ class ProjectSummaryFormsController < ApplicationController
 	end
 
 	def new
-		@psf = ProjectSummaryForm.new
+		@project_summary_form = ProjectSummaryForm.new
 
 		respond_to do |format|
 			format.html # new.html.erb
@@ -34,23 +35,35 @@ class ProjectSummaryFormsController < ApplicationController
 		end
 	end
 
-	def update
-	  @psf = ProjectSummaryForm.find(params[:id])
+	def show
+	end
 
-	  respond_to do |format|
-	    if @psf.update_attributes(psf_params)
-	      format.html { redirect_to @psf, notice: 'PSF was successfully updated.' }
-	      format.json { head :no_content }
-	    else
-	      format.html { render action: "edit" }
-	      format.json { render json: @psf.errors, status: :unprocessable_entity }
-	    end
-	  end
+	def edit
+	end
+
+	def update
+		respond_to do |format|
+			if @project_summary_form.update(project_summary_form_params)
+			  format.html { redirect_to @project_summary_form, notice: 'Project summary form was successfully updated.' }
+			  format.json { head :no_content }
+			else
+			  format.html { render action: 'edit' }
+			  format.json { render json: @project_summary_form.errors, status: :unprocessable_entity }
+			end
+		end
+	end
+
+	def destroy
+		@project_summary_form.destroy
+		respond_to do |format|
+			format.html { redirect_to project_summary_forms_url }
+			format.json { head :no_content }
+		end
 	end
 
 	def toggle_approve
-		@psf = ProjectSummaryForm.find(params[:id])
-		@psf.toggle!(:approved)
+		@project_summary_form = ProjectSummaryForm.find(params[:id])
+		@project_summary_form.toggle!(:approved)
 		respond_to do |format|
 			format.html { redirect_to :back, notice: "Changed" }
 			format.js
