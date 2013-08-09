@@ -1,27 +1,28 @@
 class ProjectSummaryFormsController < ApplicationController
 	before_filter :authenticate_user!
 
-	def
-
 	def create
-		@psf = current_user.project_summary_form.create(psf_params)
-
-		if @psf.save
-			flash[:success] = "Saved"
-			redirect_to @psf
-		else
-			render 'new'
-		end
+		@psf = current_user.project_summary_forms.create(psf_params)
 
 		# respond_to do |format|
-		# 	if @psf.save
-		# 		format.html { redirect_to @psf, notice: 'PSF was successfully created.' }
-		# 		format.json { render json: @psf, status: :created, location: @psf }
-		# 	else
-		# 		format.html { render action: "new" }
-		# 		format.json { render json: @psf.errors, status: :unprocessable_entity }
-		# 	end
+		#   if @psf.save
+		#     format.html { redirect_to @psf, notice: 'Project summary form was successfully created.' }
+		#     format.json { render action: 'show', status: :created, location: @psf }
+		#   else
+		#     format.html { render action: 'new' }
+		#     format.json { render json: @psf.errors, status: :unprocessable_entity }
+		#   end
 		# end
+
+		respond_to do |format|
+			if @psf.save
+				format.html { redirect_to @psf, notice: 'PSF was successfully created.' }
+				format.json { render json: @psf, status: :created, location: @psf }
+			else
+				format.html { render action: "new" }
+				format.json { render json: @psf.errors, status: :unprocessable_entity }
+			end
+		end
 	end
 
 	def new
@@ -57,7 +58,12 @@ class ProjectSummaryFormsController < ApplicationController
 	end
 
 	private
+		# Use callbacks to share common setup or constraints between actions.
+		def set_project_summary_form
+			@project_summary_form = ProjectSummaryForm.find(params[:id])
+		end
+	
 		def psf_params
-			params.require(:psf).permit(:project_manager, :location, :budget, :est_revenue, :title)
+			params.require(:project_summary_form).permit(:project_manager, :location, :budget, :est_revenue, :title)
 		end
 end

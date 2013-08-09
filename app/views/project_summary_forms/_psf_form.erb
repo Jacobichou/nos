@@ -1,5 +1,17 @@
-<%= render 'shared/error_messages', object: f.object %>
+<%= form_for(@psf) do |f| %>
+	<%= render 'shared/error_messages', object: f.object %>
 
-<%= f.label :Event_Title %>
-<%= f.text_field :title %>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br>
+    <%= f.text_field :location %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Submit' %>
+  </div>
+<% end %>
+
 

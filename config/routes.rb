@@ -11,7 +11,9 @@ Nos::Application.routes.draw do
   match '/contact', to: 'static_pages#contact', via: 'get'
 
   resources :project_summary_forms do
-    member { put :toggle_approve }
+    member do 
+      put :toggle_approve
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
