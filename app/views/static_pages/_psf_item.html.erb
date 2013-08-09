@@ -14,11 +14,11 @@
 					</div>
 					<div class="one-third">
 						<h5>&nbsp;</h5>
-						<p>Lorem Ipsum is simply dummy text of the print and industry. </p> 
+						<h5>Budget:&nbsp;<%= psf_item.id %></h5>
 					</div>
 					<div class="one-third">
-						<h5>Budget:&nbsp;<%= number_to_currency(psf_item.budget) %></h5>
-						<h5>Recurring:&nbsp;<%= psf_item.frequency %></h5>
+						<h5>Budget:&nbsp;<%= number_to_currency(psf_item.email) %></h5>
+						<h5>Date:&nbsp;<%= psf_item.start_date %></h5>
 					</div>
 				</div>
 				<div class="container no-bottom">
@@ -28,9 +28,6 @@
 				
 				<div class="toggle-decoration-v1"></div>
 				<div class="psf-controls">
-					<!-- <= link_to 'Discard', toggle_approve_project_summary_form_path(psf_item), remote: true, class: "no-bottom demo-button button-minimal red-minimal discard", id:"approve_link_#{psf_item.id}" %>
-					
-					<= link_to 'Accept', toggle_approve_project_summary_form_path(psf_item), remote: true, class: "no-bottom demo-button button-minimal green-minimal accept", id:"approve_link_#{psf_item.id}" %> -->
 					<% if psf_item.approved? %>
 						<%= link_to approve_link_text(psf_item), toggle_approve_project_summary_form_path(psf_item), remote: true, id:"approve_link_#{psf_item.id}", class:"approved-item", method: :put %>
 					<% else %>

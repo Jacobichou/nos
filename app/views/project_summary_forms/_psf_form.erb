@@ -111,8 +111,8 @@
 
       <div class="formFieldWrap">
         <%= f.label :offering, "Will there be an offering?:", class:"field-title" %>
-        # <= f.radio_button :offering, "Yes", class:"checker radio-v1" %>
-        # <= f.radio_button :offering, "No", class:"checker radio-v1" %>
+        <%= f.radio_button :offering, class:"radio-v1" %>
+        <%= f.radio_button :offering, "No", class:"checker radio-v1" %>
       </div>
     </div>
 
@@ -122,8 +122,6 @@
       <%= f.submit 'Submit', class:"buttonWrap button-minimal grey-minimal" %>
     </div>
   </fieldset>
-
 <% end %>
-
 
 
