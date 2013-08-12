@@ -7,9 +7,9 @@ class ProjectSummaryFormsController < ApplicationController
 
 		respond_to do |format|
 		  if @project_summary_form.save
+			 UserMailer.email_notify(3, @project_summary_form).deliver
 		    format.html { redirect_to @project_summary_form, notice: 'Project summary form was successfully created.' }
 		    format.json { render action: 'show', status: :created, location: @project_summary_form }
-		    # UserMailer.welcome_email(current_user).deliver
 		  else
 		    format.html { render action: 'new' }
 		    format.json { render json: @project_summary_form.errors, status: :unprocessable_entity }

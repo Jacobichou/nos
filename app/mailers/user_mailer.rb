@@ -1,10 +1,13 @@
 class UserMailer < ActionMailer::Base
-  # default from: "from@example.com"
+  default from: "potarts02@gmail.com"
 
-  def email_notify(item) # accepts an object as argument; e.g. passing a psf_item grants access to the psf's data
+  def email_notify(hierarchy_lvl, item) # accepts an object as argument; e.g. passing a psf_item grants access to the psf's data
   	@item = item
-  	@who = User.find_by_hierarchy(0)
+  	@who = User.where(hierarchy: 0..hierarchy_lvl)
   	@login_url = 'http://localhost:3000/users/sign_in'
-  	mail(to: , subject: 'NOSSYM Notification')
+
+  	@who.each do |person|
+  		mail(to: person.email, subject: 'NOSSYM Notification')
+  	end
   end
 end
