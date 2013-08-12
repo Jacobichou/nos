@@ -2,6 +2,22 @@
 	<%= render 'shared/error_messages', object: f.object %>
 
   <fieldset>
+    <div class="column">
+      <div class="one-third">
+        <div class="formFieldWrap">
+          <%= f.radio_button :type, "Van Request", class:"checker radio-v1" %>
+        </div>
+      </div>
+      <div class="one-third">
+        <%= f.radio_button :type, "Facility/Meeting Request", class:"checker radio-v1" %>
+      </div>
+      <div class="one-third">
+        <%= f.radio_button :type, "Event/Project", class:"checker radio-v1" %>
+      </div>
+    </div>
+
+    <div class="decoration"></div>
+
     <div class="container">
       <div class="formFieldWrap">
         <!-- <= f.label :title, "Event Title:", class:"field-title" %> -->
@@ -103,7 +119,7 @@
 
       <div class="formFieldWrap">
         <!-- <= f.label :offering, "Will there be an offering?:", class:"field-title" %> -->
-        <%= f.radio_button :offering, class:"radio-v1" %>
+        <%= f.radio_button :offering, "Yes", class:"radio-v1" %>
         <%= f.radio_button :offering, "No", class:"checker radio-v1" %>
       </div>
     </div>

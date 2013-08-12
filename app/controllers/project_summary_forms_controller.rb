@@ -1,7 +1,7 @@
 class ProjectSummaryFormsController < ApplicationController
 	before_filter :authenticate_user!
 	before_action :set_project_summary_form, only: [:show, :edit, :update, :destroy]
-	PSF_HIER_LVL = 3
+	PSF_HIER_LVL = 3 # dictates that anyone of 0, 1, 2, 3(superAdmin, admin, supervisor, employee, member) hierarchy levels can view or receive something
 
 	def create
 		@project_summary_form = current_user.project_summary_forms.create(psf_params)
@@ -36,12 +36,12 @@ class ProjectSummaryFormsController < ApplicationController
 	def update
 		respond_to do |format|
 			if @project_summary_form.update(psf_params)
-			  UserMailer.email_notify(PSF_HIER_LVL, @project_summary_form, "psf-update").deliver
-			  format.html { redirect_to @project_summary_form, notice: 'Project summary form was successfully updated.' }
-			  format.json { head :no_content }
+				UserMailer.email_notify(PSF_HIER_LVL, @project_summary_form, "psf-update").deliver
+				format.html { redirect_to @project_summary_form, notice: 'Project summary form was successfully updated.' }
+				format.json { head :no_content }
 			else
-			  format.html { render action: 'edit' }
-			  format.json { render json: @project_summary_form.errors, status: :unprocessable_entity }
+				format.html { render action: 'edit' }
+				format.json { render json: @project_summary_form.errors, status: :unprocessable_entity }
 			end
 		end
 	end
@@ -52,14 +52,20 @@ class ProjectSummaryFormsController < ApplicationController
 			format.html { redirect_to home_path }
 			format.json { head :no_content }
 		end
+		UserMailer.notify_discarded(@project_summary_form).deliver if @project_summary_form.destroyed?
 	end
 
 	def toggle_approve
 		@project_summary_form = ProjectSummaryForm.find(params[:id])
 		@project_summary_form.toggle!(:approved)
 		respond_to do |format|
-			format.html { redirect_to :back, notice: "Changed" }
-			format.js
+				format.html { redirect_to :back, notice: "Changed" }
+				format.js
+		end
+		unless @project_summary_form.approved?
+			UserMailer.notify_unapproved(@project_summary_form).deliver
+		else
+			UserMailer.notify_approved(@project_summary_form).deliver
 		end
 	end
 

@@ -6,7 +6,7 @@
   <body>
     <h1>Notification</h1>
     <h3><%= @item.title.titlecase %></h3>
-    <p><%= @item.user.name %> has submit an item.<br>
+    <p>The item '<%= @item.title.titlecase %>' has been unapproved. <br>
       For more detail, login here by following this link: <%= @login_url %>.
     </p>
   </body>
