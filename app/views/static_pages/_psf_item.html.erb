@@ -1,16 +1,16 @@
 <div id="<%= psf_item.id %>" class="container no-bottom">
 	<div class="toggle-container-v1"> 
 		<div class="toggle-v1">
-			<a href="#" class="show-toggle-v1" style="display: none;"><span id= "item_<%=psf_item.title.downcase.tr(" ", "_") %>_<%=psf_item.id %>" class="<%= psf_item.approved? ? 'un-approved-item' : 'approved-item' %>"><%= psf_item.title %>&nbsp;|&nbsp;<%= psf_item.project_manager %></span></a>
-			<a href="#" class="hide-toggle-v1"><span id= "item_<%=psf_item.title.downcase.tr(" ", "_") %>_<%=psf_item.id %>" class="<%= psf_item.approved? ? 'un-approved-item' : 'approved-item' %>"><%= psf_item.title %>&nbsp;|&nbsp;<%= psf_item.project_manager %></span></a>
+			<a href="#" class="show-toggle-v1" style="display: none;"><span id= "item_<%=psf_item.title.downcase.tr(" ", "_") %>_<%=psf_item.id %>" class="<%= psf_item.approved? ? 'un-approved-item' : 'approved-item' %>"><%= psf_item.title %>&nbsp;|&nbsp;<%= get_user(psf_item).name %></span></a>
+			<a href="#" class="hide-toggle-v1"><span id= "item_<%=psf_item.title.downcase.tr(" ", "_") %>_<%=psf_item.id %>" class="<%= psf_item.approved? ? 'un-approved-item' : 'approved-item' %>"><%= psf_item.title %>&nbsp;|&nbsp;<%= get_user(psf_item).name %></span></a>
 			<div class="clear"></div>
 			<div class="toggle-content-v1" style="display: none;">
 				<div class="toggle-decoration-v1"></div>
 
 				<div class="column">
 					<div class="one-half">
-						<h5>Phone:&nbsp;<%= psf_item.phone %></h5>
-						<h5>E-mail:&nbsp;<%= get_email(psf_item) %></h5>
+						<h5>Phone:&nbsp;<%= number_to_phone(get_user(psf_item).phone, area_code: true) %></h5>
+						<h5>E-mail:&nbsp;<%= mail_to(get_user(psf_item).email, get_user(psf_item).name, subject: "Your PSF Form") %></h5>
 						
 					</div>
 
@@ -25,15 +25,20 @@
 				</div>
 				
 				<div class="toggle-decoration-v1"></div>
-				<div class="psf-controls">
-					<% if psf_item.approved? %>
-						<%= link_to approve_link_text(psf_item), toggle_approve_project_summary_form_path(psf_item), remote: true, id:"approve_link_#{psf_item.id}", class:"approved-item", method: :put %>
-					<% else %>
-						<%= link_to approve_link_text(psf_item), toggle_approve_project_summary_form_path(psf_item), remote: true, id:"approve_link_#{psf_item.id}", class:"un-approved-item", method: :put %>
-					<% end %>
-					&nbsp;|&nbsp;
-					<%= link_to 'Destroy', psf_item, method: :delete, class:"btn", data: { confirm: 'Are you sure?' } %>
-				</div>
+					<div class="psf-controls">
+						<div class="column no-bottom">
+							<div class="one-half">
+								<% if psf_item.approved? %>
+									<%= link_to approve_link_text(psf_item), toggle_approve_project_summary_form_path(psf_item), remote: true, id:"approve_link_#{psf_item.id}", class:"approved-item no-bottom demo-button button red", method: :put %>
+								<% else %>
+									<%= link_to approve_link_text(psf_item), toggle_approve_project_summary_form_path(psf_item), remote: true, id:"approve_link_#{psf_item.id}", class:"un-approved-item no-bottom demo-button button green", method: :put %>
+								<% end %>
+							</div>
+							<div class="one-half">
+								<%= link_to 'Destroy', psf_item, method: :delete, class:"btn btn-warning no-bottom demo-button button yellow", data: { confirm: 'Are you sure?' } %>
+							</div>
+						</div>
+					</div>
 			</div> 
 		</div> 
 	</div>

@@ -9,21 +9,12 @@ class ProjectSummaryFormsController < ApplicationController
 		  if @project_summary_form.save
 		    format.html { redirect_to @project_summary_form, notice: 'Project summary form was successfully created.' }
 		    format.json { render action: 'show', status: :created, location: @project_summary_form }
+		    # UserMailer.welcome_email(current_user).deliver
 		  else
 		    format.html { render action: 'new' }
 		    format.json { render json: @project_summary_form.errors, status: :unprocessable_entity }
 		  end
 		end
-
-		# respond_to do |format|
-		# 	if @psf.save
-		# 		format.html { redirect_to @psf, notice: 'PSF was successfully created.' }
-		# 		format.json { render json: @psf, status: :created, location: @psf }
-		# 	else
-		# 		format.html { render action: "new" }
-		# 		format.json { render json: @psf.errors, status: :unprocessable_entity }
-		# 	end
-		# end
 	end
 
 	def new
