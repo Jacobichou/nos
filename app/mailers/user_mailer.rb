@@ -6,6 +6,8 @@ class UserMailer < ActionMailer::Base
   	@who = User.where(hierarchy: 0..hierarchy_lvl)
   	@login_url = 'http://localhost:3000/users/sign_in'
 
+  	# !DO! build link directly to submission
+
   	@who.each do |person|
   		mail(to: person.email, subject: 'NOSSYM Notification')
   	end

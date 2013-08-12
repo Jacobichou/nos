@@ -6,12 +6,8 @@
   <body>
     <h1>Notification</h1>
     <h3><%= @item.title %></h3>
-    <p>
-      There is a new submission.<br/>
+    <p><%= @item.user.name %> has submit an item.<br>
+      For more detail, login to the site by following this link: <%= @login_url %>.
     </p>
-    <p>
-      To login to the site, just follow this link: <%= @login_url %>.
-    </p>
-    <p>Thanks for joining and have a great day!</p>
   </body>
 </html>
