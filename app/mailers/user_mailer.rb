@@ -1,9 +1,10 @@
 class UserMailer < ActionMailer::Base
-  default from: "from@example.com"
+  # default from: "from@example.com"
 
-  def welcome_email(user)
-  	@user = user
-  	@url = 'http://example.com/login'
-  	mail(to: @user.email, subject: 'Welcome to the Site')
+  def email_notify(item) # accepts an object as argument; e.g. passing a psf_item grants access to the psf's data
+  	@item = item
+  	@who = User.find_by_hierarchy(0)
+  	@login_url = 'http://localhost:3000/users/sign_in'
+  	mail(to: , subject: 'NOSSYM Notification')
   end
 end

@@ -10,7 +10,7 @@
 				<div class="column">
 					<div class="one-half">
 						<h5>Phone:&nbsp;<%= number_to_phone(get_user(psf_item).phone, area_code: true) %></h5>
-						<h5>E-mail:&nbsp;<%= mail_to(get_user(psf_item).email, get_user(psf_item).name, subject: "Your PSF Form") %></h5>
+						<h5>E-mail:&nbsp;</h5><h5><%= mail_to(get_user(psf_item).email, get_user(psf_item).email, subject: "Your PSF Form: #{psf_item.title}") %></h5>
 						
 					</div>
 
@@ -35,7 +35,9 @@
 								<% end %>
 							</div>
 							<div class="one-half">
-								<%= link_to 'Destroy', psf_item, method: :delete, class:"btn btn-warning no-bottom demo-button button yellow", data: { confirm: 'Are you sure?' } %>
+								<% if current_user.id == psf_item.user.id %>
+									<%= link_to 'Discard Item', psf_item, method: :delete, class:"btn btn-warning no-bottom demo-button button yellow", data: { confirm: "Delete: #{psf_item.title}", title: psf_item.title } %>
+								<% end %>
 							</div>
 						</div>
 					</div>

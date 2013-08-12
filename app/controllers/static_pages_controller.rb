@@ -11,9 +11,5 @@ class StaticPagesController < ApplicationController
 
   def contact
   end
-
-  private
-    def get_user_param
-      
-    end
+  
 end
