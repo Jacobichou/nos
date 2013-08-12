@@ -1,7 +1,3 @@
-<div class="container center">
-	<h1>Welcome, <%= current_user.email %></h1>
-</div>
-
 <div class="container psf-box">
 	<% if current_user.hierarchy <= 3 %>
 		<% if @psf_items.any? %>

@@ -1,72 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="utf-8">
   <title><%= full_title(yield(:title)) %></title>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta name="Keywords"     content="Epsilon, mobile, framework, css3, html5, javascript, retina" />
-  <meta name="Description"  content="Epsilon based mobile retina webpp template!" />
-  <!--Favicon shortcut link-->
-  <link type="image/x-icon"  rel="shortcut icon" href="<%= asset_path 'splash/favicon.ico' %>" />
-  <link type="image/x-icon"  rel="icon"      href="<%= asset_path 'splash/favicon.ico' %>" />
-  <!--Declare page as mobile friendly --> 
-  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
-  <!-- Declare page as iDevice WebApp friendly -->
-  <meta name="apple-mobile-web-app-capable" content="yes"/>
-  <!-- iDevice WebApp Splash Screen, Regular Icon, iPhone, iPad, iPod Retina Icons -->
-  <link rel="apple-touch-icon" sizes="114x114" href="<%= asset_path 'splash/splash-icon.png' %>"> 
-  <link rel="apple-touch-startup-image" href="<%= asset_path 'splash/splash-screen.png' %>" media="screen and (max-device-width: 320px)" /> 
-  <link rel="apple-touch-startup-image" href="<%= asset_path 'splash/splash-screen@2x.png' %>" media="(max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)" /> 
-  <link rel="apple-touch-startup-image" href="<%= asset_path 'splash/splash-screen@3x.png' %>" sizes="640x1096">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <%= render 'layouts/fav_touch' %>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<div id="preloader">
-  <div id="status">
-      <p class="center-text">
-      Loading the content...
-            <em>Loading depends on your connection speed!</em>
-        </p>
-    </div>
-</div>
-
-<div class="page-coach">
-  <div class="portrait-coach">
-        <span  style="top:-10px; left:50px;" class="coach-arrow arrow9">
-            <p class="center-text" style="padding-top:20px; padding-left:75px;">Tap to deploy <br> sidebar menu!</p>
-        </span>
-        
-        <span style="top:40px; right:10px;" class="coach-arrow arrow2">
-            <p style="padding-top:85px; padding-left:105px;">Contact and subscribe from sidebar!</p>
-        </span>
-        
-        <span style="top:180px; left:50px;" class="coach-arrow arrow1">
-            <p class="center-text" style="padding-top:35px; padding-left:70px;">Touch enabled <br> image slider!</p>
-        </span>
-        
-        <span style="top:280px; left:35%;" class="coach-arrow arrow16">
-            <p class="center-text" style="padding-top:125px; margin-left:-100px;">Touch anywhere <br> to dismiss!</p>
-        </span>
-
-    </div>    
-    <div class="landscape-coach">        
-        <span style="left:47%; top:15%;" class="coach-arrow arrow12">
-            <p style="text-align:center; padding-top:100px; margin-left:-160px;">
-              This page has a lot of responsive features!<br>
-                That means they expand when the device is in landscape!<br>
-        Flip your device back in portrait mode to continue the tutorial!<br>      
-            </p>
-        </span>
-    </div>
-</div>
-
-<div class="header">
-  <a href="#" class="deploy-left-sidebar"></a>
-  <a href="#" class="deploy-right-sidebar"></a>
-  <%= link_to "NOSSYM", root_url, class:"top-logo" %>
-</div>
+<%= render 'layouts/header' %>
 
 <div class="content-box shadow">
   <div class="container center">
@@ -82,8 +29,80 @@
   </div>
 </div>
 
-<%= render 'layouts/left_nav' %>
-<%= render 'layouts/right_nav' %>
+<div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3">
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Sidebar</li>
+              <li class="active"><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li class="nav-header">Sidebar</li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li class="nav-header">Sidebar</li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+        <div class="span9">
+          <div class="hero-unit">
+            <h1>Hello, world!</h1>
+            <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+            <p><a href="#" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+          </div>
+          <div class="row-fluid">
+            <div class="span4">
+              <h2>Heading</h2>
+              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <p><a class="btn" href="#">View details &raquo;</a></p>
+            </div><!--/span-->
+            <div class="span4">
+              <h2>Heading</h2>
+              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <p><a class="btn" href="#">View details &raquo;</a></p>
+            </div><!--/span-->
+            <div class="span4">
+              <h2>Heading</h2>
+              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <p><a class="btn" href="#">View details &raquo;</a></p>
+            </div><!--/span-->
+          </div><!--/row-->
+          <div class="row-fluid">
+            <div class="span4">
+              <h2>Heading</h2>
+              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <p><a class="btn" href="#">View details &raquo;</a></p>
+            </div><!--/span-->
+            <div class="span4">
+              <h2>Heading</h2>
+              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <p><a class="btn" href="#">View details &raquo;</a></p>
+            </div><!--/span-->
+            <div class="span4">
+              <h2>Heading</h2>
+              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <p><a class="btn" href="#">View details &raquo;</a></p>
+            </div><!--/span-->
+          </div><!--/row-->
+        </div><!--/span-->
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <p>&copy; New Creation Christian Fellowship 2013</p>
+      </footer>
+
+    </div><!--/.fluid-container-->
 
 </body>
 </html>
