@@ -4,12 +4,12 @@
   <fieldset>
     <div class="container">
       <div class="formFieldWrap">
-        <%= f.label :title, "Event Title:", class:"field-title" %>
+        <!-- <= f.label :title, "Event Title:", class:"field-title" %> -->
         <%= f.text_field :title, placeholder: "Event Title", class:"contactField" %>
       </div>
 
       <div class="formFieldWrap">
-        <%= f.label :location, "Location:", class:"field-title" %>
+        <!-- <= f.label :location, "Location:", class:"field-title" %> -->
         <%= f.text_field :location, placeholder: "Location", class:"contactField" %>
       </div>
 
@@ -54,13 +54,13 @@
 
     <div class="container">
       <div class="formFieldWrap">
-        <%= f.label :frequency, "Indicate if recurring event by giving the frequency (e.g. Each Sunday after 8pm):", class:"field-title" %>
+        <!-- <= f.label :frequency, "Indicate if recurring event by giving the frequency (e.g. Each Sunday after 8pm):", class:"field-title" %> -->
         <%= f.text_field :frequency, placeholder: "Indicate if recurring event by giving the frequency (e.g. Each Sunday after 8pm)", class:"contactField" %>
       </div>
 
       <div class="formFieldWrap">
-        <%= f.label :frequency_exception, "Indicate exception for recurring event (e.g. the date during Thanksgiving week):", class:"field-title" %>
-        <%= f.text_field :frequency_exception, class:"contactField" %>
+        <!-- <= f.label :frequency_exception, "Indicate exception for recurring event (e.g. the date during Thanksgiving week):", class:"field-title" %> -->
+        <%= f.text_field :frequency_exception, placeholder: "Indicate exception for recurring event (e.g. the date during Thanksgiving week)", class:"contactField" %>
       </div>
     </div>
 
@@ -68,28 +68,28 @@
 
     <div class="container">
       <div class="formFieldWrap">
-        <%= f.label :purpose, "Purpose of event:", class:"field-title" %>
-        <%= f.text_area :purpose, class:"contactTextarea" %>
+        <!-- <= f.label :purpose, "Purpose of event:", class:"field-title" %> -->
+        <%= f.text_area :purpose, placeholder: "Purpose of event", class:"contactTextarea" %>
       </div>
 
       <div class="formFieldWrap">
-        <%= f.label :audience, "Target audience:", class:"field-title" %>
-        <%= f.text_field :audience, class:"contactField" %>
+        <!-- <= f.label :audience, "Target audience:", class:"field-title" %> -->
+        <%= f.text_field :audience, placeholder: "Target audience", class:"contactField" %>
       </div>
 
       <div class="formFieldWrap">
-        <%= f.label :outcome, "Expected outcome:", class:"field-title" %>
-        <%= f.text_field :outcome, class:"contactField" %>
+        <!-- <= f.label :outcome, "Expected outcome:", class:"field-title" %> -->
+        <%= f.text_field :outcome, placeholder: "Expected outcome", class:"contactField" %>
       </div>
 
       <div class="formFieldWrap">
-        <%= f.label :budget, "Budget:", class:"field-title" %>
-        <%= f.number_field :budget, class:"contactField" %>
+        <!-- <= f.label :budget, "Budget:", class:"field-title" %> -->
+        <%= f.number_field :budget, placeholder: "Budget", class:"contactField" %>
       </div>
 
       <div class="formFieldWrap">
-        <%= f.label :revenue, "Estimated revenue:", class:"field-title" %>
-        <%= f.number_field :revenue, class:"contactField" %>
+        <!-- <= f.label :revenue, "Estimated revenue:", class:"field-title" %> -->
+        <%= f.number_field :revenue, placeholder: "Estimated revenue", class:"contactField" %>
       </div>
     </div>
 
@@ -97,12 +97,12 @@
 
     <div class="container">
       <div class="formFieldWrap">
-        <%= f.label :fee, "Event fee:", class:"field-title" %>
-        <%= f.number_field :fee, class:"contactField" %>
+        <!-- <= f.label :fee, "Event fee:", class:"field-title" %> -->
+        <%= f.number_field :fee, placeholder: "Event fee -- Do not use dollar sign", class:"contactField" %>
       </div>
 
       <div class="formFieldWrap">
-        <%= f.label :offering, "Will there be an offering?:", class:"field-title" %>
+        <!-- <= f.label :offering, "Will there be an offering?:", class:"field-title" %> -->
         <%= f.radio_button :offering, class:"radio-v1" %>
         <%= f.radio_button :offering, "No", class:"checker radio-v1" %>
       </div>
