@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Notification</h1>
+    <h3><%= @item.title.titlecase %> has been updated</h3>
+    <p><%= @item.user.name.titlecase %> has updated an item.<br>
+      For more detail, login to the site by following this link: <%= @login_url %>.
+    </p>
+  </body>
+</html>

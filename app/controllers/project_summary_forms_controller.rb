@@ -1,13 +1,14 @@
 class ProjectSummaryFormsController < ApplicationController
 	before_filter :authenticate_user!
 	before_action :set_project_summary_form, only: [:show, :edit, :update, :destroy]
+	PSF_HIER_LVL = 3
 
 	def create
 		@project_summary_form = current_user.project_summary_forms.create(psf_params)
 
 		respond_to do |format|
 		  if @project_summary_form.save
-			 UserMailer.email_notify(3, @project_summary_form).deliver
+			 UserMailer.email_notify(PSF_HIER_LVL, @project_summary_form, "psf").deliver
 		    format.html { redirect_to @project_summary_form, notice: 'Project summary form was successfully created.' }
 		    format.json { render action: 'show', status: :created, location: @project_summary_form }
 		  else
@@ -35,6 +36,7 @@ class ProjectSummaryFormsController < ApplicationController
 	def update
 		respond_to do |format|
 			if @project_summary_form.update(psf_params)
+			  UserMailer.email_notify(PSF_HIER_LVL, @project_summary_form, "psf-update").deliver
 			  format.html { redirect_to @project_summary_form, notice: 'Project summary form was successfully updated.' }
 			  format.json { head :no_content }
 			else
