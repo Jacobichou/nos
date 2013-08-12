@@ -1,4 +1,4 @@
-<div id="<%= psf_item.id %>" class="container no-bottom">
+<div id="<%= psf_item.id %>">
 	<div class="toggle-container-v1"> 
 		<div class="toggle-v1">
 			<a href="#" class="show-toggle-v1" style="display: none;"><span id= "item_<%=psf_item.title.downcase.tr(" ", "_") %>_<%=psf_item.id %>" class="<%= psf_item.approved? ? 'un-approved-item' : 'approved-item' %>"><%= psf_item.title %>&nbsp;|&nbsp;<%= psf_item.project_manager == nil || "" ? get_user(psf_item).name : psf_item.project_manager %></span></a>
@@ -20,7 +20,7 @@
 					</div>
 				</div>
 
-				<div class="container no-bottom">
+				<div class="">
 						<h5>Location:&nbsp;<%= psf_item.location.titlecase %></h5>
 				</div>
 				
