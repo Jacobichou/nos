@@ -3,7 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<title><%= full_title(yield(:title)) %></title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta name="HandheldFriendly" content="true" />
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<%= render 'layouts/fav_touch' %>
@@ -23,7 +24,9 @@
 
 	<div class="container-fluid">
 		<div class="row-fluid">
-			<%= render 'layouts/side_nav' %>
+			<div class="span2">
+				<%= render 'layouts/side_nav' %>
+			</div><!--/span-->
 
 			<div class="span9">
 				<%= yield %>
