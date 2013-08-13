@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130812192058) do
+ActiveRecord::Schema.define(version: 20130813175808) do
 
   create_table "departments", force: true do |t|
     t.string   "dept_name"
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20130812192058) do
     t.integer  "fee"
     t.boolean  "offering"
     t.integer  "event_level"
-    t.string   "type"
+    t.string   "request_type"
     t.string   "comments"
     t.integer  "num_participants"
     t.integer  "revenue"

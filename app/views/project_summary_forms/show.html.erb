@@ -6,9 +6,8 @@
 <hr>
 
 <h4>Project:&nbsp;<span class="muted"><%= @project_summary_form.title.titlecase %></span></h4>
-
-
 <h4>Prepared <em>and</em> Submitted:&nbsp;<span class="muted"><%= @project_summary_form.created_at.strftime("%B %d %Y") %></span></h4>
+<h5>Request Type:&nbsp;<span class="muted"><%= @project_summary_form.request_type %></span></h5>
 
 <div class="row-fluid">
   <div class="span12">
@@ -17,10 +16,13 @@
       <dd><%= @project_summary_form.start_date.strftime("%A, %B %d %Y") %></dd>
 
       <dt>Time:&nbsp;</dt>
-      <dd><%= @project_summary_form.start_time.strftime("%I:%M %p") %></dd>
+      <dd><%= @project_summary_form.start_time.strftime("%I:%M %p") %>&nbsp;-&nbsp;<%= @project_summary_form.end_time.strftime("%I:%M %p") %></dd>
 
       <dt>Project Manager:&nbsp;</dt>
       <dd><%= @project_summary_form.user.name.titlecase %></dd>
+
+      <dt>Phone:&nbsp;</dt>
+      <dd><%= number_to_phone(@project_summary_form.user.phone) %></dd>
 
       <dt>Location:&nbsp;</dt>
       <dd><%= @project_summary_form.location.titlecase %></dd>
@@ -29,11 +31,15 @@
       <dd><%= @project_summary_form.purpose %></dd>
 
       <dt>Objectives:&nbsp;</dt>
-      <dd><%= @project_summary_form.outcome %></dd> <!-- This needs to be changed later to the user input information which happens when the full summary info is given by user -->
+      <dd>This is an objective</dd> <!-- This needs to be changed later to the user input information which happens when the full summary info is given by user -->
         <dl>
           <dt><!-- this stays empty --></dt>
-          <dd>1) La lal a</dd>
-          <dd>2) La lal a</dd>
+          <dd>
+            <ol>
+              <li>La lal a</li>
+              <li>La lal a</li>
+            </ol>
+          </dd>
         </dl>
     </dl>
   </div>
@@ -50,100 +56,62 @@
       <dt>Income:&nbsp;</dt>
       <dd><%= number_to_currency(@project_summary_form.revenue) %></dd>
     </dl>
+
+    <h5>Additional requests:</h5>
+      <ul>
+        <li>A hug</li>
+      </ul>
   </div>
 </div>
 
+<hr>
 
+<div class="row-fluid">
+  <div class="span12">
+    <div class="accordion" id="psf-more-info">
+      <div class="accordion-group">
+        <div class="accordion-heading">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+            EXTRA INFORMATION...
+          </a>
+        </div>
+        <div id="collapseOne" class="accordion-body collapse">
+          <div class="accordion-inner">
+            <dl class="dl-horizontal">
+              <dt>Audience:&nbsp;</dt>
+              <dd><%= @project_summary_form.audience %></dd>
 
+              <dt>Outcome:&nbsp;</dt>
+              <dd><%= @project_summary_form.outcome %></dd>
 
+              <dt>Frequency:&nbsp;</dt>
+              <dd><%= @project_summary_form.frequency %></dd>
 
+              <dt>Frequency Exception:&nbsp;</dt>
+              <dd><%= @project_summary_form.frequency_exception %></dd>
 
+              <dt>End Date:&nbsp;</dt>
+              <dd><%= @project_summary_form.end_date.strftime("%B %d %Y") %></dd>
 
+              <dt>Event Fee:&nbsp;</dt>
+              <dd><%= number_to_currency(@project_summary_form.fee) %></dd>
 
+              <dt>Offering Taken?:&nbsp;</dt>
+              <dd><%= @project_summary_form.offering %></dd>
 
+              <dt>Num of participants?:&nbsp;</dt>
+              <dd><%= @project_summary_form.num_participants %></dd>
 
+              <dt>Admin Comments:&nbsp;</dt>
+              <dd><%= @project_summary_form.comments %></dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Location:</strong>
-  <%= @project_summary_form.location %>
-</p>
-
-
-
-<p>
-  <strong>Phone:</strong>
-  <%= number_to_phone(@project_summary_form.user.phone) %>
-</p>
-
-<p>
-  <strong>Budget:</strong>
-  <%= number_to_currency(@project_summary_form.budget) %>
-</p>
-
-<p>
-  <strong>Revenue:</strong>
-  <%= number_to_currency(@project_summary_form.revenue) %>
-</p>
-
-
-<p>
-  <strong>Frequency:</strong>
-  <%= @project_summary_form.frequency %>
-</p>
-
-<p>
-  <strong>Frequency Exception:</strong>
-  <%= @project_summary_form.frequency_exception %>
-</p>
-
-<p>
-  <strong>Fee:</strong>
-  <%= number_to_currency(@project_summary_form.fee) %>
-</p>
-
-<p>
-  <strong>Offering:</strong>
-  <%= @project_summary_form.offering %>
-</p>
-
-<p>
-  <strong>Comments:</strong>
-  <%= @project_summary_form.comments %>
-</p>
-
-
-
-<p>
-  <strong>End Date:</strong>
-  <%= @project_summary_form.end_date.strftime("%B %d %Y") %>
-</p>
-
-
-
-<p>
-  <strong>End Time:</strong>
-  <%= @project_summary_form.end_time.strftime("%I:%M %p") %>
-</p>
-
-<p>
-  <strong>Participants:</strong>
-  <%= @project_summary_form.num_participants %>
-</p>
-
-<p>
-  <strong>Request Type:</strong>
-  <%= @project_summary_form.type %>
-</p>
-
-<p>
-  <strong>Audience:</strong>
-  <%= @project_summary_form.audience %>
-</p>
-
-<p>
-  <strong>Outcome:</strong>
-  <%= @project_summary_form.outcome %>
-</p>
 
 <%= link_to 'Edit', edit_project_summary_form_path(@project_summary_form) %> |
 <%= link_to 'Back', home_path %>
