@@ -5,5 +5,8 @@
 		<li><%= link_to 'PSF', new_project_summary_form_path %></li>
 		<li class="nav-header">Settings</li>
 		<li><a href="#">Profile</a></li>
+		<% if user_signed_in? %>
+			<li><%= link_to "Sign out", destroy_user_session_path, method: "delete" %></li>
+		<% end %>
 	</ul>
 </div><!--/.well -->
