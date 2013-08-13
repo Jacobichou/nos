@@ -1,47 +1,29 @@
-<div id="<%= psf_item.id %>">
-	<div class="toggle-container-v1"> 
-		<div class="toggle-v1">
-			<a href="#" class="show-toggle-v1" style="display: none;"><span id= "item_<%=psf_item.title.downcase.tr(" ", "_") %>_<%=psf_item.id %>" class="<%= psf_item.approved? ? 'un-approved-item' : 'approved-item' %>"><%= psf_item.title %>&nbsp;|&nbsp;<%= psf_item.project_manager == nil || "" ? get_user(psf_item).name : psf_item.project_manager %></span></a>
-			<a href="#" class="hide-toggle-v1"><span id= "item_<%=psf_item.title.downcase.tr(" ", "_") %>_<%=psf_item.id %>" class="<%= psf_item.approved? ? 'un-approved-item' : 'approved-item' %>"><%= psf_item.title %>&nbsp;|&nbsp;<%= psf_item.project_manager == nil || "" ? get_user(psf_item).name : psf_item.project_manager %></span></a>
-			<div class="clear"></div>
-			<div class="toggle-content-v1" style="display: none;">
-				<div class="toggle-decoration-v1"></div>
-
-				<div class="column">
-					<div class="one-half">
-						<h5>Phone:&nbsp;<%= number_to_phone(get_user(psf_item).phone, area_code: true) %></h5>
-						<h5>E-mail:&nbsp;</h5><h5><%= mail_to(get_user(psf_item).email, get_user(psf_item).email, subject: "Your PSF Form: #{psf_item.title}") %></h5>
-						
-					</div>
-
-					<div class="one-half">
-						<h5>Budget:&nbsp;<%= number_to_currency(psf_item.budget) %></h5>
-						<h5>Date:&nbsp;<%= psf_item.start_date %></h5>
-					</div>
-				</div>
-
-				<div class="">
-						<h5>Location:&nbsp;<%= psf_item.location.titlecase %></h5>
-				</div>
-				
-				<div class="toggle-decoration-v1"></div>
-					<div class="psf-controls">
-						<div class="column no-bottom">
-							<div class="one-half">
-								<% if psf_item.approved? %>
-									<%= link_to approve_link_text(psf_item), toggle_approve_project_summary_form_path(psf_item), remote: true, id:"approve_link_#{psf_item.id}", class:"approved-item no-bottom demo-button button red", method: :put %>
-								<% else %>
-									<%= link_to approve_link_text(psf_item), toggle_approve_project_summary_form_path(psf_item), remote: true, id:"approve_link_#{psf_item.id}", class:"un-approved-item no-bottom demo-button button green", method: :put %>
-								<% end %>
-							</div>
-							<div class="one-half">
-								<% if current_user.id == psf_item.user.id %>
-									<%= link_to 'Discard Item', psf_item, method: :delete, class:"btn btn-warning no-bottom demo-button button yellow", data: { confirm: "Delete: #{psf_item.title}", title: psf_item.title } %>
-								<% end %>
-							</div>
-						</div>
-					</div>
-			</div> 
-		</div> 
+<div class="accordion-group">
+	<div class="accordion-heading">
+		<a id="item_<%=psf_item.title.downcase.tr(" ", "_") %>_<%=psf_item.id %>" class="accordion-toggle <%= psf_item.approved? ? 'un-approved-item' : 'approved-item' %>" data-toggle="collapse" data-parent="#psf-accordion" href="#collapseItem_<%=psf_item.title.downcase.tr(" ", "_") %>_<%=psf_item.id %>">
+			<%= psf_item.title.upcase %>&nbsp;|&nbsp;<%= psf_item.project_manager == nil || "" ? get_user(psf_item).name.upcase : psf_item.project_manager.upcase %>
+		</a>
 	</div>
-</div>
+	<div id="collapseItem_<%=psf_item.title.downcase.tr(" ", "_") %>_<%=psf_item.id %>" class="accordion-body collapse">
+		<div class="accordion-inner">
+			<h5>Phone:&nbsp;<%= number_to_phone(get_user(psf_item).phone, area_code: true) %></h5>
+			<h5>E-mail:&nbsp;<%= mail_to(get_user(psf_item).email, get_user(psf_item).email, subject: "Your PSF Form: #{psf_item.title}") %></h5>
+			<h5>Budget:&nbsp;<%= number_to_currency(psf_item.budget) %></h5>
+			<h5>Date:&nbsp;<%= psf_item.start_date %></h5>
+			<h5>Location:&nbsp;<%= psf_item.location.titlecase %></h5>
+
+			<div class="psf-controls">
+				<% if psf_item.approved? %>
+				<%= link_to approve_link_text(psf_item), toggle_approve_project_summary_form_path(psf_item), remote: true, id:"approve_link_#{psf_item.id}", class:"btn btn-danger", method: :put %>
+				<% else %>
+				<%= link_to approve_link_text(psf_item), toggle_approve_project_summary_form_path(psf_item), remote: true, id:"approve_link_#{psf_item.id}", class:"btn btn-success", method: :put %>
+				<% end %>
+
+
+				<% if current_user.id == psf_item.user.id %>
+				<%= link_to 'Discard Item', psf_item, method: :delete, class:"btn btn-warning no-bottom demo-button button yellow", data: { confirm: "Delete: #{psf_item.title}", title: psf_item.title } %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div> <hr>

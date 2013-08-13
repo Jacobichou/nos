@@ -3,11 +3,9 @@ $("#item_<%=@project_summary_form.title.downcase.tr(" ", "_") %>_<%=@project_sum
 
 if ( <%= @project_summary_form.approved? %> ) {
 	$("#item_<%=@project_summary_form.title.downcase.tr(" ", "_") %>_<%=@project_summary_form.id %>").removeClass("approved-item").addClass("un-approved-item")
-	$("#approve_link_<%= @project_summary_form.id %>").removeClass("un-approved-item").addClass("approved-item")
-	$("#approve_link_<%= @project_summary_form.id %>").removeClass("no-bottom demo-button button green").addClass("no-bottom demo-button button red")
+	$("#approve_link_<%= @project_summary_form.id %>").removeClass("btn-success").addClass("btn-danger")
 }
 else {
 	$("#item_<%=@project_summary_form.title.downcase.tr(" ", "_") %>_<%=@project_summary_form.id %>").removeClass("un-approved-item").addClass("approved-item")
-	$("#approve_link_<%= @project_summary_form.id %>").removeClass("approved-item").addClass("un-approved-item")
-	$("#approve_link_<%= @project_summary_form.id %>").removeClass("no-bottom demo-button button red").addClass("no-bottom demo-button button green")
+	$("#approve_link_<%= @project_summary_form.id %>").removeClass("btn-danger").addClass("btn-success")
 }

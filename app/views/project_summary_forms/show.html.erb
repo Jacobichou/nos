@@ -1,18 +1,74 @@
+<h1>
+  New Creation Christian Fellowship <br>
+  <small>of San Antonio, Tx</small>
+</h1>
 
-<p>
-  <strong>Title:</strong>
-  <%= @project_summary_form.title %>
-</p>
+<hr>
+
+<h4>Project:&nbsp;<span class="muted"><%= @project_summary_form.title.titlecase %></span></h4>
+
+
+<h4>Prepared <em>and</em> Submitted:&nbsp;<span class="muted"><%= @project_summary_form.created_at.strftime("%B %d %Y") %></span></h4>
+
+<div class="row-fluid">
+  <div class="span12">
+    <dl class="dl-horizontal">
+      <dt>Date:&nbsp;</dt>
+      <dd><%= @project_summary_form.start_date.strftime("%A, %B %d %Y") %></dd>
+
+      <dt>Time:&nbsp;</dt>
+      <dd><%= @project_summary_form.start_time.strftime("%I:%M %p") %></dd>
+
+      <dt>Project Manager:&nbsp;</dt>
+      <dd><%= @project_summary_form.user.name.titlecase %></dd>
+
+      <dt>Location:&nbsp;</dt>
+      <dd><%= @project_summary_form.location.titlecase %></dd>
+
+      <dt>Purpose:&nbsp;</dt>
+      <dd><%= @project_summary_form.purpose %></dd>
+
+      <dt>Objectives:&nbsp;</dt>
+      <dd><%= @project_summary_form.outcome %></dd> <!-- This needs to be changed later to the user input information which happens when the full summary info is given by user -->
+        <dl>
+          <dt><!-- this stays empty --></dt>
+          <dd>1) La lal a</dd>
+          <dd>2) La lal a</dd>
+        </dl>
+    </dl>
+  </div>
+</div>
+
+<h4>Receive from Pastor Copeland:</h4>
+
+<div class="row-fluid">
+  <div class="span12">
+    <dl class="dl-horizontal">
+      <dt>Budget:&nbsp;</dt>
+      <dd><%= number_to_currency(@project_summary_form.budget) %></dd>
+
+      <dt>Income:&nbsp;</dt>
+      <dd><%= number_to_currency(@project_summary_form.revenue) %></dd>
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
 
 <p>
   <strong>Location:</strong>
   <%= @project_summary_form.location %>
 </p>
 
-<p>
-  <strong>Project Manager:</strong>
-  <%= @project_summary_form.user.name %>
-</p>
+
 
 <p>
   <strong>Phone:</strong>
@@ -29,10 +85,6 @@
   <%= number_to_currency(@project_summary_form.revenue) %>
 </p>
 
-<p>
-  <strong>Purpose:</strong>
-  <%= @project_summary_form.purpose %>
-</p>
 
 <p>
   <strong>Frequency:</strong>
@@ -59,20 +111,14 @@
   <%= @project_summary_form.comments %>
 </p>
 
-<p>
-  <strong>Start Date:</strong>
-  <%= @project_summary_form.start_date.strftime("%B %d %Y") %>
-</p>
+
 
 <p>
   <strong>End Date:</strong>
   <%= @project_summary_form.end_date.strftime("%B %d %Y") %>
 </p>
 
-<p>
-  <strong>Start Time:</strong>
-  <%= @project_summary_form.start_time.strftime("%I:%M %p") %>
-</p>
+
 
 <p>
   <strong>End Time:</strong>

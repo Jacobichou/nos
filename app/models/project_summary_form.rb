@@ -3,5 +3,6 @@ class ProjectSummaryForm < ActiveRecord::Base
 
 	validates :user_id, presence: true
 	validates :budget, :revenue, :fee, numericality: true
+	validates :purpose, presence: true, length: { maximum: 140 }
 
 end

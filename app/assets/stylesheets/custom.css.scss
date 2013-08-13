@@ -1,48 +1,18 @@
 @import "bootstrap";
 @import "bootstrap-responsive";
 
-body {
-        padding-top: 60px;
-        padding-bottom: 40px;
-      }
-      .sidebar-nav {
-        padding: 9px 0;
-      }
-
-      @media (max-width: 980px) {
-        /* Enable use of floated navbar text */
-        .navbar-text.pull-right {
-          float: none;
-          padding-left: 5px;
-          padding-right: 5px;
-        }
-        .hero-unit{
-          h1 {
-            font-size: 2em;
-          }
-        }
-      }
-
 /* mixins, variables, etc. */
 
 $grayMediumLight: #eaeaea;
 
 /* universal */
 
-html {
-  // overflow-y: scroll;
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
 }
-
-// body {
-  // padding-top: 60px;
-// }
-
-section {
-  // overflow: auto;
-}
-
-textarea {
-  // resize: vertical;
+.sidebar-nav {
+  padding: 9px 0;
 }
 
 .center {
@@ -60,45 +30,29 @@ textarea {
   color: #e34e47; //6b6b6b
 }
 
-.toggle-v1 {
-  .discard {
-    color: #923c47;
-  }
-  .accept {
-    color: #5a742d;
-  }
+.discard {
+  color: #923c47;
+}
+.accept {
+  color: #5a742d;
 }
 
 /* approval status */
 
-.toggle-v1 {
-  .approved-item {
+.approved-item {
+  color: #923c47;
+  &:hover {
     color: #923c47;
   }
+}
 
-  .un-approved-item {
+.un-approved-item {
+  color: #5a742d;
+  &:hover {
     color: #5a742d;
   }
 }
 
-/* logo */
-
-#logo {
-  float: left;
-  margin-right: 10px;
-  font-size: 1.7em;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 9px;
-  font-weight: bold;
-  line-height: 1;
-  &:hover {
-    color: #fff;
-    text-decoration: none;
-  }
-}
-  
 
 /* footer */
 
@@ -128,13 +82,13 @@ footer {
 
 /* Large desktop */
 // @media (min-width: 1200px) {}
- 
+
 /* Portrait tablet to landscape and desktop */
 // @media (min-width: 768px) and (max-width: 979px) {}
- 
+
 /* Landscape phone to portrait tablet */
 // @media (max-width: 767px) {}
- 
+
 /* Landscape phones and down */
 // @media (max-width: 480px) {
 //   .hero-unit{
@@ -143,3 +97,17 @@ footer {
 //     }
 //   }
 // }
+
+@media (max-width: 980px) {
+  /* Enable use of floated navbar text */
+  .navbar-text.pull-right {
+    float: none;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .hero-unit{
+    h1 {
+      font-size: 2em;
+    }
+  }
+}
