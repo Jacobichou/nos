@@ -16,6 +16,11 @@ body {
           padding-left: 5px;
           padding-right: 5px;
         }
+        .hero-unit{
+          h1 {
+            font-size: 2em;
+          }
+        }
       }
 
 /* mixins, variables, etc. */
@@ -97,44 +102,44 @@ textarea {
 
 /* footer */
 
-// footer {
-//   margin-top: 45px;
-//   padding-top: 5px;
-//   border-top: 1px solid #eaeaea;
-//   color: #999;
-//   a {
-//     color: #555;
-//     &:hover {
-//       color: #222;
-//     }
-//   }
-//   small {
-//     float: left;
-//   }
-//   ul {
-//     float: right;
-//     list-style: none;
-//     li {
-//       float: left;
-//       margin-left: 10px;
-//     }
-//   }
-// }
-
-/* Large desktop */
-@media (min-width: 1200px) {}
- 
-/* Portrait tablet to landscape and desktop */
-@media (min-width: 768px) and (max-width: 979px) {}
- 
-/* Landscape phone to portrait tablet */
-@media (max-width: 767px) {}
- 
-/* Landscape phones and down */
-@media (max-width: 480px) {
-  .hero-unit{
-    h1 {
-      font-size: 2em;
+footer {
+  // margin-top: 45px;
+  // padding-top: 5px;
+  // border-top: 1px solid #eaeaea;
+  // color: #999;
+  a {
+    color: #555;
+    &:hover {
+      color: #222;
+    }
+  }
+  small {
+    float: left;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 10px;
     }
   }
 }
+
+/* Large desktop */
+// @media (min-width: 1200px) {}
+ 
+/* Portrait tablet to landscape and desktop */
+// @media (min-width: 768px) and (max-width: 979px) {}
+ 
+/* Landscape phone to portrait tablet */
+// @media (max-width: 767px) {}
+ 
+/* Landscape phones and down */
+// @media (max-width: 480px) {
+//   .hero-unit{
+//     h1 {
+//       font-size: 2em;
+//     }
+//   }
+// }
