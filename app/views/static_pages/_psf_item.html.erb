@@ -1,6 +1,6 @@
 <div class="accordion-group">
 	<div class="accordion-heading">
-		<a id="item_<%=psf_item.title.downcase.tr(" ", "_") %>_<%=psf_item.id %>" class="accordion-toggle <%= psf_item.approved? ? 'un-approved-item' : 'approved-item' %>" data-toggle="collapse" data-parent="#psf-accordion" href="#collapseItem_<%=psf_item.title.downcase.tr(" ", "_") %>_<%=psf_item.id %>">
+		<a id="item_<%=psf_item.title.downcase.tr(" ", "_") %>_<%=psf_item.id %>" class="accordion-toggle <%= psf_item.approved? ? 'un-approved-item' : 'approved-item' %>" data-toggle="collapse" data-parent="#psf-accordion" href="#collapseItem_<%=psf_item.title.downcase.tr(" ", "_") %>_<%=psf_item.id %>"><i class="icon-list-alt"></i>
 			<%= psf_item.title.upcase %>&nbsp;|&nbsp;<%= psf_item.project_manager == nil || "" ? get_user(psf_item).name.upcase : psf_item.project_manager.upcase %>
 		</a>
 	</div>
