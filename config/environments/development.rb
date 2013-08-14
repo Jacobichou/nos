@@ -15,15 +15,15 @@ Nos::Application.configure do
 
   # Don't care if the mailer can't send.
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
   config.action_mailer.perform_deliveries = true # this line is super important for actually sending the mail; over an hour of Googlefu to find this answer buried at StackOverflow
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address:              'smtp.gmail.com',
     port:                 587,
-    domain:               'gmail.com',
-    user_name:            'potarts02',
-    password:             'winningpants',
+    domain:               'nccf-sa.org',
+    user_name:            'general@nccf-sa.org',
+    password:             ENV['SMTP_PASSWORD'],
     authentication:       'plain',
     enable_starttls_auto: true
   }
