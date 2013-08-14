@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130814000818) do
+ActiveRecord::Schema.define(version: 20130814151102) do
 
   create_table "departments", force: true do |t|
     t.string   "dept_name"
@@ -47,7 +47,6 @@ ActiveRecord::Schema.define(version: 20130814000818) do
     t.integer  "event_level"
     t.string   "request_type"
     t.string   "comments"
-    t.integer  "num_participants"
     t.integer  "revenue"
     t.string   "objectives"
     t.string   "facilities"
@@ -60,6 +59,7 @@ ActiveRecord::Schema.define(version: 20130814000818) do
     t.string   "ministry_leader"
     t.string   "marketing"
     t.string   "decorations"
+    t.string   "num_participants"
   end
 
   create_table "users", force: true do |t|
