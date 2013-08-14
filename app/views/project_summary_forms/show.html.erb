@@ -31,13 +31,12 @@
       <dd><%= @project_summary_form.purpose %></dd>
 
       <dt>Objectives:&nbsp;</dt>
-      <dd><%= string_splitter(@project_summary_form) %></dd> <!-- This needs to be changed later to the user input information which happens when the full summary info is given by user -->
+      <dd><%= @project_summary_form.outcome %></dd> <!-- This needs to be changed later to the user input information which happens when the full summary info is given by user -->
         <dl>
           <dt><!-- this stays empty --></dt>
           <dd>
             <ol>
-              <li>La lal a</li>
-              <li>La lal a</li>
+              <%= string_splitter(@project_summary_form) %>
             </ol>
           </dd>
         </dl>
