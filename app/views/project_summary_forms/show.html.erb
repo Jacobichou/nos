@@ -1,3 +1,4 @@
+<div class="summary-view">
 <h1>
   New Creation Christian Fellowship <br>
   <small>of San Antonio, Tx</small>
@@ -71,8 +72,35 @@
 
 <div class="row-fluid">
   <div class="span12">
-    <h5>Facilities (Deacon Darryl Marbury):</h5>
-    <p><%= @project_summary_form.facilities %></p>
+    <dt>Facilities (Deacon Darryl Marbury):</h5>
+    <dd><%= @project_summary_form.facilities %></dd>
+
+    <dt>Production &amp; Audio/Visual (Bishop Harker):</dt>
+    <dd><%= @project_summary_form.comm %></dd>
+
+    <dt>Worship Council (Elder Renetha Macklin):</dt>
+    <dd><%= @project_summary_form.worship_council %></dd>
+
+    <dt>Day Staff ( Laura Peebles):</dt>
+    <dd><%= @project_summary_form.day_staff %></dd>
+
+    <dt>Menu (Sister Sandra Ross):</dt>
+    <dd><%= @project_summary_form.menu %></dd>
+
+    <dt>Greeters (Sister Sandra Ross):</dt>
+    <dd><%= @project_summary_form.greeters %></dd>
+
+    <dt>Ushers (Sister Sandra Ross):</dt>
+    <dd><%= @project_summary_form.ushers %></dd>
+
+    <dt>Ministry Leader:</dt>
+    <dd><%= @project_summary_form.ministry_leader %></dd>
+
+    <dt>Marketing:</dt>
+    <dd><%= @project_summary_form.marketing %></dd>
+
+    <dt>Decorations (Sister Nichelle Hosley):</dt>
+    <dd><%= @project_summary_form.decorations %></dd>
   </div>
 </div>
 
@@ -127,3 +155,5 @@
 <hr>
 <%= link_to 'Edit', edit_project_summary_form_path(@project_summary_form), class: "btn btn-large btn-warning btn-block" %>
 <%= link_to 'Back', home_path, class: "btn btn-large btn-block" %>
+
+</div>
