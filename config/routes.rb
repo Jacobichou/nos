@@ -13,6 +13,7 @@ Nos::Application.routes.draw do
   resources :project_summary_forms do
     member do 
       put :toggle_approve
+      get :full_summary
     end
   end
 

@@ -6,7 +6,7 @@ module ProjectSummaryFormsHelper
 
 
 		# @items.each do |item|
-			return simple_format(@items, {}, wrapper_tag: "li")
+			return simple_format(@items, {}, wrapper_tag: "li") # only returning one item because return ends loop
 		# end
 	end
 end

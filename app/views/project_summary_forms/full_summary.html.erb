@@ -1,0 +1,10 @@
+<div class="container">
+	<h1>Editing</h1>
+	<h3><%= @project_summary_form.title.titlecase %></h3>
+</div>
+
+<%= render 'full_summary_form' %>
+
+<hr>
+<%= link_to 'Show', @project_summary_form, class:"btn btn-large btn-info btn-block" %> 
+<%= link_to 'Back', home_path, class:"btn btn-large btn-block" %>

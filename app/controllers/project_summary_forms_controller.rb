@@ -33,6 +33,10 @@ class ProjectSummaryFormsController < ApplicationController
 	def edit
 	end
 
+	def full_summary
+		@project_summary_form = ProjectSummaryForm.find_by_id(params[:id])
+	end
+
 	def update
 		respond_to do |format|
 			if @project_summary_form.update(psf_params)
@@ -79,7 +83,9 @@ class ProjectSummaryFormsController < ApplicationController
 			params.require(:project_summary_form).permit(:project_manager, :location, :budget, :revenue, 
 																		:title, :purpose, :frequency, :frequency_exception, :fee, :offering, 
 																		:comments, :start_date, :end_date, :start_time, :end_time, 
-																		:num_participants, :type, :audience, :outcome, :phone)
+																		:num_participants, :type, :audience, :outcome, :phone,
+																		:objectives, :facilities, :comm, :worship_council, :day_staff, :menu, 
+																		:greeters, :ushers, :ministry_leader, :marketing, :decorations)
 		end
 
 		def can_view?

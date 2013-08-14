@@ -3,7 +3,12 @@
 	<h3><%= @project_summary_form.title.titlecase %></h3>
 </div>
 
-<%= render 'psf_form' %>
+<% unless @project_summary_form.reviewed? %>
+	<%= render 'psf_form' %>
+<% else %>
+	<%= render 'full_summary_form' %>
+<% end %>
 
-<%= link_to 'Show', @project_summary_form %> |
-<%= link_to 'Back', home_path %>
+<hr>
+<%= link_to 'Show', @project_summary_form, class: "btn btn-info btn-large btn-block" %>
+<%= link_to 'Back', home_path, class: "btn btn-large btn-block" %>

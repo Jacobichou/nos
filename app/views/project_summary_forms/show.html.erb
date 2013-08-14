@@ -4,6 +4,8 @@
 </h1>
 
 <hr>
+  <%= link_to 'Add Full Details to Summary', full_summary_project_summary_form_path, class: "btn btn-large btn-info btn-block" %>
+<hr>
 
 <h4>Project:&nbsp;<span class="muted"><%= @project_summary_form.title.titlecase %></span></h4>
 <h4>Prepared <em>and</em> Submitted:&nbsp;<span class="muted"><%= @project_summary_form.created_at.strftime("%B %d %Y") %></span></h4>
@@ -111,6 +113,6 @@
   </div>
 </div>
 
-
-<%= link_to 'Edit', edit_project_summary_form_path(@project_summary_form) %> |
-<%= link_to 'Back', home_path %>
+<hr>
+<%= link_to 'Edit', edit_project_summary_form_path(@project_summary_form), class: "btn btn-large btn-warning btn-block" %>
+<%= link_to 'Back', home_path, class: "btn btn-large btn-block" %>
