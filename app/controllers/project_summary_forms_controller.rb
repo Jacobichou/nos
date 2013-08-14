@@ -94,12 +94,13 @@ class ProjectSummaryFormsController < ApplicationController
 			params.require(:project_summary_form).permit(:project_manager, :location, :budget, :revenue, 
 																		:title, :purpose, :frequency, :frequency_exception, :fee, :offering, 
 																		:comments, :start_date, :end_date, :start_time, :end_time, 
-																		:num_participants, :type, :audience, :outcome, :objectives, :facilities, :comm, :worship_council, :day_staff, :menu, 
+																		:num_participants, :request_type, :audience, :outcome, :additional_requests, 
+																		:objectives, :facilities, :comm, :worship_council, :day_staff, :menu, 
 																		:greeters, :ushers, :ministry_leader, :marketing, :decorations)
 		end
 
 		def full_summary_params
-			params.fetch(:full_summary, {}).permit(:objectives, :facilities, :comm, :worship_council, :day_staff, :menu, 
+			params.fetch(:full_summary, {}).permit(:additional_requests, :objectives, :facilities, :comm, :worship_council, :day_staff, :menu, 
 																		:greeters, :ushers, :ministry_leader, :marketing, :decorations)
 		end
 

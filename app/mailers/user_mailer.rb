@@ -8,7 +8,7 @@ class UserMailer < ActionMailer::Base
 
   	@item = item
   	@who = User.where(hierarchy: HIGHEST_HIER_LVL..hierarchy_lvl)
-  	@login_url = 'http://localhost:3000/users/sign_in'
+  	@login_url = root_url + 'project_summary_forms/' + @item.id.to_s
 
   	# !DO! build link directly to submission
     case item_type
@@ -28,7 +28,7 @@ class UserMailer < ActionMailer::Base
   def notify_approved(item) # only notifies user who submitted item
     @item = item
     @who = item.user.email
-    @login_url = 'http://localhost:3000/users/sign_in'
+    @login_url = root_url + 'project_summary_forms/' + @item.id.to_s
 
     mail(to: @who, subject: '[NOSSYM Notification] Item Approval')
   end
@@ -36,7 +36,7 @@ class UserMailer < ActionMailer::Base
   def notify_unapproved(item) # only notifies user who submitted item
     @item = item
     @who = item.user.email
-    @login_url = 'http://localhost:3000/users/sign_in'
+    @login_url = root_url + 'project_summary_forms/' + @item.id.to_s
 
     mail(to: @who, subject: '[NOSSYM Notification] Item Unapproved')
   end
@@ -44,7 +44,7 @@ class UserMailer < ActionMailer::Base
   def notify_discarded(item) # only notifies user who submitted item
     @item = item
     @who = item.user.email
-    @login_url = 'http://localhost:3000/users/sign_in'
+    @login_url = root_url + 'project_summary_forms/' + @item.id.to_s
 
     mail(to: @who, subject: '[NOSSYM Notification] Item Discarded')
   end
