@@ -5,6 +5,23 @@
 
   <div class="row-fluid">
     <div class="span12">
+      <h4>Additional requests for Pastor Copeland:</h4>
+
+      <!-- <= f.label :purpose, "Purpose of event:", class:"span12" %> -->
+      <!-- <= f.text_field :additional_requests, placeholder: "e.g. A token of her appreciation", class:"span12" %> -->
+
+      <div class="input-prepend">
+        <span class="add-on">Requests:</span>
+        <%= f.text_field :additional_requests, placeholder: "e.g. A token of her appreciation", class:"span12" %>
+      </div>
+
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="row-fluid">
+    <div class="span12">
       <!-- <= f.label :purpose, "Purpose of event:", class:"span12" %> -->
       <%= f.text_field :facilities, placeholder: "Factilities", class:"span12" %>
 

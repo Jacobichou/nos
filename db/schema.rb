@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130814151102) do
+ActiveRecord::Schema.define(version: 20130814151629) do
 
   create_table "departments", force: true do |t|
     t.string   "dept_name"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20130814151102) do
     t.string   "marketing"
     t.string   "decorations"
     t.string   "num_participants"
+    t.string   "additional_requests"
   end
 
   create_table "users", force: true do |t|
