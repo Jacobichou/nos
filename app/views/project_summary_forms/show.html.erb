@@ -25,13 +25,13 @@
       <dd><%= number_to_phone(@project_summary_form.user.phone) %></dd>
 
       <dt>Location:&nbsp;</dt>
-      <dd><%= @project_summary_form.location.titlecase %></dd>
+      <dd><%= @project_summary_form.location.titlecase unless @project_summary_form.location == nil %></dd>
 
       <dt>Purpose:&nbsp;</dt>
       <dd><%= @project_summary_form.purpose %></dd>
 
       <dt>Objectives:&nbsp;</dt>
-      <dd>This is an objective</dd> <!-- This needs to be changed later to the user input information which happens when the full summary info is given by user -->
+      <dd><%= string_splitter(@project_summary_form) %></dd> <!-- This needs to be changed later to the user input information which happens when the full summary info is given by user -->
         <dl>
           <dt><!-- this stays empty --></dt>
           <dd>
