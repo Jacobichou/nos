@@ -5,7 +5,7 @@
 </h1>
 
 <hr>
-  <%= link_to 'Add Full Details to Summary', full_summary_project_summary_form_path, class: "btn btn-large btn-info btn-block" %>
+  <%= link_to 'Add Checklist Details', full_summary_project_summary_form_path, class: "btn btn-large btn-info btn-block" %>
 <hr>
 
 <h4>Project:&nbsp;<span class="muted"><%= @project_summary_form.title.titlecase %></span></h4>
@@ -153,7 +153,7 @@
 </div>
 
 <hr>
-<%= link_to 'Edit', edit_project_summary_form_path(@project_summary_form), class: "btn btn-large btn-warning btn-block" %>
-<%= link_to 'Back', home_path, class: "btn btn-large btn-block" %>
+<%= link_to 'Edit PSF Form', edit_project_summary_form_path(@project_summary_form), class: "btn btn-large btn-warning btn-block" %>
+<%= link_to 'Overview', home_path, class: "btn btn-large btn-block" %>
 
 </div>
