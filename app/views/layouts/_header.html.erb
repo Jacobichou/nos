@@ -7,18 +7,14 @@
 				<span class="icon-bar"></span>
 			</button> -->
 			<!-- <= link_to "NOSSYM", root_path, class: "brand" %> -->
-			<button id="showLeft" type="button" class="brand btn-inverse">Menu</button>
-			<div class="nav-collapse collapse">
-				<ul class="nav pull-right">
-					<% if user_signed_in? %>
-						<li><p class="navbar-text">Welcome,&nbsp;<a href="#" class="badge badge-info"><%= current_user.name.titlecase unless current_user.name == nil %>&nbsp;&#40;<%= current_user.email %>&#41;</a></p></li>
-					<% else %>
-						<li><%= link_to "Sign in", new_user_session_path, class: "btn-primary" %></li>
-					<% end %>
-				</ul>
+			<% if user_signed_in? %>
+				<button id="showLeft" type="button" class="brand btn-inverse">Menu</button>
+			<% else %>
+				<%= link_to 'Sign In', new_user_session_path, class: "brand btn-primary" %>
+				<!-- <button id="showRight" type="button" class="brand btn-primary">Sign In</button> -->
+			<% end %>
 
-					<!-- <button id="showLeft2" type="button" class="btn"><i class="icon-th"></i></button> -->
-				</ul>
+			<div class="nav-collapse collapse">
 			</div><!--/.nav-collapse -->
 		</div>
 	</div>

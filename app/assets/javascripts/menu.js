@@ -3,7 +3,6 @@ var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
 				menuTop = document.getElementById( 'cbp-spmenu-s3' ),
 				menuBottom = document.getElementById( 'cbp-spmenu-s4' ),
 				showLeft = document.getElementById( 'showLeft' ),
-				showLeft2 = document.getElementById( 'showLeft2' ),
 				showRight = document.getElementById( 'showRight' ),
 				showTop = document.getElementById( 'showTop' ),
 				showBottom = document.getElementById( 'showBottom' ),
@@ -12,11 +11,6 @@ var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
 				body = document.body;
 
 			showLeft.onclick = function() {
-				classie.toggle( this, 'active' );
-				classie.toggle( menuLeft, 'cbp-spmenu-open' );
-				disableOther( 'showLeft' );
-			};
-			showLeft2.onclick = function() {
 				classie.toggle( this, 'active' );
 				classie.toggle( menuLeft, 'cbp-spmenu-open' );
 				disableOther( 'showLeft' );
