@@ -12,6 +12,9 @@
 					<ul class="nav pull-right">
 						<% if user_signed_in? %>
 							<li><p class="navbar-text">Welcome,&nbsp;<a href="#" class="badge badge-info"><%= current_user.name.titlecase unless current_user.name == nil %>&nbsp;&#40;<%= current_user.email %>&#41;</a></p></li>
+							<li>
+								<%= link_to "Sign out", destroy_user_session_path, method: "delete", class: "btn-danger text-center" %>
+							</li>
 						<% else %>
 							<li><%= link_to "Sign in", new_user_session_path, class: "btn-primary" %></li>
 						<% end %>
