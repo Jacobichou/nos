@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
 	<meta charset="utf-8">
 	<title><%= full_title(yield(:title)) %></title>
@@ -12,9 +12,10 @@
 	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 	<%= csrf_meta_tags %>
 </head>
-<body>
+<body class="cbp-spmenu-push">
 
 	<%= render 'layouts/header' %>
+	<%= render 'layouts/menu' %>
 	
 	<div class="container center">
 		<% flash.each do |key, value| %>
@@ -38,6 +39,7 @@
 		<%= render 'layouts/footer' %>
 
 	</div><!--/.fluid-container-->
-
+	<%= javascript_include_tag "classie" %>
+	<%= javascript_include_tag "menu" %>
 </body>
 </html>

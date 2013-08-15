@@ -1,0 +1,19 @@
+
+<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+		<%= link_to "Home", '#' %>
+		<%= link_to "Help", help_path %>
+		<%= link_to "Contact Us", contact_path %>
+		<br>
+		<strong>Settings</strong>
+		<a href="#">Profile</a>
+		<%= link_to "Sign out", destroy_user_session_path, method: "delete", class: "btn-danger text-center" %>
+</nav>
+<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+	<h3>Menu</h3>
+	<a href="#">Celery seakale</a>
+	<a href="#">Dulse daikon</a>
+	<a href="#">Zucchini garlic</a>
+	<a href="#">Catsear azuki bean</a>
+	<a href="#">Dandelion bunya</a>
+	<a href="#">Rutabaga</a>
+</nav>
