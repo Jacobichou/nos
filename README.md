@@ -9,3 +9,9 @@ To Do
 - [ ] Add profile page
 - [ ] write better tests! :/
 - [x] missing full summary items
+- [x] fix production base URL from mailer views
+- [x] need show:view button for psf_items
+- [ ] add ability for downloading full summary (checklist) as pdf/make print version
+- [ ] add ability to send full summary (checklist) sections to respective person with button click
+- [ ] implement departments
+- [ ] add admin ability to promote hierarchy lvls
