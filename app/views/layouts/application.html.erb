@@ -1,18 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
 	<meta charset="utf-8">
+	<%= render 'layouts/fav_touch' %>
 	<title><%= full_title(yield(:title)) %></title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-	<meta name="HandheldFriendly" content="true" />
 	<meta name="description" content="">
 	<meta name="author" content="">
-	<%= render 'layouts/fav_touch' %>
 	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
 	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 	<%= csrf_meta_tags %>
 </head>
-<body class="cbp-spmenu-push">
+<body>
 
 	<%= render 'layouts/header' %>
 	
@@ -22,25 +20,27 @@
 		<% end %>
 	</div>
 
-	<div class="container-fluid">
-		<div class="row-fluid">
 
 
-			<div class="span12">
-				<div class="container">
-					<%= yield %>
-				</div>
-				
-			</div><!--/span-->
-		</div><!--/row-->
 
-		<hr>
+<div class="content-box shadow">
+    <div class="content">
+    
+    	<div class="container">
+        	<%= yield %>
+     </div>
+        
+    </div>
+</div>
 
-		<%= render 'layouts/footer' %>
 
-	</div><!--/.fluid-container-->
+	<%= render 'layouts/footer' %>
+
+	<%= render 'layouts/left_nav' %>
+	<%= render 'layouts/right_nav' %>
+
 	<!-- <= javascript_include_tag "classie" %>
 	<= javascript_include_tag "menu" %> -->
-	<%= render 'layouts/menu_js' %>
+	<!-- <= render 'layouts/menu_js' %> -->
 </body>
 </html>

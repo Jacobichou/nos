@@ -18,7 +18,7 @@ License Restrictions: You are not allowed to remove these comments, or take cred
 }
 
 body{
-	background-image:url(../images/body-bg.png);
+	background-image:url(<%= asset_path 'body-bg.png' %>);
 	-webkit-font-smoothing: antialiased;
 	overflow-x:hidden;
 }
@@ -77,8 +77,8 @@ blockquote					{	color:#8a8a8a!important;}
 /*/////////////////////////////////////////////////////////////////////////////////////*/		
 /*-----------------------------Toggle Style 5------------------------------------------*/
 /*/////////////////////////////////////////////////////////////////////////////////////*/
-.show-toggle-v5{		background-image:url(../images/ui/minus.png);					}
-.hide-toggle-v5{		background-image:url(../images/ui/plus.png);					}
+.show-toggle-v5{		background-image:url(<%= asset_path 'ui/minus.png' %>);					}
+.hide-toggle-v5{		background-image:url(<%= asset_path 'ui/plus.png' %>);					}
 
 .toggle-v5 a{			color:#999999!important; font-family:'Open Sans', sans-serif!important; font-weight:400!important; font-size:14px; text-transform:uppercase;	}
 .toggle-container-v5{	background-color:#FFFFFF; color:#9a9a9a!important;	}
@@ -86,8 +86,8 @@ blockquote					{	color:#8a8a8a!important;}
 /*/////////////////////////////////////////////////////////////////////////////////////*/		
 /*-----------------------------Toggle Style 4------------------------------------------*/
 /*/////////////////////////////////////////////////////////////////////////////////////*/
-.show-toggle-v4{		background-image:url(../images/lists/delete_16.png);			}
-.hide-toggle-v4{		background-image:url(../images/lists/plus_16.png);				}
+.show-toggle-v4{		background-image:url(<%= asset_path 'lists/delete_16.png' %>);			}
+.hide-toggle-v4{		background-image:url(<%= asset_path 'lists/plus_16.png' %>);				}
 
 .toggle-v4 a{			color:#999999!important; font-family:'Open Sans', sans-serif!important; font-weight:400!important;	font-size:14px; text-transform:uppercase;	}
 .toggle-container-v4{	background-color:#FFFFFF; color:#9a9a9a!important;	}
@@ -95,8 +95,8 @@ blockquote					{	color:#8a8a8a!important;}
 /*/////////////////////////////////////////////////////////////////////////////////////*/		
 /*-----------------------------Toggle Style 3------------------------------------------*/
 /*/////////////////////////////////////////////////////////////////////////////////////*/
-.show-toggle-v3{		background-image:url(../images/ui/switch-on.png); 				}
-.hide-toggle-v3{		background-image:url(../images/ui/switch-off.png);				}
+.show-toggle-v3{		background-image:url(<%= asset_path 'ui/switch-on.png' %>); 				}
+.hide-toggle-v3{		background-image:url(<%= asset_path 'ui/switch-off.png' %>);				}
 
 .toggle-v3 a{			color:#999999!important; font-family:'Open Sans', sans-serif!important; font-weight:400!important; font-size:14px; text-transform:uppercase;	}
 .toggle-container-v3{	background-color:#FFFFFF; color:#9a9a9a!important;	}
@@ -104,8 +104,8 @@ blockquote					{	color:#8a8a8a!important;}
 /*/////////////////////////////////////////////////////////////////////////////////////*/		
 /*-----------------------------Toggle Style 2------------------------------------------*/
 /*/////////////////////////////////////////////////////////////////////////////////////*/
-.show-toggle-v2{		background-image:url(../images/lists/delete_16.png);			}
-.hide-toggle-v2{		background-image:url(../images/lists/plus_16.png);				}
+.show-toggle-v2{		background-image:url(<%= asset_path 'lists/delete_16.png' %>);			}
+.hide-toggle-v2{		background-image:url(<%= asset_path 'lists/plus_16.png' %>);				}
 
 .toggle-v2 a{			color:#999999!important; font-family:'Open Sans', sans-serif!important; font-weight:400!important; font-size:14px; text-transform:uppercase;	}
 .toggle-container-v2{	background-color:#FFFFFF; color:#9a9a9a!important;	}
@@ -113,8 +113,8 @@ blockquote					{	color:#8a8a8a!important;}
 /*/////////////////////////////////////////////////////////////////////////////////////*/		
 /*-----------------------------Toggle Style 1------------------------------------------*/
 /*/////////////////////////////////////////////////////////////////////////////////////*/
-.show-toggle-v1{	background-image:url(../images/ui/minus.png);						}
-.hide-toggle-v1{	background-image:url(../images/ui/plus.png);						}
+.show-toggle-v1{	background-image:url(<%= asset_path 'ui/minus.png' %>);						}
+.hide-toggle-v1{	background-image:url(<%= asset_path 'ui/plus.png' %>);						}
 
 .toggle-v1 a{			color:#999999!important; font-family:'Open Sans', sans-serif!important; font-weight:400!important;	font-size:14px; text-transform:uppercase;	}
 .toggle-container-v1{	background-color:#FFFFFF; color:#9a9a9a!important;	}
@@ -123,75 +123,75 @@ blockquote					{	color:#8a8a8a!important;}
 /*--------------------------Checkboxes and Radios--------------------------------------*/
 /*/////////////////////////////////////////////////////////////////////////////////////*/
 .checker{			color:#9a9a9a!important;}
-.checkbox-v1{		background-image:url(../images/ui/checkbox.png);					}
-.checked-v1{		background-image:url(../images/ui/checkbox-selected.png)!important; }
-.checkbox-v2{		background-image:url(../images/ui/checkbox2.png);					}
-.checked-v2{		background-image:url(../images/ui/checkbox2-selected.png)!important;}
-.checkbox-v3{		background-image:url(../images/ui/empty.png);						}
-.checked-v3{		background-image:url(../images/ui/cross.png)!important;				}
-.checkbox-v4{		background-image:url(../images/ui/empty.png);						}
-.checked-v4{		background-image:url(../images/ui/tick.png)!important;				}
-.radio-v1{			background-image:url(../images/ui/radio.png);						}
-.balled-v1{			background-image:url(../images/ui/radio-selected.png)!important;	}
-.radio-v2{			background-image:url(../images/ui/radio2.png);						}
-.balled-v2{			background-image:url(../images/ui/radio2-selected.png)!important;	}
+.checkbox-v1{		background-image:url(<%= asset_path 'ui/checkbox.png' %>);					}
+.checked-v1{		background-image:url(<%= asset_path 'ui/checkbox-selected.png' %>)!important; }
+.checkbox-v2{		background-image:url(<%= asset_path 'ui/checkbox2.png' %>);					}
+.checked-v2{		background-image:url(<%= asset_path 'ui/checkbox2-selected.png' %>)!important;}
+.checkbox-v3{		background-image:url(<%= asset_path 'ui/empty.png' %>);						}
+.checked-v3{		background-image:url(<%= asset_path 'ui/cross.png' %>)!important;				}
+.checkbox-v4{		background-image:url(<%= asset_path 'ui/empty.png' %>);						}
+.checked-v4{		background-image:url(<%= asset_path 'ui/tick.png' %>)!important;				}
+.radio-v1{			background-image:url(<%= asset_path 'ui/radio.png' %>);						}
+.balled-v1{			background-image:url(<%= asset_path 'ui/radio-selected.png' %>)!important;	}
+.radio-v2{			background-image:url(<%= asset_path 'ui/radio2.png' %>);						}
+.balled-v2{			background-image:url(<%= asset_path 'ui/radio2-selected.png' %>)!important;	}
 
 /*//////////////////////////////////////////////////////////////////////////////////////*/
 /*---------------------------------List Icons-------------------------------------------*/
 /*//////////////////////////////////////////////////////////////////////////////////////*/
 
 .demo{	margin-left:3px;	margin-bottom:3px;}
-.list-address{		background-image:url(../images/lists/address_16.png);		}
-.list-block{		background-image:url(../images/lists/block_16.png);			}
-.list-bookmark{		background-image:url(../images/lists/bookmark_16.png);		}
-.list-briefcase{	background-image:url(../images/lists/briefcase_16.png);		}
-.list-bubble{		background-image:url(../images/lists/bubble_16.png);		}
-.list-buy{			background-image:url(../images/lists/buy_16.png);			}
-.list-calendar{		background-image:url(../images/lists/calendar_16.png);		}
-.list-clipboard{	background-image:url(../images/lists/clipboard_16.png);		}
-.list-delete{		background-image:url(../images/lists/delete_16.png);		}
-.list-clock{		background-image:url(../images/lists/clock_16.png);			}
-.list-diagram{		background-image:url(../images/lists/diagram_16.png);		}
-.list-document{		background-image:url(../images/lists/document_16.png);		}
-.list-down{			background-image:url(../images/lists/down_16.png);			}
-.list-flag{			background-image:url(../images/lists/flag_16.png);			}
-.list-folder{		background-image:url(../images/lists/folder_16.png);		}
-.list-gear{			background-image:url(../images/lists/gear_16.png);			}
-.list-globe{		background-image:url(../images/lists/globe_16.png);			}
-.list-heart{		background-image:url(../images/lists/heart_16.png);			}
-.list-help{			background-image:url(../images/lists/help_16.png);			}
-.list-home{			background-image:url(../images/lists/home_16.png);			}
-.list-key{			background-image:url(../images/lists/key_16.png);			}
-.list-label{		background-image:url(../images/lists/label_16.png);			}
-.list-left{			background-image:url(../images/lists/left_16.png);			}
-.list-letter{		background-image:url(../images/lists/letter_16.png);		}
-.list-monitor{		background-image:url(../images/lists/monitor_16.png);		}
-.list-pencil{		background-image:url(../images/lists/pencil_16.png);		}
-.list-plus{			background-image:url(../images/lists/plus_16.png);			}
-.list-present{		background-image:url(../images/lists/present_16.png);		}
-.list-print{		background-image:url(../images/lists/print_16.png);			}
-.list-right{		background-image:url(../images/lists/right_16.png);			}
-.list-save{			background-image:url(../images/lists/save_16.png);			}
-.list-shield{		background-image:url(../images/lists/shield_16.png);		}
-.list-statistics{	background-image:url(../images/lists/statistics_16.png);	}
-.list-stop{			background-image:url(../images/lists/stop_16.png);			}
-.list-tick{			background-image:url(../images/lists/tick_16.png);			}
-.list-trash{		background-image:url(../images/lists/trash_16.png);			}
-.list-up{			background-image:url(../images/lists/up_16.png);			}
-.list-user{			background-image:url(../images/lists/user_16.png);			}
-.list-walet{		background-image:url(../images/lists/wallet_16.png);		}
-.list-warning{		background-image:url(../images/lists/warning_16.png);		}
+.list-address{		background-image:url(<%= asset_path 'lists/address_16.png' %>);		}
+.list-block{		background-image:url(<%= asset_path 'lists/block_16.png' %>);			}
+.list-bookmark{		background-image:url(<%= asset_path 'lists/bookmark_16.png' %>);		}
+.list-briefcase{	background-image:url(<%= asset_path 'lists/briefcase_16.png' %>);		}
+.list-bubble{		background-image:url(<%= asset_path 'lists/bubble_16.png' %>);		}
+.list-buy{			background-image:url(<%= asset_path 'lists/buy_16.png' %>);			}
+.list-calendar{		background-image:url(<%= asset_path 'lists/calendar_16.png' %>);		}
+.list-clipboard{	background-image:url(<%= asset_path 'lists/clipboard_16.png' %>);		}
+.list-delete{		background-image:url(<%= asset_path 'lists/delete_16.png' %>);		}
+.list-clock{		background-image:url(<%= asset_path 'lists/clock_16.png' %>);			}
+.list-diagram{		background-image:url(<%= asset_path 'lists/diagram_16.png' %>);		}
+.list-document{		background-image:url(<%= asset_path 'lists/document_16.png' %>);		}
+.list-down{			background-image:url(<%= asset_path 'lists/down_16.png' %>);			}
+.list-flag{			background-image:url(<%= asset_path 'lists/flag_16.png' %>);			}
+.list-folder{		background-image:url(<%= asset_path 'lists/folder_16.png' %>);		}
+.list-gear{			background-image:url(<%= asset_path 'lists/gear_16.png' %>);			}
+.list-globe{		background-image:url(<%= asset_path 'lists/globe_16.png' %>);			}
+.list-heart{		background-image:url(<%= asset_path 'lists/heart_16.png' %>);			}
+.list-help{			background-image:url(<%= asset_path 'lists/help_16.png' %>);			}
+.list-home{			background-image:url(<%= asset_path 'lists/home_16.png' %>);			}
+.list-key{			background-image:url(<%= asset_path 'lists/key_16.png' %>);			}
+.list-label{		background-image:url(<%= asset_path 'lists/label_16.png' %>);			}
+.list-left{			background-image:url(<%= asset_path 'lists/left_16.png' %>);			}
+.list-letter{		background-image:url(<%= asset_path 'lists/letter_16.png' %>);		}
+.list-monitor{		background-image:url(<%= asset_path 'lists/monitor_16.png' %>);		}
+.list-pencil{		background-image:url(<%= asset_path 'lists/pencil_16.png' %>);		}
+.list-plus{			background-image:url(<%= asset_path 'lists/plus_16.png' %>);			}
+.list-present{		background-image:url(<%= asset_path 'lists/present_16.png' %>);		}
+.list-print{		background-image:url(<%= asset_path 'lists/print_16.png' %>);			}
+.list-right{		background-image:url(<%= asset_path 'lists/right_16.png' %>);			}
+.list-save{			background-image:url(<%= asset_path 'lists/save_16.png' %>);			}
+.list-shield{		background-image:url(<%= asset_path 'lists/shield_16.png' %>);		}
+.list-statistics{	background-image:url(<%= asset_path 'lists/statistics_16.png' %>);	}
+.list-stop{			background-image:url(<%= asset_path 'lists/stop_16.png' %>);			}
+.list-tick{			background-image:url(<%= asset_path 'lists/tick_16.png' %>);			}
+.list-trash{		background-image:url(<%= asset_path 'lists/trash_16.png' %>);			}
+.list-up{			background-image:url(<%= asset_path 'lists/up_16.png' %>);			}
+.list-user{			background-image:url(<%= asset_path 'lists/user_16.png' %>);			}
+.list-walet{		background-image:url(<%= asset_path 'lists/wallet_16.png' %>);		}
+.list-warning{		background-image:url(<%= asset_path 'lists/warning_16.png' %>);		}
 
 /*//////////////////////////////////////////////////////////////////////////////////////*/
 /*-------------------------Header Notification------------------------------------------*/
 /*//////////////////////////////////////////////////////////////////////////////////////*/
 .header-notification{			background-color:#000000;	font-size:12px;	text-align:left;	color:#FFFFFF;}
 .header-notification strong{ 	color:#666;}
-.warning-notification em{		background-image:url(../images/lists/warning_16.png);}
-.close-notification em{			background-image:url(../images/lists/delete_16.png);}
-.heart-notification em{			background-image:url(../images/lists/heart_16.png);}
-.calendar-notification em{		background-image:url(../images/lists/calendar_16.png);}
-.info-notification em{			background-image:url(../images/lists/info_16.png);}
+.warning-notification em{		background-image:url(<%= asset_path 'lists/warning_16.png' %>);}
+.close-notification em{			background-image:url(<%= asset_path 'lists/delete_16.png' %>);}
+.heart-notification em{			background-image:url(<%= asset_path 'lists/heart_16.png' %>);}
+.calendar-notification em{		background-image:url(<%= asset_path 'lists/calendar_16.png' %>);}
+.info-notification em{			background-image:url(<%= asset_path 'lists/info_16.png' %>);}
 
 /*//////////////////////////////////////////////////////////////////////////////////////*/
 /*-------------------------------CSS3 Buttons-------------------------------------------*/
@@ -266,10 +266,10 @@ blockquote					{	color:#8a8a8a!important;}
 /*////////////////////////////////////////////////////////////////////////////////*/
 
 .no-detected-background{background-image:none!important;}
-.iphone-detected{	background-image:url(../images/icon/mobile/iphone4.png); 				background-size:45px 45px; background-position:4px 4px!important;	background-repeat:no-repeat;}
-.ipod-detected{		background-image:url(../images/icon/electrical/ipodclassic.png);	    background-size:45px 45px; background-position:4px 4px!important;	background-repeat:no-repeat;}
-.android-detected{	background-image:url(../images/icon/mobile/android.png);	   			background-size:45px 45px; background-position:4px 4px!important;	background-repeat:no-repeat;}
-.ipad-detected{		background-image:url(../images/icon/electrical/ipad2.png);	   			background-size:45px 45px; background-position:4px 4px!important;	background-repeat:no-repeat;}
+.iphone-detected{	background-image:url(<%= asset_path 'icon/mobile/iphone4.png' %>); 				background-size:45px 45px; background-position:4px 4px!important;	background-repeat:no-repeat;}
+.ipod-detected{		background-image:url(<%= asset_path 'icon/electrical/ipodclassic.png' %>);	    background-size:45px 45px; background-position:4px 4px!important;	background-repeat:no-repeat;}
+.android-detected{	background-image:url(<%= asset_path 'icon/mobile/android.png' %>);	   			background-size:45px 45px; background-position:4px 4px!important;	background-repeat:no-repeat;}
+.ipad-detected{		background-image:url(<%= asset_path 'icon/electrical/ipad2.png' %>);	   			background-size:45px 45px; background-position:4px 4px!important;	background-repeat:no-repeat;}
 
 
 /*///////////////////////////////////////////////////////////////////////////////*/
@@ -278,10 +278,10 @@ blockquote					{	color:#8a8a8a!important;}
 
 .small-notification{	margin-bottom:20px;	}
 
-.green-notification p{		background-image:url(../images/lists/tick_16.png);	background-repeat:no-repeat;		display:inline-block;	height:16px;	padding-left:30px;	color:#060;}
-.red-notification p{		background-image:url(../images/lists/delete_16.png);	background-repeat:no-repeat;	display:inline-block;	height:16px;	padding-left:30px;	color:#C00;}
-.blue-notification p{		background-image:url(../images/lists/info_16.png);	background-repeat:no-repeat;	display:inline-block;	height:16px;	padding-left:30px;	color:#039;}
-.yellow-notification p{		background-image:url(../images/lists/warning_16.png);	background-repeat:no-repeat;	display:inline-block;	height:16px;	padding-left:30px;	color:#F90;}
+.green-notification p{		background-image:url(<%= asset_path 'lists/tick_16.png' %>);	background-repeat:no-repeat;		display:inline-block;	height:16px;	padding-left:30px;	color:#060;}
+.red-notification p{		background-image:url(<%= asset_path 'lists/delete_16.png' %>);	background-repeat:no-repeat;	display:inline-block;	height:16px;	padding-left:30px;	color:#C00;}
+.blue-notification p{		background-image:url(<%= asset_path 'lists/info_16.png' %>);	background-repeat:no-repeat;	display:inline-block;	height:16px;	padding-left:30px;	color:#039;}
+.yellow-notification p{		background-image:url(<%= asset_path 'lists/warning_16.png' %>);	background-repeat:no-repeat;	display:inline-block;	height:16px;	padding-left:30px;	color:#F90;}
 
 
 /*///////////////////////////////////////////////////////////////////////////////*/
@@ -524,7 +524,7 @@ blockquote					{	color:#8a8a8a!important;}
 
 
 .posted-by{
-	background-image:url(../images/blog/user.png);
+	background-image:url(<%= asset_path 'blog/user.png' %>);
 	background-repeat:no-repeat;
 	background-position:0px 4px;
 	padding-right:20px;
@@ -537,7 +537,7 @@ blockquote					{	color:#8a8a8a!important;}
 }
 
 .posted-at{
-	background-image:url(../images/blog/time.png);
+	background-image:url(<%= asset_path 'blog/time.png' %>);
 	background-repeat:no-repeat;
 	background-position:0px 4px;
 	padding-right:20px;
@@ -550,7 +550,7 @@ blockquote					{	color:#8a8a8a!important;}
 }
 
 .posted-cat{
-	background-image:url(../images/blog/cat.png);
+	background-image:url(<%= asset_path 'blog/cat.png' %>);
 	background-repeat:no-repeat;
 	background-position:0px 4px;
 	padding-right:20px;
@@ -563,7 +563,7 @@ blockquote					{	color:#8a8a8a!important;}
 }
 
 .posted-tag{
-	background-image:url(../images/blog/tag.png);
+	background-image:url(<%= asset_path 'blog/tag.png' %>);
 	background-repeat:no-repeat;
 	background-position:0px 4px;
 	padding-right:20px;
@@ -576,7 +576,7 @@ blockquote					{	color:#8a8a8a!important;}
 }
 
 .posted-more{
-	background-image:url(../images/blog/more.png);
+	background-image:url(<%= asset_path 'blog/more.png' %>);
 	background-repeat:no-repeat;
 	background-position:0px 4px;
 	padding-right:20px;

@@ -111,12 +111,12 @@ div.ps-zoom-pan-rotate *  { display: block; }
 /* Carousel */
 div.ps-carousel-item-loading 
 { 
-	background: url(../images/swype/loader.gif) no-repeat center center; 
+	background: url(<%= asset_path 'swype/loader.gif' %>) no-repeat center center; 
 }
 
 div.ps-carousel-item-error 
 { 
-	background: url(../images/swype/error.gif) no-repeat center center; 
+	background: url(<%= asset_path 'swype/error.gif' %>) no-repeat center center; 
 }
 
 
@@ -185,7 +185,7 @@ div.ps-toolbar div div.ps-toolbar-content
 	width: 44px;
 	height: 44px;
 	margin: 0 auto 0;
-	background-image: url(../images/swype/icons.png);
+	background-image: url(<%= asset_path 'swype/icons.png' %>);
 	background-repeat: no-repeat;
 }
 
@@ -232,6 +232,6 @@ div.ps-toolbar-play div.ps-toolbar-content
 		-o-background-size: 176px 88px;
 		-webkit-background-size: 176px 88px;
 		background-size: 176px 88px;
-		background-image: url(../images/swype/icons@2x.png);
+		background-image: url(<%= asset_path 'swype/icons@2x.png' %>);
 	}
 }

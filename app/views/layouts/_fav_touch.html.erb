@@ -1,6 +1,12 @@
-<!-- Fav and touch icons -->
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<% asset_path 'ico/apple-touch-icon-144-precomposed.png' %>">
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="<% asset_path 'ico/apple-touch-icon-114-precomposed.png' %>">
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<% asset_path 'ico/apple-touch-icon-72-precomposed.png' %>">
-<link rel="apple-touch-icon-precomposed" href="<% asset_path 'ico/apple-touch-icon-57-precomposed.png' %>">
-<link rel="shortcut icon" href="<% asset_path 'ico/favicon.png' %>">
+<!--Favicon shortcut link-->
+<!-- <link type="image/x-icon"  rel="shortcut icon" href="< asset_path 'splash/favicon.ico' %>" />
+<link type="image/x-icon"  rel="icon"		   href="< asset_path 'splash/favicon.ico' %>" /> -->
+<!--Declare page as mobile friendly --> 
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0"/>
+<!-- Declare page as iDevice WebApp friendly -->
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<!-- iDevice WebApp Splash Screen, Regular Icon, iPhone, iPad, iPod Retina Icons -->
+<link rel="apple-touch-icon" sizes="114x114" href="<%= asset_path 'splash/splash-icon.png' %>"> 
+<link rel="apple-touch-startup-image" href="<%= asset_path 'splash/splash-screen.png' %>" media="screen and (max-device-width: 320px)" /> 
+<link rel="apple-touch-startup-image" href="<%= asset_path 'splash/splash-screen@2x.png' %>" media="(max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)" /> 
+<link rel="apple-touch-startup-image" href="<%= asset_path 'splash/splash-screen@3x.png' %>" sizes="640x1096">

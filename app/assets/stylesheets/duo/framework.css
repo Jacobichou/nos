@@ -236,7 +236,7 @@ ol > li:last-child, ul > li:last-child {
 	position:absolute;
 	left:50%; 
 	top:50%; 
-	background-image:url(../images/status.gif); 
+	background-image:url(<%= asset_path 'status.gif' %>); 
 	background-size:32px 32px;
 	background-repeat:no-repeat;
 	background-position:center;
@@ -266,7 +266,7 @@ ol > li:last-child, ul > li:last-child {
 .heading-background{
 	text-transform:uppercase;
 	border:solid 1px #cacaca;
-	background-image:url(../images/icon_shadow/arrows/bendedright.png);
+	background-image:url(<%= asset_path 'icon_shadow/arrows/bendedright.png' %>);
 	background-repeat:no-repeat;
 	background-size:18px 19px;
 	background-position:10px center;
@@ -1574,13 +1574,13 @@ textarea {
 #cboxTitle{position:absolute; top:-20px; left:0; color:#ccc;}
 #cboxCurrent{position:absolute; top:-20px; right:0px; color:#ccc;}
 #cboxSlideshow{position:absolute; top:-20px; right:90px; color:#fff;}
-#cboxPrevious{position:absolute; top:50%; left:5px; margin-top:-32px; background:url(../images/colorbox/controls.png) no-repeat top left; width:28px; height:65px; text-indent:-9999px;}
+#cboxPrevious{position:absolute; top:50%; left:5px; margin-top:-32px; background:url(<%= asset_path 'colorbox/controls.png' %>) no-repeat top left; width:28px; height:65px; text-indent:-9999px;}
 #cboxPrevious:hover{background-position:bottom left;}
-#cboxNext{position:absolute; top:50%; right:5px; margin-top:-32px; background:url(../images/colorbox/controls.png) no-repeat top right; width:28px; height:65px; text-indent:-9999px;}
+#cboxNext{position:absolute; top:50%; right:5px; margin-top:-32px; background:url(<%= asset_path 'colorbox/controls.png' %>) no-repeat top right; width:28px; height:65px; text-indent:-9999px;}
 #cboxNext:hover{background-position:bottom right;}
 #cboxLoadingOverlay{background:#000;}
-#cboxLoadingGraphic{background:url(images/loading.gif) no-repeat center center;}
-#cboxClose{position:absolute; top:5px; right:5px; display:block; background:url(../images/colorbox/controls.png) no-repeat top center; width:38px; height:19px; text-indent:-9999px;}
+#cboxLoadingGraphic{background:url(<%= asset_path 'loading.gif' %>) no-repeat center center;}
+#cboxClose{position:absolute; top:5px; right:5px; display:block; background:url(<%= asset_path 'colorbox/controls.png' %>) no-repeat top center; width:38px; height:19px; text-indent:-9999px;}
 #cboxClose:hover{background-position:bottom center;}
 
 
@@ -1618,8 +1618,8 @@ div.ps-uilayer { 				background: #000;	cursor: pointer;}
 
 div.ps-zoom-pan-rotate{			background: #000;}
 div.ps-zoom-pan-rotate *  { 	display: block; }
-div.ps-carousel-item-loading { 	background: url(../images/gallery/loader.gif) no-repeat center center; }
-div.ps-carousel-item-error { 	background: url(../images/gallery/error.gif) no-repeat center center; }
+div.ps-carousel-item-loading { 	background: url(<%= asset_path 'gallery/loader.gif' %>) no-repeat center center; }
+div.ps-carousel-item-error { 	background: url(<%= asset_path 'gallery/error.gif' %>) no-repeat center center; }
 
 div.ps-caption{ 
 	background: #000000;
@@ -1674,7 +1674,7 @@ div.ps-toolbar div div.ps-toolbar-content{
 	width: 44px;
 	height: 44px;
 	margin: 0 auto 0;
-	background-image: url(../images/gallery/icons.png);
+	background-image: url(<%= asset_path 'gallery/icons.png' %>);
 	background-repeat: no-repeat;
 }
 
@@ -1713,7 +1713,7 @@ div.ps-toolbar-play div.ps-toolbar-content{
 		-o-background-size: 176px 88px;
 		-webkit-background-size: 176px 88px;
 		background-size: 176px 88px;
-		background-image: url(../images/gallery/icons@2x.png);
+		background-image: url(<%= asset_path 'gallery/icons@2x.png' %>);
 	}
 }
 
@@ -1959,7 +1959,7 @@ div.ps-toolbar-play div.ps-toolbar-content{
 }
 
 .sliding-door-bottom a em{
-	background-image:url(../images/ui/minus.png);
+	background-image:url(<%= asset_path 'ui/minus.png' %>);
 	background-repeat:no-repeat;
 	background-position:13px 13px;
 	margin-right:20px;
@@ -1971,7 +1971,7 @@ div.ps-toolbar-play div.ps-toolbar-content{
 
 
 .sliding-door-top a em{
-	background-image:url(../images/ui/plus.png);
+	background-image:url(<%= asset_path 'ui/plus.png' %>);
 	background-repeat:no-repeat;
 	background-position:13px 13px;
 	margin-right:20px;
@@ -2001,7 +2001,7 @@ div.ps-toolbar-play div.ps-toolbar-content{
 .dropdown-deploy em{
 	width:40px;
 	height:40px;
-	background-image:url(../images/ui/arrow-down.png);
+	background-image:url(<%= asset_path 'ui/arrow-down.png' %>);
 	background-repeat:no-repeat;
 	background-position:11px 15px;
 }
@@ -2025,7 +2025,7 @@ div.ps-toolbar-play div.ps-toolbar-content{
 .dropdown-hidden em{
 	width:40px;
 	height:40px;
-	background-image:url(../images/ui/arrow-up.png);
+	background-image:url(<%= asset_path 'ui/arrow-up.png' %>);
 	background-repeat:no-repeat;
 	background-position:11px 15px;
 }
@@ -2260,17 +2260,17 @@ div.ps-toolbar-play div.ps-toolbar-content{
 }
 
 .swipe-null-box{
-	background-image:url(../images/ui/empty.png);
+	background-image:url(<%= asset_path 'ui/empty.png' %>);
 }
 
 .swipe-check-box{
 	display:none;
-	background-image:url(../images/ui/cross.png);
+	background-image:url(<%= asset_path 'ui/cross.png' %>);
 }
 
 .swipe-tick-box{
 	display:none;
-	background-image:url(../images/ui/tick.png);
+	background-image:url(<%= asset_path 'ui/tick.png' %>);
 }
 
 
@@ -2310,10 +2310,10 @@ div.ps-toolbar-play div.ps-toolbar-content{
 	margin-top:-8px;	
 }
 
-.white-information{	background-image:url(../images/notification/info.png);}
-.white-warning{		background-image:url(../images/notification/warning.png);}
-.white-question{	background-image:url(../images/notification/tip.png);}
-.white-disabled{	background-image:url(../images/notification/disable.png);}
+.white-information{	background-image:url(<%= asset_path 'notification/info.png' %>);}
+.white-warning{		background-image:url(<%= asset_path 'notification/warning.png' %>);}
+.white-question{	background-image:url(<%= asset_path 'notification/tip.png' %>);}
+.white-disabled{	background-image:url(<%= asset_path 'notification/disable.png' %>);}
 
 #gallery{
 	margin-bottom:10px;
@@ -2366,7 +2366,7 @@ div.ps-toolbar-play div.ps-toolbar-content{
 
 
 #swipebox-slider .slide {
-  background: url("../images/gallery/loader.gif") no-repeat center center;
+  background: url("<%= asset_path 'gallery/loader.gif") no-repeat center center;
   height: 100%;
   width: 100%;
   line-height: 1px;
@@ -2426,7 +2426,7 @@ div.ps-toolbar-play div.ps-toolbar-content{
 
 #swipebox-action #swipebox-prev, #swipebox-action #swipebox-next,
 #swipebox-action #swipebox-close {
-  background-image: url("../images/gallery/icon3.png");
+  background-image: url("<%= asset_path 'gallery/icon3.png");
   background-repeat: no-repeat;
   border: none!important;
   text-decoration: none!important;
