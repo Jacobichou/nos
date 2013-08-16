@@ -15,4 +15,6 @@
 //= require turbolinks
 //= require bootstrap
 //= require holder
+//= require menu
+//= require classie
 //= require_tree .
