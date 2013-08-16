@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
-//= require menu
 //= require classie
+//= require menu
 //= require holder
 //= require_tree .
