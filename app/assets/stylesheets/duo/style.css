@@ -21,7 +21,7 @@ input {
 }
 
 .content-box{
-	background-image:url(../images/body-bg.png);
+	background-image:url(<%= asset_path 'body-bg.png' %>);
 	background-repeat:repeat;
 	z-index:10;
 	padding-top:70px;
@@ -50,7 +50,7 @@ input {
 }
 
 .deploy-left-sidebar{
-	background-image:url(../images/misc/nav.png);
+	background-image:url(<%= asset_path 'misc/nav.png' %>);
 	background-repeat:no-repeat;
 	background-color:#f9fafc;
 	height:50px;
@@ -60,7 +60,7 @@ input {
 
 
 .deploy-right-sidebar{
-	background-image:url(../images/misc/contact.png);
+	background-image:url(<%= asset_path 'misc/contact.png' %>);
 	background-repeat:no-repeat;
 	background-color:#f9fafc;
 	width:50px;
@@ -71,7 +71,7 @@ input {
 }
 
 .deploy-back-home{
-	background-image:url(../images/misc/home.png);
+	background-image:url(<%= asset_path 'misc/home.png' %>);
 	background-repeat:no-repeat;
 	background-color:#f9fafc;
 	width:50px;
@@ -83,7 +83,7 @@ input {
 
 .delete-right-sidebar{
 	display:none;
-	background-image:url(../images/misc/contact.png);
+	background-image:url(<%= asset_path 'misc/contact.png' %>);
 	background-repeat:no-repeat;
 	background-color:#f9fafc;
 	width:50px;
@@ -95,7 +95,7 @@ input {
 
 .sidebar-left{
 	box-shadow: 3px 0px 3px 0px rgba(0, 0, 0, 0.3);
-	background-image:url(../images/sidebar-bg.png);
+	background-image:url(<%= asset_path 'sidebar-bg.png' %>);
 	background-repeat:repeat;
 	width:270px;
 	position:fixed;
@@ -127,7 +127,7 @@ input {
 
 .sidebar-right{
 	box-shadow: -2px 0px 2px 0px rgba(0, 0, 0, 0.3);
-	background-image:url(../images/sidebar-bg.png);
+	background-image:url(<%= asset_path 'sidebar-bg.png' %>);
 	background-repeat:repeat;
 	position: fixed;
 	overflow:hidden;
@@ -141,7 +141,7 @@ input {
 
 
 .sidebar-decoration{
-	background-image:url(../images/misc/sidebar-deco.png);
+	background-image:url(<%= asset_path 'misc/sidebar-deco.png' %>);
 	background-repeat:repeat-x;
 	height:2px;	
 	margin-bottom:15px;
@@ -166,7 +166,7 @@ input {
 
 .close-sidebar-left{
 	background-color:#212326;
-	background-image:url(../images/icon/misc/accessdenied.png);
+	background-image:url(<%= asset_path 'icon/misc/accessdenied.png' %>);
 	background-size:17px 17px;
 	background-repeat:no-repeat;
 	background-position:16px 18px;
@@ -188,19 +188,19 @@ input {
 
 
 
-.home-nav{background-image:url(../images/icon/misc/home.png);}
-.info-nav{background-image:url(../images/icon/misc/infoabout.png);}
-.folio-nav{background-image:url(../images/icon/media/image2.png);}
-.video-nav{background-image:url(../images/icon/media/clapboard.png);}
-.blog-nav{background-image:url(../images/icon/tools/pencil.png);}
-.mail-nav{background-image:url(../images/icon/misc/mail.png);}
-.newsletter-nav{background-image:url(../images/icon/misc/rss.png);}
-.call-nav{background-image:url(../images/icon/communication/phonehook.png);}
-.text-nav{background-image:url(../images/icon/communication/speechbubble4.png);}
-.maps-nav{background-image:url(../images/icon/location/maps.png);}
-.facebook-nav{background-image:url(../images/icon/social/facebook.png);}
-.twitter-nav{background-image:url(../images/icon/social/twitter.png);}
-.coach-nav{background-image:url(../images/icon/misc/help.png);}
+.home-nav{background-image:url(<%= asset_path 'icon/misc/home.png' %>);}
+.info-nav{background-image:url(<%= asset_path 'icon/misc/infoabout.png' %>);}
+.folio-nav{background-image:url(<%= asset_path 'icon/media/image2.png' %>);}
+.video-nav{background-image:url(<%= asset_path 'icon/media/clapboard.png' %>);}
+.blog-nav{background-image:url(<%= asset_path 'icon/tools/pencil.png' %>);}
+.mail-nav{background-image:url(<%= asset_path 'icon/misc/mail.png' %>);}
+.newsletter-nav{background-image:url(<%= asset_path 'icon/misc/rss.png' %>);}
+.call-nav{background-image:url(<%= asset_path 'icon/communication/phonehook.png' %>);}
+.text-nav{background-image:url(<%= asset_path 'icon/communication/speechbubble4.png' %>);}
+.maps-nav{background-image:url(<%= asset_path 'icon/location/maps.png' %>);}
+.facebook-nav{background-image:url(<%= asset_path 'icon/social/facebook.png' %>);}
+.twitter-nav{background-image:url(<%= asset_path 'icon/social/twitter.png' %>);}
+.coach-nav{background-image:url(<%= asset_path 'icon/misc/help.png' %>);}
 
 .nav-item:hover{
 	background-color:#212326;
@@ -226,7 +226,7 @@ input {
 
 .icon-active{
 	position:absolute;
-	background-image:url(../images/misc/left-sidebar/location@2x.png);
+	background-image:url(<%= asset_path 'misc/left-sidebar/location@2x.png' %>);
 	background-size:10px 15px;
 	background-repeat:no-repeat;
 	display:block;
@@ -239,7 +239,7 @@ input {
 
 .icon-page{
 	position:absolute;
-	background-image:url(../images/misc/left-sidebar/gopage@2x.png);
+	background-image:url(<%= asset_path 'misc/left-sidebar/gopage@2x.png' %>);
 	background-size:8px 11px;
 	background-repeat:no-repeat;
 	display:block;
@@ -251,7 +251,7 @@ input {
 
 .icon-drop{
 	position:absolute;
-	background-image:url(../images/misc/left-sidebar/godrop@2x.png);
+	background-image:url(<%= asset_path 'misc/left-sidebar/godrop@2x.png' %>);
 	background-size:11px 8px;
 	background-repeat:no-repeat;
 	display:block;
@@ -263,7 +263,7 @@ input {
 
 .submenu a{
 	text-shadow:0px 2px 0px rgba(0,0,0,1);
-	background-image:url(../images/misc/sidebar-deco.png);
+	background-image:url(<%= asset_path 'misc/sidebar-deco.png' %>);
 	background-repeat:repeat-x;
 	padding-top:12px;
 	padding-bottom:12px;
@@ -276,7 +276,7 @@ input {
 }
 
 .submenu a em{
-	background-image:url(../images/misc/left-sidebar/gopage@2x.png);
+	background-image:url(<%= asset_path 'misc/left-sidebar/gopage@2x.png' %>);
 	background-size:8px 11px;
 	background-repeat:no-repeat;
 	float:left;
@@ -319,9 +319,9 @@ input {
 	line-height:10px;
 }
 
-.info-sidebar{	background-image:url(../images/misc/left-sidebar-notifications/update-news.png);}
-.update-sidebar{	background-image:url(../images/misc/left-sidebar-notifications/update-blog.png);}
-.folio-sidebar{	background-image:url(../images/misc/left-sidebar-notifications/update-folio.png);}
+.info-sidebar{	background-image:url(<%= asset_path 'misc/left-sidebar-notifications/update-news.png' %>);}
+.update-sidebar{	background-image:url(<%= asset_path 'misc/left-sidebar-notifications/update-blog.png' %>);}
+.folio-sidebar{	background-image:url(<%= asset_path 'misc/left-sidebar-notifications/update-folio.png' %>);}
 
 
 .sidebar-bottom-controls{
@@ -336,7 +336,7 @@ input {
 }
 
 .sidebar-bottom-controls a{
-	background-image:url(../images/misc/sidebar-deco-vertical.png);
+	background-image:url(<%= asset_path 'misc/sidebar-deco-vertical.png' %>);
 	background-repeat:repeat-y;
 	font-size:10px;
 	text-align:center;
@@ -351,7 +351,7 @@ input {
 
 .twitter-bottom{
 	display:block;
-	background-image:url(../images/icon/social/twitter.png);
+	background-image:url(<%= asset_path 'icon/social/twitter.png' %>);
 	background-repeat:no-repeat;
 	background-position:center 33px;
 	background-size:16px 16px;
@@ -362,7 +362,7 @@ input {
 .facebook-bottom{
 	display:block;
 	padding-top:26px;
-	background-image:url(../images/icon/social/facebook.png);
+	background-image:url(<%= asset_path 'icon/social/facebook.png' %>);
 	background-repeat:no-repeat;
 	background-position:center 33px;
 	background-size:16px 16px;
@@ -373,7 +373,7 @@ input {
 .close-bottom-left{
 	display:block;
 	padding-top:26px;
-	background-image:url(../images/icon/misc/accessdenied.png);
+	background-image:url(<%= asset_path 'icon/misc/accessdenied.png' %>);
 	background-repeat:no-repeat;
 	background-position:center 33px;
 	background-size:16px 16px;
@@ -384,7 +384,7 @@ input {
 .close-bottom-right{
 	display:block;
 	padding-top:26px;
-	background-image:url(../images/icon/misc/accessdenied.png);
+	background-image:url(<%= asset_path 'icon/misc/accessdenied.png' %>);
 	background-repeat:no-repeat;
 	background-position:center 33px;
 	background-size:16px 16px;
@@ -411,7 +411,7 @@ input {
 
 .close-sidebar-right{
 	background-color:#212326;
-	background-image:url(../images/icon/misc/accessdenied.png);
+	background-image:url(<%= asset_path 'icon/misc/accessdenied.png' %>);
 	background-size:17px 17px;
 	background-repeat:no-repeat;
 	background-position:16px 18px;
@@ -613,7 +613,7 @@ input {
 	z-index:9999;
 	margin-top:-60px;
 	height:60px;
-	background-image:url(../images/full-folio/dark.png);
+	background-image:url(<%= asset_path 'full-folio/dark.png' %>);
 	width:100%;
 	display:block;
 	background-repeat:repeat;	
@@ -633,7 +633,7 @@ input {
 }
 
 .full-folio-item-more{
-	background-image:url(../images/icon_shadow/misc/link2.png);
+	background-image:url(<%= asset_path 'icon_shadow/misc/link2.png' %>);
 	background-size:32px 32px;
 	background-repeat:no-repeat;
 	position:absolute;
