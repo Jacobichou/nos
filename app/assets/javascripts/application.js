@@ -10,8 +10,6 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require classie
-//= require menu
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
