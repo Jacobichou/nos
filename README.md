@@ -15,3 +15,4 @@ To Do
 - [ ] add ability to send full summary (checklist) sections to respective person with button click
 - [ ] implement departments
 - [ ] add admin ability to promote hierarchy lvls
+- [ ] I believe special characters like ampersand are causing bootstrap collapse issues?
