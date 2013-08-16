@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="utf-8">
+	<title><%= full_title(yield(:title)) %></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta name="HandheldFriendly" content="true" />
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<%= render 'layouts/fav_touch' %>
+	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	<%= csrf_meta_tags %>
+</head>
+<body class="cbp-spmenu-push">
+
+	<%= render 'layouts/header' %>
+	
+	<div class="container center">
+		<% flash.each do |key, value| %>
+			<%= content_tag(:div, value, class: "alert alert-#{key}") %>
+		<% end %>
+	</div>
+
+	<div class="container-fluid">
+		<div class="row-fluid">
+
+
+			<div class="span12">
+				<div class="container">
+					<%= yield %>
+				</div>
+				
+			</div><!--/span-->
+		</div><!--/row-->
+
+		<hr>
+
+		<%= render 'layouts/footer' %>
+
+	</div><!--/.fluid-container-->
+	<!-- <= javascript_include_tag "classie" %>
+	<= javascript_include_tag "menu" %> -->
+	<%= render 'layouts/menu_js' %>
+</body>
+</html>
