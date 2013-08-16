@@ -8,7 +8,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<%= render 'layouts/fav_touch' %>
-	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+	<%= stylesheet_link_tag    "application", "classie", "menu", media: "all", "data-turbolinks-track" => true %>
 	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 	<%= csrf_meta_tags %>
 </head>
@@ -37,7 +37,7 @@
 		<%= render 'layouts/footer' %>
 
 	</div><!--/.fluid-container-->
-	<%= javascript_include_tag "classie" %>
-	<%= javascript_include_tag "menu" %>
+	<!-- <= javascript_include_tag "classie" %> -->
+	<!-- <= javascript_include_tag "menu" %> -->
 </body>
 </html>
