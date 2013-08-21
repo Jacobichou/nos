@@ -10,7 +10,7 @@ $grayMediumLight: #eaeaea;
 html{ overflow-y: scroll; }
 
 body {
-  padding-top: 60px;
+  padding-top: 80px; /* should actually be 60px but I wanted more due to menu stlying */
   padding-bottom: 40px;
 }
 .sidebar-nav {
@@ -115,13 +115,13 @@ footer {
 
 @media screen and (max-width: 980px) {
 
-        .footer-break { //used as a fix for iphone menu non-scrollability
+        .footer-break { /* used as a fix for iphone menu non-scrollability */
           margin-top: 75px;
           margin-bottom: 20px;
         }
 
         footer {
-    padding-bottom: 400px; //used as a fix for iphone menu non-scrollability
+    padding-bottom: 400px; /* used as a fix for iphone menu non-scrollability */
   }
 
   .navbar-fixed-top {
@@ -149,7 +149,7 @@ footer {
 /*--- iPhone only CSS  ---*/
 
 // @media screen and (max-device-width: 480px){
- 
+
 
 // }
 
