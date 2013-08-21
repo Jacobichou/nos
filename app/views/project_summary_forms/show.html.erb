@@ -1,159 +1,146 @@
 <div class="summary-view">
-<h1>
-  New Creation Christian Fellowship <br>
-  <small>of San Antonio, Tx</small>
-</h1>
+  <h1>
+    New Creation Christian Fellowship <br>
+    <small>of San Antonio, Tx</small>
+  </h1>
 
-<hr>
+  <hr>
   <%= link_to 'Add Checklist Details', full_summary_project_summary_form_path, class: "btn btn-large btn-info btn-block" %>
-<hr>
+  <hr>
 
-<h4>Project:&nbsp;<span class="muted"><%= @project_summary_form.title.titlecase %></span></h4>
-<h4>Prepared <em>and</em> Submitted:&nbsp;<span class="muted"><%= @project_summary_form.created_at.strftime("%B %d %Y") %></span></h4>
-<h5>Request Type:&nbsp;<span class="muted"><%= @project_summary_form.request_type %></span></h5>
+  <h4>Project:&nbsp;<span class="muted"><%= @project_summary_form.title.titlecase %></span></h4>
+  <h4>Prepared <em>and</em> Submitted:&nbsp;<span class="muted"><%= @project_summary_form.created_at.strftime("%B %d %Y") %></span></h4>
+  <h5>Request Type:&nbsp;<span class="muted"><%= @project_summary_form.request_type %></span></h5>
 
-<div class="row-fluid">
-  <div class="span12">
-    <dl class="dl-horizontal">
-      <dt>Date:&nbsp;</dt>
-      <dd><%= @project_summary_form.start_date.strftime("%A, %B %d %Y") %></dd>
+  <div class="row-fluid">
+    <div class="span12">
+      <dl class="dl-horizontal">
+        <dt>Date(s):&nbsp;</dt>
+        <dd><%= @project_summary_form.start_date.strftime("%A, %B %d %Y") %>&nbsp;<strong>thru</strong>&nbsp;<%= @project_summary_form.end_date.strftime("%A, %B %d %Y") %>
 
-      <dt>Time:&nbsp;</dt>
-      <dd><%= @project_summary_form.start_time.strftime("%I:%M %p") %>&nbsp;-&nbsp;<%= @project_summary_form.end_time.strftime("%I:%M %p") %></dd>
+          <dt>Time:&nbsp;</dt>
+          <dd><%= @project_summary_form.start_time.strftime("%I:%M %p") %>&nbsp;-&nbsp;<%= @project_summary_form.end_time.strftime("%I:%M %p") %></dd>
 
-      <dt>Project Manager:&nbsp;</dt>
-      <dd><%= @project_summary_form.user.name.titlecase %></dd>
+          <dt>Frequency:&nbsp;</dt>
+          <dd><%= @project_summary_form.frequency %></dd>
 
-      <dt>Phone:&nbsp;</dt>
-      <dd><%= number_to_phone(@project_summary_form.user.phone) %></dd>
+          <dt>Project Manager:&nbsp;</dt>
+          <dd><%= @project_summary_form.user.name.titlecase %></dd>
 
-      <dt>Location:&nbsp;</dt>
-      <dd><%= @project_summary_form.location.titlecase unless @project_summary_form.location == nil %></dd>
+          <dt>Phone:&nbsp;</dt>
+          <dd><%= number_to_phone(@project_summary_form.user.phone) %></dd>
 
-      <dt>Purpose:&nbsp;</dt>
-      <dd><%= @project_summary_form.purpose %></dd>
+          <dt>Location:&nbsp;</dt>
+          <dd><%= @project_summary_form.location.titlecase unless @project_summary_form.location == nil %></dd>
 
-      <dt>Objectives:&nbsp;</dt>
-      <dd><%= @project_summary_form.outcome %></dd> <!-- This needs to be changed later to the user input information which happens when the full summary info is given by user -->
-        <dl>
-          <dt><!-- this stays empty --></dt>
+          <dt>Purpose:&nbsp;</dt>
+          <dd><%= @project_summary_form.purpose %></dd>
+
+          <dt>Audience:&nbsp;</dt>
+          <dd><%= @project_summary_form.audience %></dd>
+
+          <dt>Outcome:&nbsp;</dt>
+          <dd><%= @project_summary_form.outcome %></dd>
+
+          <dt>Objectives:&nbsp;</dt>
           <dd>
-            <ol>
-              <%= @project_summary_form.objectives %>
-            </ol>
+            <ul>
+              <%= @project_summary_form.objectives.insert(0,",").gsub!(/,\s*/, '<li>').html_safe %> <!-- /,\s*/ -->
+            </ul>
           </dd>
         </dl>
-    </dl>
-  </div>
-</div>
+      </div>
+    </div>
 
-<h4>Receive from Pastor Copeland:</h4>
+    <h4>Receive from Pastor Copeland:</h4>
 
-<div class="row-fluid">
-  <div class="span12">
-    <dl class="dl-horizontal">
-      <dt>Budget:&nbsp;</dt>
-      <dd><%= number_to_currency(@project_summary_form.budget) %></dd>
+    <div class="row-fluid">
+      <div class="span12">
+        <dl class="dl-horizontal">
+          <dt>Budget:&nbsp;</dt>
+          <dd><%= number_to_currency(@project_summary_form.budget) %></dd>
 
-      <dt>Income:&nbsp;</dt>
-      <dd><%= number_to_currency(@project_summary_form.revenue) %></dd>
-    </dl>
+          <dt>Income:&nbsp;</dt>
+          <dd><%= number_to_currency(@project_summary_form.revenue) %></dd>
+        </dl>
 
-    <h5>Additional requests:</h5>
-      <ul>
-        <li><%= @project_summary_form.additional_requests %></li>
-      </ul>
-  </div>
-</div>
+        <h5>Additional requests:</h5>
+        <ul>
+          <%= @project_summary_form.additional_requests.insert(0,",").gsub!(/,\s*/, '<li>').html_safe %>
+        </ul>
+      </div>
+    </div>
 
-<hr>
+    <hr>
 
-<h4>Requirements:</h4>
+    <h4>Requirements:</h4>
 
-<div class="row-fluid">
-  <div class="span12">
-    <dt>Facilities (Deacon Darryl Marbury):</h5>
-    <dd><%= @project_summary_form.facilities %></dd>
+    <div class="row-fluid">
+      <div class="span12">
+        <dt>Facilities (Deacon Darryl Marbury):</h5>
+          <dd><%= @project_summary_form.facilities.insert(0,",").gsub!(/,\s*/, '<li>').html_safe %></dd>
 
-    <dt>Production &amp; Audio/Visual (Bishop Harker):</dt>
-    <dd><%= @project_summary_form.comm %></dd>
+          <dt>Communications (Bishop Harker):</dt>
+          <dd><%= @project_summary_form.comm.insert(0,",").gsub!(/,\s*/, '<li>').html_safe %></dd>
 
-    <dt>Worship Council (Elder Renetha Macklin):</dt>
-    <dd><%= @project_summary_form.worship_council %></dd>
+          <dt>Worship Council (Elder Renetha Macklin):</dt>
+          <dd><%= @project_summary_form.worship_council.insert(0,",").gsub!(/,\s*/, '<li>').html_safe %></dd>
 
-    <dt>Day Staff ( Laura Peebles):</dt>
-    <dd><%= @project_summary_form.day_staff %></dd>
+          <dt>Finance (Laura Peebles):</dt>
+          <dd><%= @project_summary_form.day_staff.insert(0,",").gsub!(/,\s*/, '<li>').html_safe %></dd>
 
-    <dt>Menu (Sister Sandra Ross):</dt>
-    <dd><%= @project_summary_form.menu %></dd>
+          <dt>Hospitality (Sister Sandra Ross):</dt>
+          <dd><%= @project_summary_form.menu.insert(0,",").gsub!(/,\s*/, '<li>').html_safe %></dd>
 
-    <dt>Greeters (Sister Sandra Ross):</dt>
-    <dd><%= @project_summary_form.greeters %></dd>
+          <dt>Greeters (Sister Sandra Ross):</dt>
+          <dd><%= @project_summary_form.greeters.insert(0,",").gsub!(/,\s*/, '<li>').html_safe %></dd>
 
-    <dt>Ushers (Sister Sandra Ross):</dt>
-    <dd><%= @project_summary_form.ushers %></dd>
+          <dt>Ushers (Sister Sandra Ross):</dt>
+          <dd><%= @project_summary_form.ushers.insert(0,",").gsub!(/,\s*/, '<li>').html_safe %></dd>
 
-    <dt>Ministry Leader:</dt>
-    <dd><%= @project_summary_form.ministry_leader %></dd>
-
-    <dt>Marketing:</dt>
-    <dd><%= @project_summary_form.marketing %></dd>
-
-    <dt>Decorations (Sister Nichelle Hosley):</dt>
-    <dd><%= @project_summary_form.decorations %></dd>
-  </div>
-</div>
-
-<hr>
-
-<div class="row-fluid">
-  <div class="span12">
-    <div class="accordion" id="psf-more-info">
-      <div class="accordion-group">
-        <div class="accordion-heading">
-          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-            EXTRA INFORMATION...
-          </a>
+          <dt>Decorations (Sister Nichelle Hosley):</dt>
+          <dd><%= @project_summary_form.decorations.insert(0,",").gsub!(/,\s*/, '<li>').html_safe %></dd>
         </div>
-        <div id="collapseOne" class="accordion-body collapse">
-          <div class="accordion-inner">
-            <dl class="dl-horizontal">
-              <dt>Audience:&nbsp;</dt>
-              <dd><%= @project_summary_form.audience %></dd>
+      </div>
 
-              <dt>Outcome:&nbsp;</dt>
-              <dd><%= @project_summary_form.outcome %></dd>
+      <hr>
 
-              <dt>Frequency:&nbsp;</dt>
-              <dd><%= @project_summary_form.frequency %></dd>
+      <div class="row-fluid">
+        <div class="span12">
+          <div class="accordion" id="psf-more-info">
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                  EXTRA INFORMATION...
+                </a>
+              </div>
+              <div id="collapseOne" class="accordion-body collapse">
+                <div class="accordion-inner">
+                  <dl class="dl-horizontal">
+                    <dt>Frequency Exception:&nbsp;</dt>
+                    <dd><%= @project_summary_form.frequency_exception %></dd>
 
-              <dt>Frequency Exception:&nbsp;</dt>
-              <dd><%= @project_summary_form.frequency_exception %></dd>
+                    <dt>Event Fee:&nbsp;</dt>
+                    <dd><%= number_to_currency(@project_summary_form.fee) %></dd>
 
-              <dt>End Date:&nbsp;</dt>
-              <dd><%= @project_summary_form.end_date.strftime("%B %d %Y") %></dd>
+                    <dt>Offering Taken?:&nbsp;</dt>
+                    <dd><%= @project_summary_form.offering %></dd>
 
-              <dt>Event Fee:&nbsp;</dt>
-              <dd><%= number_to_currency(@project_summary_form.fee) %></dd>
+                    <dt>Num of participants?:&nbsp;</dt>
+                    <dd><%= @project_summary_form.num_participants %></dd>
 
-              <dt>Offering Taken?:&nbsp;</dt>
-              <dd><%= @project_summary_form.offering %></dd>
-
-              <dt>Num of participants?:&nbsp;</dt>
-              <dd><%= @project_summary_form.num_participants %></dd>
-
-              <dt>Admin Comments:&nbsp;</dt>
-              <dd><%= @project_summary_form.comments %></dd>
-            </dl>
+                    <dt>Admin Comments:&nbsp;</dt>
+                    <dd><%= @project_summary_form.comments %></dd>
+                  </dl>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
+      <hr>
+      <%= link_to 'Edit PSF Form', edit_project_summary_form_path(@project_summary_form), class: "btn btn-large btn-warning btn-block" %>
+      <%= link_to 'Overview', home_path, class: "btn btn-large btn-block" %>
+
     </div>
-  </div>
-</div>
-
-<hr>
-<%= link_to 'Edit PSF Form', edit_project_summary_form_path(@project_summary_form), class: "btn btn-large btn-warning btn-block" %>
-<%= link_to 'Overview', home_path, class: "btn btn-large btn-block" %>
-
-</div>
