@@ -1,0 +1,12 @@
+<h1> Welcome!</h1>
+
+<% if request.format.html? %>
+  #sidebar
+    This is a sidebar. It will only be visible in the HTML version.
+    <% end %>
+
+
+  The requested format is: <%= "#{request.format.to_s}" %>!
+
+
+  <%= link_to "Download as PDF", url_for(request.params.merge(:format => :pdf)) if request.format.html? %>

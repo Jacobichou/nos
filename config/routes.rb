@@ -14,6 +14,7 @@ Nos::Application.routes.draw do
     member do 
       put :toggle_approve
       get :full_summary
+      get :pdf
     end
   end
 
