@@ -91,6 +91,96 @@ footer {
   }
 }
 
+/* print */
+
+@media print{ 
+  body { 
+    padding-top: 0px; 
+  }
+
+  h1 { 
+    font-size: 15px;
+    small {
+      font-size: 13px;
+    }
+  }
+
+  h2 {
+    font-size: 13px;
+  }
+
+  h3 {
+    font-size: 10px;
+  }
+
+  h4 {
+    font-size: 14px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+  }
+
+  h5 {
+    font-size: 14px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+  }
+
+  dl {
+
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    display: table;
+    content: "";
+    line-height: 0;
+    dt {
+      float: left;
+    }
+    dd {
+      margin-left: 180px;
+    }
+
+  }
+
+  .navbar-fixed-top { 
+    display: none; 
+  } 
+
+  .breadcrumb { 
+    display: none; 
+  } 
+
+  .nav-tabs { 
+    display: none; 
+  } 
+
+  .row-fluid .span3 { 
+    display: none; 
+  }
+
+  .btn {
+    display: none;
+  }
+
+  #psf-more-info {
+    display: none;
+  }
+
+  hr {
+    display: none;
+  }
+
+  #cbp-spmenu-s1, #cbp-spmenu-s2 {
+    display:none;
+  }
+
+  footer { 
+    display: none; 
+  } 
+}
+
 /* Large desktop */
 @media (min-width: 1200px) {
   body { 
@@ -115,12 +205,12 @@ footer {
 
 @media screen and (max-width: 980px) {
 
-        .footer-break { /* used as a fix for iphone menu non-scrollability */
-          margin-top: 75px;
-          margin-bottom: 20px;
-        }
+  .footer-break { /* used as a fix for iphone menu non-scrollability */
+    margin-top: 75px;
+    margin-bottom: 20px;
+  }
 
-        footer {
+  footer {
     padding-bottom: 400px; /* used as a fix for iphone menu non-scrollability */
   }
 
