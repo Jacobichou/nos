@@ -1,13 +1,8 @@
 module ProjectSummaryFormsHelper
 
-	def string_splitter(item)
-		@items = item.split(',')
-
-		
-
-		@items.each do |item|
-			simple_format(item, {}, wrapper_tag: "li")
-		end
+	def li_prepare(item, column)
+		@column = "@project_summary_form.#{column}"
+		@item = item.insert(0,",").gsub!(/,\s*/, '<li>').html_safe unless @column.nil?
 	end
 
 end

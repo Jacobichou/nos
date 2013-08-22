@@ -16,22 +16,22 @@
     <div class="span12">
       <dl class="dl-horizontal">
         <dt>Date(s):&nbsp;</dt>
-        <dd><%= @project_summary_form.start_date.strftime("%A, %B %d %Y") %>&nbsp;<strong>thru</strong>&nbsp;<%= @project_summary_form.end_date.strftime("%A, %B %d %Y") %>
+        <dd><%= @project_summary_form.start_date.strftime("%A, %B %d %Y") unless @project_summary_form.start_date.nil? %>&nbsp;<strong>thru</strong>&nbsp;<%= @project_summary_form.end_date.strftime("%A, %B %d %Y") unless @project_summary_form.nil? %>
 
           <dt>Time:&nbsp;</dt>
-          <dd><%= @project_summary_form.start_time.strftime("%I:%M %p") %>&nbsp;-&nbsp;<%= @project_summary_form.end_time.strftime("%I:%M %p") %></dd>
+          <dd><%= @project_summary_form.start_time.strftime("%I:%M %p") unless @project_summary_form.start_time.nil? %>&nbsp;-&nbsp;<%= @project_summary_form.end_time.strftime("%I:%M %p") unless @project_summary_form.end_time.nil? %></dd>
 
           <dt>Frequency:&nbsp;</dt>
           <dd><%= @project_summary_form.frequency %></dd>
 
           <dt>Project Manager:&nbsp;</dt>
-          <dd><%= @project_summary_form.user.name.titlecase %></dd>
+          <dd><%= @project_summary_form.user.name.titlecase unless @project_summary_form.user.name.nil? %></dd>
 
           <dt>Phone:&nbsp;</dt>
           <dd><%= number_to_phone(@project_summary_form.user.phone) %></dd>
 
           <dt>Location:&nbsp;</dt>
-          <dd><%= @project_summary_form.location.titlecase unless @project_summary_form.location == nil %></dd>
+          <dd><%= @project_summary_form.location.titlecase unless @project_summary_form.location.nil? %></dd>
 
           <dt>Purpose:&nbsp;</dt>
           <dd><%= @project_summary_form.purpose %></dd>
@@ -45,7 +45,7 @@
           <dt>Objectives:&nbsp;</dt>
           <dd>
             <ul>
-              <%= @project_summary_form.objectives.insert(0,",").gsub!(/,\s*/, '<li>').html_safe %> <!-- /,\s*/ -->
+              <%= li_prepare(@project_summary_form.objectives, "objectives") %> <!-- /,\s*/ -->
             </ul>
           </dd>
         </dl>
@@ -58,15 +58,15 @@
       <div class="span12">
         <dl class="dl-horizontal">
           <dt>Budget:&nbsp;</dt>
-          <dd><%= number_to_currency(@project_summary_form.budget) %></dd>
+          <dd><%= number_to_currency(@project_summary_form.budget) unless @project_summary_form.budget.nil? %></dd>
 
           <dt>Income:&nbsp;</dt>
-          <dd><%= number_to_currency(@project_summary_form.revenue) %></dd>
+          <dd><%= number_to_currency(@project_summary_form.revenue) unless @project_summary_form.revenue.nil? %></dd>
         </dl>
 
         <h5>Additional requests:</h5>
         <ul>
-          <%= @project_summary_form.additional_requests.insert(0,",").gsub!(/,\s*/, '<li>').html_safe %>
+          <%= li_prepare(@project_summary_form.additional_requests, "additional_requests") %>
         </ul>
       </div>
     </div>
@@ -78,28 +78,29 @@
     <div class="row-fluid">
       <div class="span12">
         <dt>Facilities (Deacon Darryl Marbury):</h5>
-          <dd><%= @project_summary_form.facilities.insert(0,",").gsub!(/,\s*/, '<li>').html_safe %></dd>
+          <dd><%= li_prepare(@project_summary_form.facilities, "facilities") %></dd>
 
           <dt>Communications (Bishop Harker):</dt>
-          <dd><%= @project_summary_form.comm.insert(0,",").gsub!(/,\s*/, '<li>').html_safe %></dd>
+          <dd><%= li_prepare(@project_summary_form.comm, "comm") %></dd>
 
           <dt>Worship Council (Elder Renetha Macklin):</dt>
-          <dd><%= @project_summary_form.worship_council.insert(0,",").gsub!(/,\s*/, '<li>').html_safe %></dd>
+          <dd><%= li_prepare(@project_summary_form.worship_council, "worship_council") %></dd>
 
           <dt>Finance (Laura Peebles):</dt>
-          <dd><%= @project_summary_form.day_staff.insert(0,",").gsub!(/,\s*/, '<li>').html_safe %></dd>
+          <dd><%= li_prepare(@project_summary_form.day_staff, "day_staff") %></dd>
 
           <dt>Hospitality (Sister Sandra Ross):</dt>
-          <dd><%= @project_summary_form.menu.insert(0,",").gsub!(/,\s*/, '<li>').html_safe %></dd>
+          <dd><%= li_prepare(@project_summary_form.menu, "menu") %></dd>
 
           <dt>Greeters (Sister Sandra Ross):</dt>
-          <dd><%= @project_summary_form.greeters.insert(0,",").gsub!(/,\s*/, '<li>').html_safe %></dd>
+
+          <dd><%= li_prepare(@project_summary_form.greeters, "additional_requests") %></dd>
 
           <dt>Ushers (Sister Sandra Ross):</dt>
-          <dd><%= @project_summary_form.ushers.insert(0,",").gsub!(/,\s*/, '<li>').html_safe %></dd>
+          <dd><%= li_prepare(@project_summary_form.ushers, "ushers") %></dd>
 
           <dt>Decorations (Sister Nichelle Hosley):</dt>
-          <dd><%= @project_summary_form.decorations.insert(0,",").gsub!(/,\s*/, '<li>').html_safe %></dd>
+          <dd><%= li_prepare(@project_summary_form.decorations, "decorations") %></dd>
         </div>
       </div>
 
@@ -121,7 +122,7 @@
                     <dd><%= @project_summary_form.frequency_exception %></dd>
 
                     <dt>Event Fee:&nbsp;</dt>
-                    <dd><%= number_to_currency(@project_summary_form.fee) %></dd>
+                    <dd><%= number_to_currency(@project_summary_form.fee) unless @project_summary_form.fee.nil? %></dd>
 
                     <dt>Offering Taken?:&nbsp;</dt>
                     <dd><%= @project_summary_form.offering %></dd>
