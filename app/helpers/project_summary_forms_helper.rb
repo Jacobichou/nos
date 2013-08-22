@@ -9,4 +9,5 @@ module ProjectSummaryFormsHelper
 			simple_format(item, {}, wrapper_tag: "li")
 		end
 	end
+
 end
