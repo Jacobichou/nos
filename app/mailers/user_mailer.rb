@@ -49,4 +49,12 @@ class UserMailer < ActionMailer::Base
 
     mail(to: @who, subject: '[NOSSYM Notification] Item Discarded')
   end
+
+  def send_checklist(item, person)
+    @item = item
+    @who = person
+    @login_url = URL_BASE + 'project_summary_forms/' + @item.id.to_s
+    
+    mail(to: @who, subject: '[NOSSYM Notification] Checklist Details')
+  end
 end # end file

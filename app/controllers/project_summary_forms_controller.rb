@@ -87,6 +87,15 @@ class ProjectSummaryFormsController < ApplicationController
 		end
 	end
 
+	def send_checklist
+		@project_summary_form = ProjectSummaryForm.find(params[:id])
+		respond_to do |format|
+			UserMailer.send_checklist(@project_summary_form, "jacob.pagano@gmail.com").deliver
+			format.html { redirect_to :back, notice: "Details sent" }
+			format.js
+		end
+	end
+
 	private
 		# Use callbacks to share common setup or constraints between actions.
 		def set_project_summary_form

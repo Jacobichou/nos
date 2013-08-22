@@ -15,6 +15,7 @@ Nos::Application.routes.draw do
       put :toggle_approve
       get :full_summary
       get :pdf
+      get :send_checklist
     end
   end
 

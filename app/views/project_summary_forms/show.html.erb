@@ -79,6 +79,7 @@
       <div class="span12">
         <dt>Facilities (Deacon Darryl Marbury):</h5>
           <dd><%= li_prepare(@project_summary_form.facilities) %></dd>
+          <%= link_to "Notify Marbury", send_checklist_project_summary_form_path(@project_summary_form), remote: true, id:"send_checklist_#{@project_summary_form.id}", class:"btn btn-warn btn-block" %>
 
           <dt>Communications (Bishop Harker):</dt>
           <dd><%= li_prepare(@project_summary_form.comm) %></dd>
