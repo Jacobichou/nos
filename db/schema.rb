@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130814151629) do
+ActiveRecord::Schema.define(version: 20130822171921) do
 
   create_table "departments", force: true do |t|
     t.string   "dept_name"
@@ -48,19 +48,17 @@ ActiveRecord::Schema.define(version: 20130814151629) do
     t.string   "request_type"
     t.string   "comments"
     t.integer  "revenue"
-    t.string   "objectives"
-    t.string   "facilities"
-    t.string   "comm"
-    t.string   "worship_council"
-    t.string   "day_staff"
-    t.string   "menu"
-    t.string   "greeters"
-    t.string   "ushers"
-    t.string   "ministry_leader"
-    t.string   "marketing"
-    t.string   "decorations"
-    t.string   "num_participants"
-    t.string   "additional_requests"
+    t.string   "objectives",          default: "n/a"
+    t.string   "facilities",          default: "n/a"
+    t.string   "comm",                default: "n/a"
+    t.string   "worship_council",     default: "n/a"
+    t.string   "day_staff",           default: "n/a"
+    t.string   "menu",                default: "n/a"
+    t.string   "greeters",            default: "n/a"
+    t.string   "ushers",              default: "n/a"
+    t.string   "decorations",         default: "n/a"
+    t.string   "num_participants",    default: "----"
+    t.string   "additional_requests", default: "n/a"
   end
 
   create_table "users", force: true do |t|
