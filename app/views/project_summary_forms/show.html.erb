@@ -80,7 +80,7 @@
         <dt>Facilities (Deacon Darryl Marbury):</dt>
         <dd><%= li_prepare(@project_summary_form.facilities) %></dd>
         <div id="send-details-facilities" class="send-details">
-          <%= link_to "Notify Facilities", send_checklist_facilities_project_summary_form_path(@project_summary_form), remote: true, id:"send_checklist_facilities", class:"btn btn-info btn-block", data: { disable_with: "Sending..." } %>
+          <%= link_to "Notify Facilities", send_checklist_facilities_project_summary_form_path(@project_summary_form), remote: true, id:"send_checklist_facilities", class:"btn btn-info btn-block", data: { disable_with: "Sending..." } if current_user.hierarchy <= 2 %>
         </div>
 
         <hr>
@@ -88,7 +88,7 @@
         <dt>Communications (Bishop Harker):</dt>
         <dd><%= li_prepare(@project_summary_form.comm) %></dd>
         <div id="send-details-comm" class="send-details">
-          <%= link_to "Notify Communications", send_checklist_comm_project_summary_form_path(@project_summary_form), remote: true, id:"send_checklist_comm", class:"btn btn-info btn-block", data: { disable_with: "Sending..." } %>
+          <%= link_to "Notify Communications", send_checklist_comm_project_summary_form_path(@project_summary_form), remote: true, id:"send_checklist_comm", class:"btn btn-info btn-block", data: { disable_with: "Sending..." } if current_user.hierarchy <= 2 %>
         </div>
 
         <hr>
@@ -96,7 +96,7 @@
         <dt>Worship Council (Elder Renetha Macklin):</dt>
         <dd><%= li_prepare(@project_summary_form.worship_council) %></dd>
         <div id="send-details-worship" class="send-details">
-          <%= link_to "Notify Worship Council", send_checklist_worship_project_summary_form_path(@project_summary_form), remote: true, id:"send_checklist_worship", class:"btn btn-info btn-block", data: { disable_with: "Sending..." } %>
+          <%= link_to "Notify Worship Council", send_checklist_worship_project_summary_form_path(@project_summary_form), remote: true, id:"send_checklist_worship", class:"btn btn-info btn-block", data: { disable_with: "Sending..." } if current_user.hierarchy <= 2 %>
         </div>
 
         <hr>
@@ -104,7 +104,7 @@
         <dt>Finance (Laura Peebles):</dt>
         <dd><%= li_prepare(@project_summary_form.day_staff) %></dd>
         <div id="send-details-finance" class="send-details">
-          <%= link_to "Notify Finance", send_checklist_finance_project_summary_form_path(@project_summary_form), remote: true, id:"send_checklist_finance", class:"btn btn-info btn-block", data: { disable_with: "Sending..." } %>
+          <%= link_to "Notify Finance", send_checklist_finance_project_summary_form_path(@project_summary_form), remote: true, id:"send_checklist_finance", class:"btn btn-info btn-block", data: { disable_with: "Sending..." } if current_user.hierarchy <= 2 %>
         </div>
 
         <hr>
@@ -118,7 +118,7 @@
         <dt>Ushers (Sister Sandra Ross):</dt>
         <dd><%= li_prepare(@project_summary_form.ushers) %></dd>
         <div id="send-details-hospitality" class="send-details">
-          <%= link_to "Notify Hospitality", send_checklist_hospitality_project_summary_form_path(@project_summary_form), remote: true, id:"send_checklist_hospitality", class:"btn btn-info btn-block", data: { disable_with: "Sending..." } %>
+          <%= link_to "Notify Hospitality", send_checklist_hospitality_project_summary_form_path(@project_summary_form), remote: true, id:"send_checklist_hospitality", class:"btn btn-info btn-block", data: { disable_with: "Sending..." } if current_user.hierarchy <= 2 %>
         </div>
 
         <hr>
@@ -126,7 +126,7 @@
         <dt>Decorations (Sister Nichelle Hosley):</dt>
         <dd><%= li_prepare(@project_summary_form.decorations) %></dd>
         <div id="send-details-decorations" class="send-details">
-          <%= link_to "Notify Decorator", send_checklist_decorations_project_summary_form_path(@project_summary_form), remote: true, id:"send_checklist_decorations", class:"btn btn-info btn-block", data: { disable_with: "Sending..." } %>
+          <%= link_to "Notify Decorator", send_checklist_decorations_project_summary_form_path(@project_summary_form), remote: true, id:"send_checklist_decorations", class:"btn btn-info btn-block", data: { disable_with: "Sending..." } if current_user.hierarchy <=2 %>
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 
-	<% if current_user.hierarchy <= 3 %>
+	<!-- < if current_user.hierarchy <= 3 %> -->
 		<div class="accordion" id="psf-accordion">
 			<% if @psf_items.any? %>
 				<%= render partial: 'psf_item', collection: @psf_items %>
@@ -7,6 +7,6 @@
 				<h5 class="center">Nothing here? You either do not have any open or previous submissions. Or you have no notifications.</h5>
 			<% end %>
 		</div>
-	<% else %>
-		<h5 class="center">Nothing here? You either do not have any open or previous submissions. Or you have no notifications.</h5>
-	<% end %>
+	<!-- < else %> -->
+		<!-- <h5 class="center">Nothing here? You either do not have any open or previous submissions. Or you have no notifications.</h5> -->
+	<!-- < end %> -->

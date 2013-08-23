@@ -14,10 +14,12 @@
 
 			<div class="row-fluid psf-controls">
 				<div class="span4">
-					<% if psf_item.approved? %>
-					<%= link_to approve_link_text(psf_item), toggle_approve_project_summary_form_path(psf_item), remote: true, id:"approve_link_#{psf_item.id}", class:"btn btn-danger btn-block", method: :put %>
-					<% else %>
-					<%= link_to approve_link_text(psf_item), toggle_approve_project_summary_form_path(psf_item), remote: true, id:"approve_link_#{psf_item.id}", class:"btn btn-success btn-block", method: :put %>
+					<% if current_user.hierarchy <= 2 %>
+						<% if psf_item.approved? %>
+						<%= link_to approve_link_text(psf_item), toggle_approve_project_summary_form_path(psf_item), remote: true, id:"approve_link_#{psf_item.id}", class:"btn btn-danger btn-block", method: :put %>
+						<% else %>
+						<%= link_to approve_link_text(psf_item), toggle_approve_project_summary_form_path(psf_item), remote: true, id:"approve_link_#{psf_item.id}", class:"btn btn-success btn-block", method: :put %>
+						<% end %>
 					<% end %>
 				</div>
 				<div class="span4">

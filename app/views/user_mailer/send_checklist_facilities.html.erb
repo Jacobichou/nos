@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+  <h1>Checklist Details</h1>
+  <h3>'<%= @item.title.titlecase %>'</h3>
+  <p><%= @item.user.name.titlecase %> has sent you some details.<br>
+    For more detail, login here by following this link: <%= @login_url %>.
+  </p>
+
+
+  <div class="summary-view">
+    <h1>
+      New Creation Christian Fellowship <br>
+      <small>of San Antonio, Tx</small>
+    </h1>
+
+    <hr>
+
+    <h4>Project:&nbsp;<span class="muted"><%= @item.title.titlecase %></span></h4>
+    <h4>Prepared <em>and</em> Submitted:&nbsp;<span class="muted"><%= @item.created_at.strftime("%B %d %Y") %></span></h4>
+    <h5>Request Type:&nbsp;<span class="muted"><%= @item.request_type %></span></h5>
+
+    <div class="row-fluid">
+      <div class="span12">
+        <dl class="dl-horizontal">
+          <dt>Date(s):&nbsp;</dt>
+          <dd><%= @item.start_date.nil? ? "----" : @item.start_date.strftime("%A, %B %d %Y") %>&nbsp;<strong>thru</strong>&nbsp;<%= @item.end_date.nil? ? "----" : @item.end_date.strftime("%A, %B %d %Y") %>
+
+            <dt>Time:&nbsp;</dt>
+            <dd><%= @item.start_time.nil? ? "----" : @item.start_time.strftime("%I:%M %p") %>&nbsp;-&nbsp;<%= @item.end_time.nil? ? "----" : @item.end_time.strftime("%I:%M %p") %></dd>
+
+            <dt>Frequency:&nbsp;</dt>
+            <dd><%= @item.frequency %></dd>
+
+            <dt>Project Manager:&nbsp;</dt>
+            <dd><%= @item.user.name.titlecase unless @item.user.name.nil? %></dd>
+
+            <dt>Phone:&nbsp;</dt>
+            <dd><%= number_to_phone(@item.user.phone) unless @item.user.phone.nil? %></dd>
+
+            <dt>Location:&nbsp;</dt>
+            <dd><%= @item.location.titlecase unless @item.location.nil? %></dd>
+
+            <dt>Purpose:&nbsp;</dt>
+            <dd><%= @item.purpose %></dd>
+
+            <dt>Audience:&nbsp;</dt>
+            <dd><%= @item.audience %></dd>
+
+            <dt>Outcome:&nbsp;</dt>
+            <dd><%= @item.outcome %></dd>
+
+            <dt>Objectives:&nbsp;</dt>
+            <dd>
+              <ul>
+                <%= @item.objectives.insert(0,",").gsub!(/,\s*/, '<li>').html_safe unless @item.objectives.nil? %> <!-- /,\s*/ -->
+              </ul>
+            </dd>
+          </dl>
+        </div>
+      </div>
+
+      <h4>Receive from Pastor Copeland:</h4>
+
+      <div class="row-fluid">
+        <div class="span12">
+          <dl class="dl-horizontal">
+            <dt>Budget:&nbsp;</dt>
+            <dd><%= number_to_currency(@item.budget) unless @item.budget.nil? %></dd>
+
+            <dt>Income:&nbsp;</dt>
+            <dd><%= number_to_currency(@item.revenue) unless @item.revenue.nil? %></dd>
+          </dl>
+
+          <h5>Additional requests:</h5>
+          <ul>
+            <%= @item.additional_requests.insert(0,",").gsub!(/,\s*/, '<li>').html_safe unless @item.additional_requests.nil? %>
+          </ul>
+        </div>
+      </div>
+
+      <hr>
+
+      <h4>Requirements:</h4>
+
+      <div class="row-fluid">
+        <div class="span12">
+          
+          <dt>Facilities (Deacon Darryl Marbury):</dt>
+          <dd><%= @item.facilities.insert(0,",").gsub!(/,\s*/, '<li>').html_safe unless @item.facilities.nil? %></dd>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
