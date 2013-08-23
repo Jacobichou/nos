@@ -52,7 +52,8 @@ class UserMailer < ActionMailer::Base
 
   def send_checklist(item, person)
     @item = item
-    @specifics = ProjectSummaryForm.find_by_id(@item.id).select('budget, revenue, objectives, facilities, comm, worhship_council, day_staff, menu, greeters, ushers, decorations')
+    # @specifics = @item
+    # @specifics = ProjectSummaryForm.select('budget, revenue, objectives, facilities, comm, worship_council, day_staff, menu, greeters, ushers, decorations').where(id: @item.id)
     @who = person
     @login_url = URL_BASE + 'project_summary_forms/' + @item.id.to_s
     

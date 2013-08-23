@@ -56,7 +56,7 @@
             <dt>Objectives:&nbsp;</dt>
             <dd>
               <ul>
-                <%= li_prepare(@item.objectives) %> <!-- /,\s*/ -->
+                <%= @item.objectives.insert(0,",").gsub!(/,\s*/, '<li>').html_safe unless @item.objectives.nil? %> <!-- /,\s*/ -->
               </ul>
             </dd>
           </dl>
@@ -69,15 +69,15 @@
         <div class="span12">
           <dl class="dl-horizontal">
             <dt>Budget:&nbsp;</dt>
-            <!-- <dd><= number_to_currency(@item.budget) unless @item.budget.nil? %></dd> -->
+            <dd><%= number_to_currency(@item.budget) unless @item.budget.nil? %></dd>
 
             <dt>Income:&nbsp;</dt>
-            <!-- <dd><= number_to_currency(@item.revenue) unless @item.revenue.nil? %></dd> -->
+            <dd><%= number_to_currency(@item.revenue) unless @item.revenue.nil? %></dd>
           </dl>
 
           <h5>Additional requests:</h5>
           <ul>
-            <!-- <= li_prepare(@item.additional_requests) %> -->
+            <%= @item.additional_requests.insert(0,",").gsub!(/,\s*/, '<li>').html_safe unless @item.additional_requests.nil? %>
           </ul>
         </div>
       </div>
@@ -89,29 +89,29 @@
       <div class="row-fluid">
         <div class="span12">
           <dt>Facilities (Deacon Darryl Marbury):</h5>
-            <!-- <dd><= li_prepare(@item.facilities) %></dd> -->
+            <dd><%= @item.facilities.insert(0,",").gsub!(/,\s*/, '<li>').html_safe unless @item.facilities.nil? %></dd>
 
             <dt>Communications (Bishop Harker):</dt>
-            <!-- <dd><= li_prepare(@item.comm) %></dd> -->
+            <dd><%= @item.comm.insert(0,",").gsub!(/,\s*/, '<li>').html_safe unless @item.comm.nil? %></dd>
 
             <dt>Worship Council (Elder Renetha Macklin):</dt>
-            <!-- <dd><= li_prepare(@item.worship_council) %></dd> -->
+            <dd><%= @item.worship_council.insert(0,",").gsub!(/,\s*/, '<li>').html_safe unless @item.worship_council.nil? %></dd>
 
             <dt>Finance (Laura Peebles):</dt>
-            <dd><%= li_prepare(@specifics.day_staff) %></dd>
+            <dd><%= @item.day_staff.insert(0,",").gsub!(/,\s*/, '<li>').html_safe unless @item.day_staff.nil? %></dd>
 
             <dt>Hospitality (Sister Sandra Ross):</dt>
-            <!-- <dd><= li_prepare(@item.menu) %></dd> -->
+            <dd><%= @item.menu.insert(0,",").gsub!(/,\s*/, '<li>').html_safe unless @item.menu.nil? %></dd>
 
             <dt>Greeters (Sister Sandra Ross):</dt>
 
-            <!-- <dd><= li_prepare(@item.greeters) %></dd> -->
+            <dd><%= @item.greeters.insert(0,",").gsub!(/,\s*/, '<li>').html_safe unless @item.greeters.nil? %></dd>
 
             <dt>Ushers (Sister Sandra Ross):</dt>
-            <!-- <dd><= li_prepare(@item.ushers) %></dd> -->
+            <dd><%= @item.ushers.insert(0,",").gsub!(/,\s*/, '<li>').html_safe unless @item.ushers.nil? %></dd>
 
             <dt>Decorations (Sister Nichelle Hosley):</dt>
-            <!-- <dd><= li_prepare(@item.decorations) %></dd> -->
+            <dd><%= @item.decorations.insert(0,",").gsub!(/,\s*/, '<li>').html_safe unless @item.decorations.nil? %></dd>
           </div>
         </div>
 
