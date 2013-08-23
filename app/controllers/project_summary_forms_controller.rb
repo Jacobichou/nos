@@ -102,7 +102,7 @@ class ProjectSummaryFormsController < ApplicationController
 			format.html { redirect_to :back, notice: "Details sent" }
 			format.js
 		end
-		UserMailer.send_checklist(@project_summary_form, "jacob.pagano@gmail.com").deliver
+		UserMailer.send_checklist_facilities(@project_summary_form, "jacob.pagano@gmail.com").deliver
 	end
 
 	def send_checklist_comm
@@ -111,7 +111,7 @@ class ProjectSummaryFormsController < ApplicationController
 			format.html { redirect_to :back, notice: "Details sent" }
 			format.js
 		end
-		UserMailer.send_checklist(@project_summary_form, "jacob.pagano@gmail.com").deliver
+		UserMailer.send_checklist_comm(@project_summary_form, "jacob.pagano@gmail.com").deliver
 	end
 
 	def send_checklist_worship
@@ -120,7 +120,7 @@ class ProjectSummaryFormsController < ApplicationController
 			format.html { redirect_to :back, notice: "Details sent" }
 			format.js
 		end
-		UserMailer.send_checklist(@project_summary_form, "jacob.pagano@gmail.com").deliver
+		UserMailer.send_checklist_worship(@project_summary_form, "jacob.pagano@gmail.com").deliver
 	end
 
 	def send_checklist_finance
@@ -129,7 +129,7 @@ class ProjectSummaryFormsController < ApplicationController
 			format.html { redirect_to :back, notice: "Details sent" }
 			format.js
 		end
-		UserMailer.send_checklist(@project_summary_form, "jacob.pagano@gmail.com").deliver
+		UserMailer.send_checklist_finance(@project_summary_form, "jacob.pagano@gmail.com").deliver
 	end
 
 	def send_checklist_hospitality # sends menu, greeters and ushers info bcz it goes to same person
@@ -138,7 +138,7 @@ class ProjectSummaryFormsController < ApplicationController
 			format.html { redirect_to :back, notice: "Details sent" }
 			format.js
 		end
-		UserMailer.send_checklist(@project_summary_form, "jacob.pagano@gmail.com").deliver
+		UserMailer.send_checklist_hospitality(@project_summary_form, "jacob.pagano@gmail.com").deliver
 	end
 
 	def send_checklist_decorations
@@ -147,7 +147,7 @@ class ProjectSummaryFormsController < ApplicationController
 			format.html { redirect_to :back, notice: "Details sent" }
 			format.js
 		end
-		UserMailer.send_checklist(@project_summary_form, "jacob.pagano@gmail.com").deliver
+		UserMailer.send_checklist_decorations(@project_summary_form, "jacob.pagano@gmail.com").deliver
 	end
 
 	private
