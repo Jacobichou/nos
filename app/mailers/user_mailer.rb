@@ -67,7 +67,7 @@ class UserMailer < ActionMailer::Base
     @who = person
     @login_url = URL_BASE + 'project_summary_forms/' + @item.id.to_s
     
-    mail(to: @who, subject: '[NOSSYM Notification] Checklist Details')
+    mail(to: @who, subject: '[NOSSYM Notification] Facilities Checklist Details')
   end
 
   def send_checklist_comm(item, person)
@@ -77,7 +77,7 @@ class UserMailer < ActionMailer::Base
     @who = person
     @login_url = URL_BASE + 'project_summary_forms/' + @item.id.to_s
     
-    mail(to: @who, subject: '[NOSSYM Notification] Checklist Details')
+    mail(to: @who, subject: '[NOSSYM Notification] Communications Checklist Details')
   end
 
   def send_checklist_finance(item, person)
@@ -87,7 +87,7 @@ class UserMailer < ActionMailer::Base
     @who = person
     @login_url = URL_BASE + 'project_summary_forms/' + @item.id.to_s
     
-    mail(to: @who, subject: '[NOSSYM Notification] Checklist Details')
+    mail(to: @who, subject: '[NOSSYM Notification] Finance Checklist Details')
   end
 
   def send_checklist_worship(item, person)
@@ -97,7 +97,7 @@ class UserMailer < ActionMailer::Base
     @who = person
     @login_url = URL_BASE + 'project_summary_forms/' + @item.id.to_s
     
-    mail(to: @who, subject: '[NOSSYM Notification] Checklist Details')
+    mail(to: @who, subject: '[NOSSYM Notification] Worship Checklist Details')
   end
 
   def send_checklist_hospitality(item, person)
@@ -107,7 +107,7 @@ class UserMailer < ActionMailer::Base
     @who = person
     @login_url = URL_BASE + 'project_summary_forms/' + @item.id.to_s
     
-    mail(to: @who, subject: '[NOSSYM Notification] Checklist Details')
+    mail(to: @who, subject: '[NOSSYM Notification] Hospitality Checklist Details')
   end
 
   def send_checklist_decorations(item, person)
@@ -117,6 +117,6 @@ class UserMailer < ActionMailer::Base
     @who = person
     @login_url = URL_BASE + 'project_summary_forms/' + @item.id.to_s
     
-    mail(to: @who, subject: '[NOSSYM Notification] Checklist Details')
+    mail(to: @who, subject: '[NOSSYM Notification] Decorator Checklist Details')
   end
 end # end file
