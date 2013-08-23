@@ -16,19 +16,19 @@
     <div class="span12">
       <dl class="dl-horizontal">
         <dt>Date(s):&nbsp;</dt>
-        <dd><%= @project_summary_form.start_date.strftime("%A, %B %d %Y") unless @project_summary_form.start_date.nil? %>&nbsp;<strong>thru</strong>&nbsp;<%= @project_summary_form.end_date.strftime("%A, %B %d %Y") unless @project_summary_form.nil? %>
+        <dd><%= @project_summary_form.start_date.nil? ? "----" : @project_summary_form.start_date.strftime("%A, %B %d %Y") %>&nbsp;<strong>thru</strong>&nbsp;<%= @project_summary_form.end_date.nil? ? "----" : @project_summary_form.end_date.strftime("%A, %B %d %Y") %>
 
           <dt>Time:&nbsp;</dt>
-          <dd><%= @project_summary_form.start_time.strftime("%I:%M %p") unless @project_summary_form.start_time.nil? %>&nbsp;-&nbsp;<%= @project_summary_form.end_time.strftime("%I:%M %p") unless @project_summary_form.end_time.nil? %></dd>
+          <dd><%= @project_summary_form.start_time.nil? ? "----" : @project_summary_form.start_time.strftime("%I:%M %p") %>&nbsp;-&nbsp;<%= @project_summary_form.end_time.nil? ? "----" : @project_summary_form.end_time.strftime("%I:%M %p") %></dd>
 
           <dt>Frequency:&nbsp;</dt>
           <dd><%= @project_summary_form.frequency %></dd>
 
           <dt>Project Manager:&nbsp;</dt>
-          <dd><%= @project_summary_form.user.name.titlecase unless @project_summary_form.user.name.nil? %></dd>
+          <dd><%= @project_summary_form.user.name.titlecase %></dd>
 
           <dt>Phone:&nbsp;</dt>
-          <dd><%= number_to_phone(@project_summary_form.user.phone) unless @project_summary_form.user.phone.nil? %></dd>
+          <dd><%= number_to_phone(@project_summary_form.user.phone) %></dd>
 
           <dt>Location:&nbsp;</dt>
           <dd><%= @project_summary_form.location.titlecase unless @project_summary_form.location.nil? %></dd>
@@ -58,10 +58,10 @@
       <div class="span12">
         <dl class="dl-horizontal">
           <dt>Budget:&nbsp;</dt>
-          <dd><%= number_to_currency(@project_summary_form.budget) unless @project_summary_form.budget.nil? %></dd>
+          <dd><%= number_to_currency(@project_summary_form.budget) %></dd>
 
           <dt>Income:&nbsp;</dt>
-          <dd><%= number_to_currency(@project_summary_form.revenue) unless @project_summary_form.revenue.nil? %></dd>
+          <dd><%= number_to_currency(@project_summary_form.revenue) %></dd>
         </dl>
 
         <h5>Additional requests:</h5>
@@ -79,7 +79,9 @@
       <div class="span12">
         <dt>Facilities (Deacon Darryl Marbury):</h5>
           <dd><%= li_prepare(@project_summary_form.facilities) %></dd>
-          <%= link_to "Notify Marbury", send_checklist_project_summary_form_path(@project_summary_form), remote: true, id:"send_checklist_#{@project_summary_form.id}", class:"btn btn-warn btn-block" %>
+          <div id="send-details-facilities" class="send-details">
+            <%= link_to "Notify Marbury", send_checklist_project_summary_form_path(@project_summary_form), remote: true, id:"send_checklist_facilities", class:"btn btn-warning btn-block", data: { disable_with: "Sending..." } %>
+          </div>
 
           <dt>Communications (Bishop Harker):</dt>
           <dd><%= li_prepare(@project_summary_form.comm) %></dd>
@@ -123,7 +125,7 @@
                     <dd><%= @project_summary_form.frequency_exception %></dd>
 
                     <dt>Event Fee:&nbsp;</dt>
-                    <dd><%= number_to_currency(@project_summary_form.fee) unless @project_summary_form.fee.nil? %></dd>
+                    <dd><%= number_to_currency(@project_summary_form.fee) %></dd>
 
                     <dt>Offering Taken?:&nbsp;</dt>
                     <dd><%= @project_summary_form.offering %></dd>

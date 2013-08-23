@@ -19,44 +19,44 @@
 
     <hr>
 
-    <h4>Project:&nbsp;<span class="muted"><%= @project_summary_form.title.titlecase %></span></h4>
-    <h4>Prepared <em>and</em> Submitted:&nbsp;<span class="muted"><%= @project_summary_form.created_at.strftime("%B %d %Y") %></span></h4>
-    <h5>Request Type:&nbsp;<span class="muted"><%= @project_summary_form.request_type %></span></h5>
+    <h4>Project:&nbsp;<span class="muted"><%= @item.title.titlecase %></span></h4>
+    <h4>Prepared <em>and</em> Submitted:&nbsp;<span class="muted"><%= @item.created_at.strftime("%B %d %Y") %></span></h4>
+    <h5>Request Type:&nbsp;<span class="muted"><%= @item.request_type %></span></h5>
 
     <div class="row-fluid">
       <div class="span12">
         <dl class="dl-horizontal">
           <dt>Date(s):&nbsp;</dt>
-          <dd><%= @project_summary_form.start_date.strftime("%A, %B %d %Y") unless @project_summary_form.start_date.nil? %>&nbsp;<strong>thru</strong>&nbsp;<%= @project_summary_form.end_date.strftime("%A, %B %d %Y") unless @project_summary_form.nil? %>
+          <dd><%= @item.start_date.nil? ? "----" : @item.start_date.strftime("%A, %B %d %Y") %>&nbsp;<strong>thru</strong>&nbsp;<%= @item.end_date.nil? ? "----" : @item.end_date.strftime("%A, %B %d %Y") %>
 
             <dt>Time:&nbsp;</dt>
-            <dd><%= @project_summary_form.start_time.strftime("%I:%M %p") unless @project_summary_form.start_time.nil? %>&nbsp;-&nbsp;<%= @project_summary_form.end_time.strftime("%I:%M %p") unless @project_summary_form.end_time.nil? %></dd>
+            <dd><%= @item.start_time.nil? ? "----" : @item.start_time.strftime("%I:%M %p") %>&nbsp;-&nbsp;<%= @item.end_time.nil? ? "----" : @item.end_time.strftime("%I:%M %p") %></dd>
 
             <dt>Frequency:&nbsp;</dt>
-            <dd><%= @project_summary_form.frequency %></dd>
+            <dd><%= @item.frequency %></dd>
 
             <dt>Project Manager:&nbsp;</dt>
-            <dd><%= @project_summary_form.user.name.titlecase unless @project_summary_form.user.name.nil? %></dd>
+            <dd><%= @item.user.name.titlecase unless @item.user.name.nil? %></dd>
 
             <dt>Phone:&nbsp;</dt>
-            <dd><%= number_to_phone(@project_summary_form.user.phone) unless @project_summary_form.user.phone.nil? %></dd>
+            <dd><%= number_to_phone(@item.user.phone) unless @item.user.phone.nil? %></dd>
 
             <dt>Location:&nbsp;</dt>
-            <dd><%= @project_summary_form.location.titlecase unless @project_summary_form.location.nil? %></dd>
+            <dd><%= @item.location.titlecase unless @item.location.nil? %></dd>
 
             <dt>Purpose:&nbsp;</dt>
-            <dd><%= @project_summary_form.purpose %></dd>
+            <dd><%= @item.purpose %></dd>
 
             <dt>Audience:&nbsp;</dt>
-            <dd><%= @project_summary_form.audience %></dd>
+            <dd><%= @item.audience %></dd>
 
             <dt>Outcome:&nbsp;</dt>
-            <dd><%= @project_summary_form.outcome %></dd>
+            <dd><%= @item.outcome %></dd>
 
             <dt>Objectives:&nbsp;</dt>
             <dd>
               <ul>
-                <%= li_prepare(@project_summary_form.objectives) %> <!-- /,\s*/ -->
+                <%= li_prepare(@item.objectives) %> <!-- /,\s*/ -->
               </ul>
             </dd>
           </dl>
@@ -69,15 +69,15 @@
         <div class="span12">
           <dl class="dl-horizontal">
             <dt>Budget:&nbsp;</dt>
-            <dd><%= number_to_currency(@project_summary_form.budget) unless @project_summary_form.budget.nil? %></dd>
+            <!-- <dd><= number_to_currency(@item.budget) unless @item.budget.nil? %></dd> -->
 
             <dt>Income:&nbsp;</dt>
-            <dd><%= number_to_currency(@project_summary_form.revenue) unless @project_summary_form.revenue.nil? %></dd>
+            <!-- <dd><= number_to_currency(@item.revenue) unless @item.revenue.nil? %></dd> -->
           </dl>
 
           <h5>Additional requests:</h5>
           <ul>
-            <%= li_prepare(@project_summary_form.additional_requests) %>
+            <!-- <= li_prepare(@item.additional_requests) %> -->
           </ul>
         </div>
       </div>
@@ -89,29 +89,29 @@
       <div class="row-fluid">
         <div class="span12">
           <dt>Facilities (Deacon Darryl Marbury):</h5>
-            <dd><%= li_prepare(@project_summary_form.facilities) %></dd>
+            <!-- <dd><= li_prepare(@item.facilities) %></dd> -->
 
             <dt>Communications (Bishop Harker):</dt>
-            <dd><%= li_prepare(@project_summary_form.comm) %></dd>
+            <!-- <dd><= li_prepare(@item.comm) %></dd> -->
 
             <dt>Worship Council (Elder Renetha Macklin):</dt>
-            <dd><%= li_prepare(@project_summary_form.worship_council) %></dd>
+            <!-- <dd><= li_prepare(@item.worship_council) %></dd> -->
 
             <dt>Finance (Laura Peebles):</dt>
-            <dd><%= li_prepare(@project_summary_form.day_staff) %></dd>
+            <dd><%= li_prepare(@specifics.day_staff) %></dd>
 
             <dt>Hospitality (Sister Sandra Ross):</dt>
-            <dd><%= li_prepare(@project_summary_form.menu) %></dd>
+            <!-- <dd><= li_prepare(@item.menu) %></dd> -->
 
             <dt>Greeters (Sister Sandra Ross):</dt>
 
-            <dd><%= li_prepare(@project_summary_form.greeters) %></dd>
+            <!-- <dd><= li_prepare(@item.greeters) %></dd> -->
 
             <dt>Ushers (Sister Sandra Ross):</dt>
-            <dd><%= li_prepare(@project_summary_form.ushers) %></dd>
+            <!-- <dd><= li_prepare(@item.ushers) %></dd> -->
 
             <dt>Decorations (Sister Nichelle Hosley):</dt>
-            <dd><%= li_prepare(@project_summary_form.decorations) %></dd>
+            <!-- <dd><= li_prepare(@item.decorations) %></dd> -->
           </div>
         </div>
 

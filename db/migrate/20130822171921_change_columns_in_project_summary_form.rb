@@ -1,7 +1,6 @@
 class ChangeColumnsInProjectSummaryForm < ActiveRecord::Migration
   def change
   	change_column :project_summary_forms, :additional_requests, :string, :default => 'n/a'
-  	change_column :project_summary_forms, :num_participants, :string, :default => '----'
   	change_column :project_summary_forms, :objectives, :string, :default => 'n/a'
   	change_column :project_summary_forms, :facilities, :string, :default => 'n/a'
   	change_column :project_summary_forms, :comm, :string, :default => 'n/a'

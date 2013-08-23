@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 20130822171921) do
     t.string   "greeters",            default: "n/a"
     t.string   "ushers",              default: "n/a"
     t.string   "decorations",         default: "n/a"
-    t.string   "num_participants",    default: "----"
+    t.string   "num_participants"
     t.string   "additional_requests", default: "n/a"
   end
 

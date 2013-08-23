@@ -23,4 +23,5 @@ module ApplicationHelper
 	def id_convert(phrase)
 		@rephrase = phrase.downcase.tr(" ", "_").tr("&", "-")
 	end
+
 end

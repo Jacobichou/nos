@@ -18,7 +18,7 @@
 	
 	<div class="container center">
 		<% flash.each do |key, value| %>
-			<%= content_tag(:div, value, class: "alert alert-#{key}") %>
+		<%= content_tag(:div, value, class: "alert alert-#{key}") %>
 		<% end %>
 	</div>
 
@@ -42,5 +42,16 @@
 	<!-- <= javascript_include_tag "classie" %>
 	<= javascript_include_tag "menu" %> -->
 	<%= render 'layouts/menu_js' %>
+
+
+	<!-- <script>
+	$(document).ready(function() {
+        // get data every 5 mins and refresh myDiv
+        var pingAfter = 5000;  
+        var refreshId = setInterval(function() {
+        	$("#psf-accordion").load('../static_pages/home_content');
+        }, pingAfter);
+     });
+  </script> -->
 </body>
 </html>
