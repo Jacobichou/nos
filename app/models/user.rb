@@ -18,11 +18,13 @@ class User < ActiveRecord::Base
   	def feed(user_id)
 	  	@LOWEST_HIERARCHY_LVL = 4
 	  	@user_id = user_id
-	  	if hierarchy > -1
-	  		ProjectSummaryForm.where(hierarchy_lvl: hierarchy..@LOWEST_HIERARCHY_LVL)
+	  	if hierarchy < 3 # 3 is supervisor; the lowest rank capable of viewing all submissions
+	  		# ProjectSummaryForm.where(hierarchy_lvl: hierarchy..@LOWEST_HIERARCHY_LVL)
+	  		ProjectSummaryForm.all
 	  	else
-	  		ProjectSummaryForm.where(hierarchy_lvl: hierarchy)
+	  		# ProjectSummaryForm.where(hierarchy_lvl: hierarchy)
+	  		ProjectSummaryForm.where(user_id: @user_id)
 		end
-		@submitted_psf = ProjectSummaryForm.where(user_id: @user_id)
+		# @submitted_psf = ProjectSummaryForm.where(user_id: @user_id)
 	end
 end
