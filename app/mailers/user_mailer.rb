@@ -59,4 +59,64 @@ class UserMailer < ActionMailer::Base
     
     mail(to: @who, subject: '[NOSSYM Notification] Checklist Details')
   end
+
+  def send_checklist_facilities(item, person)
+    @item = item
+    # @specifics = @item
+    # @specifics = ProjectSummaryForm.select('budget, revenue, objectives, facilities, comm, worship_council, day_staff, menu, greeters, ushers, decorations').where(id: @item.id)
+    @who = person
+    @login_url = URL_BASE + 'project_summary_forms/' + @item.id.to_s
+    
+    mail(to: @who, subject: '[NOSSYM Notification] Checklist Details')
+  end
+
+  def send_checklist_comm(item, person)
+    @item = item
+    # @specifics = @item
+    # @specifics = ProjectSummaryForm.select('budget, revenue, objectives, facilities, comm, worship_council, day_staff, menu, greeters, ushers, decorations').where(id: @item.id)
+    @who = person
+    @login_url = URL_BASE + 'project_summary_forms/' + @item.id.to_s
+    
+    mail(to: @who, subject: '[NOSSYM Notification] Checklist Details')
+  end
+
+  def send_checklist_finance(item, person)
+    @item = item
+    # @specifics = @item
+    # @specifics = ProjectSummaryForm.select('budget, revenue, objectives, facilities, comm, worship_council, day_staff, menu, greeters, ushers, decorations').where(id: @item.id)
+    @who = person
+    @login_url = URL_BASE + 'project_summary_forms/' + @item.id.to_s
+    
+    mail(to: @who, subject: '[NOSSYM Notification] Checklist Details')
+  end
+
+  def send_checklist_worship(item, person)
+    @item = item
+    # @specifics = @item
+    # @specifics = ProjectSummaryForm.select('budget, revenue, objectives, facilities, comm, worship_council, day_staff, menu, greeters, ushers, decorations').where(id: @item.id)
+    @who = person
+    @login_url = URL_BASE + 'project_summary_forms/' + @item.id.to_s
+    
+    mail(to: @who, subject: '[NOSSYM Notification] Checklist Details')
+  end
+
+  def send_checklist_hospitality(item, person)
+    @item = item
+    # @specifics = @item
+    # @specifics = ProjectSummaryForm.select('budget, revenue, objectives, facilities, comm, worship_council, day_staff, menu, greeters, ushers, decorations').where(id: @item.id)
+    @who = person
+    @login_url = URL_BASE + 'project_summary_forms/' + @item.id.to_s
+    
+    mail(to: @who, subject: '[NOSSYM Notification] Checklist Details')
+  end
+
+  def send_checklist_decorations(item, person)
+    @item = item
+    # @specifics = @item
+    # @specifics = ProjectSummaryForm.select('budget, revenue, objectives, facilities, comm, worship_council, day_staff, menu, greeters, ushers, decorations').where(id: @item.id)
+    @who = person
+    @login_url = URL_BASE + 'project_summary_forms/' + @item.id.to_s
+    
+    mail(to: @who, subject: '[NOSSYM Notification] Checklist Details')
+  end
 end # end file
