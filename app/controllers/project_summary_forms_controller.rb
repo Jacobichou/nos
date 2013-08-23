@@ -96,6 +96,60 @@ class ProjectSummaryFormsController < ApplicationController
 		UserMailer.send_checklist(@project_summary_form, "jacob.pagano@gmail.com").deliver
 	end
 
+	def send_checklist_facilities
+		@project_summary_form = ProjectSummaryForm.find(params[:id])
+		respond_to do |format|
+			format.html { redirect_to :back, notice: "Details sent" }
+			format.js
+		end
+		UserMailer.send_checklist(@project_summary_form, "jacob.pagano@gmail.com").deliver
+	end
+
+	def send_checklist_comm
+		@project_summary_form = ProjectSummaryForm.find(params[:id])
+		respond_to do |format|
+			format.html { redirect_to :back, notice: "Details sent" }
+			format.js
+		end
+		UserMailer.send_checklist(@project_summary_form, "jacob.pagano@gmail.com").deliver
+	end
+
+	def send_checklist_worship
+		@project_summary_form = ProjectSummaryForm.find(params[:id])
+		respond_to do |format|
+			format.html { redirect_to :back, notice: "Details sent" }
+			format.js
+		end
+		UserMailer.send_checklist(@project_summary_form, "jacob.pagano@gmail.com").deliver
+	end
+
+	def send_checklist_finance
+		@project_summary_form = ProjectSummaryForm.find(params[:id])
+		respond_to do |format|
+			format.html { redirect_to :back, notice: "Details sent" }
+			format.js
+		end
+		UserMailer.send_checklist(@project_summary_form, "jacob.pagano@gmail.com").deliver
+	end
+
+	def send_checklist_hospitality # sends menu, greeters and ushers info bcz it goes to same person
+		@project_summary_form = ProjectSummaryForm.find(params[:id])
+		respond_to do |format|
+			format.html { redirect_to :back, notice: "Details sent" }
+			format.js
+		end
+		UserMailer.send_checklist(@project_summary_form, "jacob.pagano@gmail.com").deliver
+	end
+
+	def send_checklist_decorations
+		@project_summary_form = ProjectSummaryForm.find(params[:id])
+		respond_to do |format|
+			format.html { redirect_to :back, notice: "Details sent" }
+			format.js
+		end
+		UserMailer.send_checklist(@project_summary_form, "jacob.pagano@gmail.com").deliver
+	end
+
 	private
 		# Use callbacks to share common setup or constraints between actions.
 		def set_project_summary_form

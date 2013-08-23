@@ -16,6 +16,12 @@ Nos::Application.routes.draw do
       get :full_summary
       get :pdf
       get :send_checklist
+      get :send_checklist_facilities
+      get :send_checklist_comm
+      get :send_checklist_worship
+      get :send_checklist_finance
+      get :send_checklist_hospitality
+      get :send_checklist_decorations
     end
   end
 
